@@ -214,7 +214,7 @@ def Critica( iF, y, z, ks, Q, MAXITER=100, tol=1e-03, NG=2 ):
         Ym = (Ya+Yb)/2
         # ...completare
             
-    print 'Maximum number of iteration reached!'
+    print('Maximum number of iteration reached!')
     return Ym
 
 
@@ -252,7 +252,7 @@ def Energia( iF, y, z, ks, Y, Q, NG=2 ):
 # Carica File di Input
 # --------------------
 cs = np.loadtxt( file_input ) # Carica Sezione
-y, z, ks = # ...
+y, z, ks = cs[:, [0]], cs[:, [1]], cs[:, [2]] #Carico i valori delle colonne del file di input .dat come vettori e assegno i valori a y, z e ks
 
 # Calcolo della scala di deflusso
 # -------------------------------
