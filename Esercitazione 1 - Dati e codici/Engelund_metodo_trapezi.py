@@ -155,6 +155,9 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
 
         # ... calcolare i valori per il singolo trapezio
         
+        dy = y[i+1]-y[i]
+        dz = z[i+1]-z[i]
+        cos_phi = dy/np.sqrt(dy**2 + dz**2)
     
     # ... calcolare gli integrali
     
