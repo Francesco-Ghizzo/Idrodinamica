@@ -123,6 +123,7 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     xj, wj = GaussPoints( NG ) # Calcola i punti e i pesi di Gauss
 
     # Inizializzo
+    Q = 0 # Portata  
     Omega = 0 # Area bagnata
     b = 0 # Larghezza superficie libera
     num_alpha = 0 # Numeratore di alpha
@@ -161,6 +162,16 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     
     # ... calcolare gli integrali
     
+        b = b + dy
+        Omega = Omega + (Yi[i]+Yi[i+1])*0.5*dy
+        num_alpha = num_alpha + (cos_phi**2)*((ks[i]**3)*(Yi[i]**3) + ((ks[i+1]**3)*(Yi[i+1]**3)))*0.5*dy
+        num_beta = num_beta + (cos_phi**(4/3))*((ks[i]**2)*(Yi[i]**(7/3)) + (ks[i+1]**2)*(Yi[i+1]**(7/3)))*0.5*dy
+        den = den + (cos_phi**(2/3))*(ks[i]*Yi[i]**(5/3)+ks[i+1]*Yi[i+1]**(5/3))*0.5*dy
+        Q = Q + den*np.sqrt(iF)
+
+    alpha = (Omega**2)*num_alpha/(den**3)
+    beta = Omega*num_beta/(den**2)
+
     return Q, Omega, b, alpha, beta
 
 
