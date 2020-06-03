@@ -170,9 +170,10 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
             num_beta = num_beta + (cos_phi**(4/3))*((ks[i]**2)*(Yi[i]**(7/3)) + (ks[i+1]**2)*(Yi[i+1]**(7/3)))*0.5*dy
             den = den + (cos_phi**(2/3))*(ks[i]*Yi[i]**(5/3)+ks[i+1]*Yi[i+1]**(5/3))*0.5*dy
             Q = Q + den*np.sqrt(iF)
-     
-    alpha = (Omega**2)*num_alpha/(den**3)
-    beta = Omega*num_beta/(den**2)
+
+    if den != 0: # Evito la divisione per 0  
+        alpha = (Omega**2)*num_alpha/(den**3)
+        beta = Omega*num_beta/(den**2)
 
     return Q, Omega, b, alpha, beta
 
