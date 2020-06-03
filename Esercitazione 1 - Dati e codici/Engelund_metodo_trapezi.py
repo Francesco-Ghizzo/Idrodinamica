@@ -297,4 +297,32 @@ np.savetxt( file_output, out_table )
 
 # Crea i grafici
 # --------------
-# ...completare
+
+# Grafico 1: Profilo Sezione
+plt.scatter(y, z)
+plt.title("Profilo dell'alveo")
+plt.xlabel("y[m]")
+plt.ylabel("z[m]")
+plt.plot(y, z)
+plt.show()
+
+# Grafico 2: Scala di Deflusso
+plt.title("Scala di deflusso")
+plt.xlabel("Q[m3/s]")
+plt.ylabel("Y[m]")
+plt.plot(Q, Y)
+plt.show()
+
+# Grafico 3: Coefficiente di Ragguaglio Alpha
+plt.title("Coefficiente di ragguaglio α")
+plt.xlabel("α[-]")
+plt.ylabel("Y[m]")
+plt.plot(alpha, Y)
+plt.show()
+
+# Grafico 4: Coefficiente di Ragguaglio Beta
+plt.title("Coefficiente di ragguaglio ß")
+plt.xlabel("ß[-]")
+plt.ylabel("Y[m]")
+plt.plot(beta, Y)
+plt.show()
