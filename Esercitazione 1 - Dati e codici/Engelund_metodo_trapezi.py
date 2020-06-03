@@ -174,6 +174,9 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     if den != 0: # Evito la divisione per 0  
         alpha = (Omega**2)*num_alpha/(den**3)
         beta = Omega*num_beta/(den**2)
+    else:
+        alpha = 0
+        beta = 0
 
     return Q, Omega, b, alpha, beta
 
