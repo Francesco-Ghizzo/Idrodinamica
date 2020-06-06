@@ -136,8 +136,22 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     # N punti trasversali -> N-1 intervalli (trapezi)
     for i in xrange( N-1 ): # Per ogni trapezio
 
-        if not (Yi[i] < 0 or Yi[i+1] < 0): # Non considero i tratti con quota Yi negativa (al di sopra della superficie dell'acqua)
+        if not (Yi[i] <= 0 and Yi[i+1] <= 0): # Non considero i tratti con tirante idraulico negativo (al di sopra della superficie dell'acqua)
         
+        # calcolo i valori di y[i], y[i+1], Yi[i], Yi[i+1], dy e dz per i triangoli laterali
+
+            if Yi[i] < 0:
+                dy = y[i+1]-y[i]
+                dy = dy*Yi[i+1]/(z[i]-z[i+1])
+                Yi[i] = 0
+                dz = Yi[i+1]
+            elif Yi[i+1] < 0:
+                dy = y[i+1]-y[i]
+                dy = dy*Yi[i]/((z[i+1]-z[i]))
+                Yi[i+1] = 0
+                dz = Yi[i]
+            else:
+
         #    vertical stripe
         # 
         #         dy
@@ -158,8 +172,9 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
 
         # ... calcolare i valori per il singolo trapezio
         
-            dy = y[i+1]-y[i]
-            dz = z[i+1]-z[i]
+                dy = y[i+1]-y[i]
+                dz = z[i+1]-z[i]
+
             cos_phi = dy/np.sqrt(dy**2 + dz**2)
     
     # ... calcolare gli integrali
