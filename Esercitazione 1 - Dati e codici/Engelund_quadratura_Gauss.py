@@ -150,26 +150,6 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
                 Yi[i+1] = 0
                 dz = Yi[i]
             else:
-
-        #    vertical stripe
-        # 
-        #         dy
-        # 
-        #        o-----o       <- water level
-        #        |     |  
-        #        |     |  YR
-        #        |     |  
-        #        |     o      zR     _ _
-        #    YL  |    /       ^       |
-        #        |   / dB     |       |
-        #        |  /         |       |  dz
-        #        | /\\ phi    |       |
-        #    zL  o  ------    |       |
-        #    ^                |      _|_
-        #    |                |
-        #    ------------------- z=0
-
-        # ... calcolare i valori per il singolo trapezio
         
                 dy = y[i+1]-y[i]
                 dz = z[i+1]-z[i]
