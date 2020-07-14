@@ -39,52 +39,6 @@ fs = 16 # Font Size x grafici
 # ========
 # Funzioni
 # ========
-def GaussPoints(NG):
-    '''
-    Funzione per il calcolo dei punti e dei pesi di Gauss
-    
-    Argomenti
-    ---------
-    NG: int
-       numero di punti di Gauss
-
-    Output
-    ------
-    p: numpy.ndarray
-      array dei punti di Gauss
-    w: numpy.ndarray
-      array dei pesi
-    '''
-    p, w = None, None
-    if NG==2:
-        p = np.array([ -1/np.sqrt(3),
-                       +1/np.sqrt(3) ])
-        w = np.array([ 1,
-                       1 ])
-    elif NG==3:
-        p = np.array([ -np.sqrt(3)/np.sqrt(5),
-                       0,
-                       +np.sqrt(3)/np.sqrt(5)
-        ])
-        w = np.array([ 5/9,
-                       8/9,
-                       5/9
-        ])
-    elif NG==4:
-        p = np.array([ -np.sqrt(525+70*np.sqrt(30))/35,
-                       -np.sqrt(525-70*np.sqrt(30))/35,
-                       +np.sqrt(525-70*np.sqrt(30))/35,
-                       +np.sqrt(525+70*np.sqrt(30))/35
-        ])
-        w = np.array([ (18-np.sqrt(30))/36,
-                       (18+np.sqrt(30))/36,
-                       (18+np.sqrt(30))/36,
-                       (18-np.sqrt(30))/36
-        ])
-        
-    # espandere il numero di punti di gauss
-    return p, w
-
 
 def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     '''
@@ -119,8 +73,6 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     beta: float
       coefficiente di ragguaglio della qdm alla profondita' Y
     '''
-    # Punti e pesi di Gauss
-    xj, wj = GaussPoints( NG ) # Calcola i punti e i pesi di Gauss
 
     # Inizializzo
     Omega = 0 # Area bagnata
@@ -150,24 +102,6 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
                 Yi[i+1] = 0
                 dz = Yi[i]
             else:
-
-        #    vertical stripe
-        # 
-        #         dy
-        # 
-        #        o-----o       <- water level
-        #        |     |  
-        #        |     |  YR
-        #        |     |  
-        #        |     o      zR     _ _
-        #    YL  |    /       ^       |
-        #        |   / dB     |       |
-        #        |  /         |       |  dz
-        #        | /\\ phi    |       |
-        #    zL  o  ------    |       |
-        #    ^                |      _|_
-        #    |                |
-        #    ------------------- z=0
 
         # ... calcolare i valori per il singolo trapezio
         
