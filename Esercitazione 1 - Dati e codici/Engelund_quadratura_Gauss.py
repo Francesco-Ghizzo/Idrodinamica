@@ -211,13 +211,19 @@ def Critica( iF, y, z, ks, Q, MAXITER=100, tol=1e-03, NG=2 ):
 
     # Calcolo della profondita' critica con il metodo dicotomico
     # La funzione da annullare e' quella per l'eccesso di carico specifico sulla sezione
-    # ...completare
 
     for i in xrange(MAXITER):
         Ym = (Ya+Yb)/2
-        # ...completare
-            
-    print('Maximum number of iteration reached!')
+        fYm = Energia( iF, y, z, ks, Ym, Q, NG)
+        fYa = Energia( iF, y, z, ks, Ya, Q, NG)
+        if abs(fYm) < tol:
+            break
+        else:
+            if fYm*fYa < 0:
+                Yb = Ym
+            else:
+                Ya = Ym    
+        
     return Ym
 
 
@@ -243,8 +249,8 @@ def Energia( iF, y, z, ks, Y, Q, NG=2 ):
       numero di punti di Gauss nel calcolo dei parametri
     '''
     
-    # ...
-
+    _, Omega, b, alpha, _ = MotoUniforme( iF, y, z, ks, Y, NG=NG )    
+    Fr2 = (Q**2)*b/(9.81*Omega**3)
     return alpha*Fr2 - 1
 
 
@@ -283,7 +289,7 @@ for n in xrange( vpoints ):
     
     # Calcola il livello critico associato alla portata corrispondente
     # al livello di moto uniform corrente
-    # Yc[n] = Critica( iF, y, z, ks, Q[n], NG=NG, MAXITER=MAXITER, tol=tol ) --> DECOMMENTARE NELLA SECONDA LEZIONE
+    Yc[n] = Critica( iF, y, z, ks, Q[n], NG=NG, MAXITER=MAXITER, tol=tol ) 
 
 
 # Salva File di Output
@@ -308,6 +314,7 @@ plt.title("Scala di deflusso")
 plt.xlabel("Q[m3/s]")
 plt.ylabel("Y[m]")
 plt.plot(Q, Y)
+plt.plot(Q, Yc)
 plt.show()
 
 # Grafico 3: Coefficiente di Ragguaglio Alpha
