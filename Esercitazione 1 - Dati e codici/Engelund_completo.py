@@ -84,6 +84,41 @@ def GaussPoints(NG):
 
     return p, w
 
+def Trapezi(cos_phi, ks, Yi, dy, i):
+    '''
+    Funzione per il calcolo di num_alpha, num_beta e den con il metodo dei trapezi
+
+    Argomenti
+    ---------
+    cos_phi, ks, Yi, dj, i
+    
+    Output
+    ------
+    num_alpha, num_beta, den
+    '''
+    num_alpha = (cos_phi**2)*((ks[i]**3)*(Yi[i]**3) + ((ks[i+1]**3)*(Yi[i+1]**3)))*0.5*dy
+    num_beta = (cos_phi**(4/3))*((ks[i]**2)*(Yi[i]**(7/3)) + (ks[i+1]**2)*(Yi[i+1]**(7/3)))*0.5*dy
+    den = (cos_phi**(2/3))*(ks[i]*Yi[i]**(5/3)+ks[i+1]*Yi[i+1]**(5/3))*0.5*dy
+    return num_alpha, num_beta, den
+
+def QuadraturaGauss(cos_phi, ks, Yi, dy, xj, wj, i):
+    '''
+    Funzione per il calcolo di num_alpha, num_beta e den con il metodo della Quadratura di Gauss
+
+    Argomenti
+    ---------
+    cos_phi, ks, xj, Yi, dy, i
+
+    Output
+    ------
+    num_alpha, num_beta, den
+    '''
+    ksj = (ks[i+1]-ks[i])*0.5*np.array(xj) + (ks[i]+ks[i+1])*0.5
+    Yj = (Yi[i+1]-Yi[i])*0.5*np.array(xj) + (Yi[i]+Yi[i+1])*0.5
+    num_alpha = dy*0.5*(cos_phi**2)*np.sum(wj*(ksj**3)*(Yj**3))
+    num_beta = dy*0.5*(cos_phi**(4/3))*np.sum(wj*(ksj**2)*(Yj**(7/3)))
+    den = dy*0.5*(cos_phi**(2/3))*np.sum(wj*ksj*Yj**(5/3))
+    return num_alpha, num_beta, den
 
 def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     '''
@@ -159,12 +194,18 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     
             b = b + dy
             Omega = Omega + (Yi[i]+Yi[i+1])*0.5*dy
-            ksj = (ks[i+1]-ks[i])*0.5*np.array(xj) + (ks[i]+ks[i+1])*0.5
-            Yj = (Yi[i+1]-Yi[i])*0.5*np.array(xj) + (Yi[i]+Yi[i+1])*0.5
-            num_alpha = num_alpha + dy*0.5*(cos_phi**2)*np.sum(wj*(ksj**3)*(Yj**3))
-            num_beta = num_beta + dy*0.5*(cos_phi**(4/3))*np.sum(wj*(ksj**2)*(Yj**(7/3)))
-            den = den + dy*0.5*(cos_phi**(2/3))*np.sum(wj*ksj*Yj**(5/3))
-
+            
+    #Quadratura di Gauss:
+            Quadr = QuadraturaGauss(cos_phi, ks, Yi, dy, xj, wj, i)
+            num_alpha += Quadr[0]
+            num_beta += Quadr[1]
+            den += Quadr[2]
+            
+    #Metodo dei Trapezi:
+            #Tr = Trapezi(cos_phi, ks, Yi, dy, i)
+            #num_alpha += Tr(cos_phi, ks, Yi, dy, i)[0]
+            #num_beta += Tr(cos_phi, ks, Yi, dy, i)[1]
+            #den += Tr(cos_phi, ks, Yi, dy, i)[2]
 
     Q = den*np.sqrt(iF)
 
@@ -313,8 +354,9 @@ plt.show()
 plt.title("Scala di deflusso")
 plt.xlabel("Q[m3/s]")
 plt.ylabel("Y[m]")
-plt.plot(Q, Y)
-plt.plot(Q, Yc)
+plt.plot( Q, Y, label = "Yu[m]" )
+plt.plot(Q, Yc, label = "Yc[m]")
+plt.legend()
 plt.show()
 
 # Grafico 3: Coefficiente di Ragguaglio Alpha
