@@ -26,8 +26,8 @@ import os
 # ================
 # Dati dell'utente
 # ================
-file_input = 'triangolare.dat'
-file_output = 'triangolare_trapezi.dat'
+file_input = ''
+file_output = ''
 vpoints = 100 # N punti discretizzazione verticale
 g = 9.81 # Accelerazione di gravita'
 iF = 0.003 # Pendenza
