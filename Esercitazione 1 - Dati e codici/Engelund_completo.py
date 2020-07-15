@@ -120,7 +120,7 @@ def QuadraturaGauss(cos_phi, ks, Yi, dy, xj, wj, i):
     den = dy*0.5*(cos_phi**(2/3))*np.sum(wj*ksj*Yj**(5/3))
     return num_alpha, num_beta, den
 
-def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
+def MotoUniforme( iF, y, z, ks, Y, NG ):
     '''
     Calcola i parametri di moto uniforme per assegnato tirante
 
@@ -194,18 +194,20 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     
             b = b + dy
             Omega = Omega + (Yi[i]+Yi[i+1])*0.5*dy
-            
-    #Quadratura di Gauss:
-            Quadr = QuadraturaGauss(cos_phi, ks, Yi, dy, xj, wj, i)
-            num_alpha += Quadr[0]
-            num_beta += Quadr[1]
-            den += Quadr[2]
-            
+            if NG == 0:
     #Metodo dei Trapezi:
-            #Tr = Trapezi(cos_phi, ks, Yi, dy, i)
-            #num_alpha += Tr[0]
-            #num_beta += Tr[1]
-            #den += Tr[2]
+                Tr = Trapezi(cos_phi, ks, Yi, dy, i)
+                num_alpha += Tr[0]
+                num_beta += Tr[1]
+                den += Tr[2]
+            else:
+    #Quadratura di Gauss:
+                # Punti e pesi di Gauss
+                xj, wj = GaussPoints( NG ) # Calcola i punti e i pesi di Gauss
+                Quadr = QuadraturaGauss(cos_phi, ks, Yi, dy, xj, wj, i)
+                num_alpha += Quadr[0]
+                num_beta += Quadr[1]
+                den += Quadr[2]
 
     Q = den*np.sqrt(iF)
 
@@ -311,11 +313,11 @@ Y = h - z.min() # Array dei tiranti
 
 # Inizializzo gli array di output
 # -------------------------------
-Q = np.zeros( vpoints ) # Portata
+Q0, Q2, Q3, Q4 = np.zeros( vpoints ), np.zeros( vpoints ), np.zeros( vpoints ), np.zeros( vpoints ) # Portata
 Omega = np.zeros( vpoints ) # Area
 b = np.zeros( vpoints ) # Larghezza superficie libera
-alpha = np.zeros( vpoints ) # Coefficiente di ragguaglio dell'energia
-beta = np.zeros( vpoints ) # Coefficiente di ragguaglio della qta' di moto
+alpha0, alpha2, alpha3, alpha4 = np.zeros( vpoints ), np.zeros( vpoints ), np.zeros( vpoints ), np.zeros( vpoints ) # Coefficiente di ragguaglio dell'energia
+beta0, beta2, beta3, beta4 = np.zeros( vpoints ), np.zeros( vpoints ), np.zeros( vpoints ), np.zeros( vpoints ) # Coefficiente di ragguaglio della qta' di moto
 Yc = np.zeros( vpoints ) # Tirante critico
 
 
@@ -326,16 +328,18 @@ Yc = np.zeros( vpoints ) # Tirante critico
 for n in range( vpoints ):
     
     # Calcola i parametri di moto uniforme assegnato il tirante
-    Q[n], Omega[n], b[n], alpha[n], beta[n] = MotoUniforme( iF, y, z, ks, Y[n], NG=NG )
-    
+    Q0[n], Omega[n], b[n], alpha0[n], beta0[n] = MotoUniforme( iF, y, z, ks, Y[n], NG=0 )
+    Q2[n], Omega[n], b[n], alpha2[n], beta2[n] = MotoUniforme( iF, y, z, ks, Y[n], NG=2 )
+    Q3[n], Omega[n], b[n], alpha3[n], beta3[n] = MotoUniforme( iF, y, z, ks, Y[n], NG=3 )
+    Q4[n], Omega[n], b[n], alpha4[n], beta4[n] = MotoUniforme( iF, y, z, ks, Y[n], NG=4 ) 
     # Calcola il livello critico associato alla portata corrispondente
     # al livello di moto uniform corrente
-    Yc[n] = Critica( iF, y, z, ks, Q[n], NG=NG, MAXITER=MAXITER, tol=tol ) 
+    Yc[n] = Critica( iF, y, z, ks, Q2[n], NG=2, MAXITER=MAXITER, tol=tol ) 
 
 
 # Salva File di Output
 # --------------------
-out_table = np.array([ Y, Q, Yc, b, Omega, alpha, beta ]).T
+out_table = np.array([ Y, Q2, Yc, b, Omega, alpha2, beta2 ]).T
 np.savetxt( file_output, out_table )
 
 
@@ -354,8 +358,8 @@ plt.show()
 plt.title("Scala di deflusso")
 plt.xlabel("Q[m3/s]")
 plt.ylabel("Y[m]")
-plt.plot( Q, Y, label = "Yu[m]" )
-plt.plot(Q, Yc, label = "Yc[m]")
+plt.plot(Q2, Y, label = "Yu[m]")
+plt.plot(Q2, Yc, label = "Yc[m]")
 plt.legend()
 plt.show()
 
@@ -363,12 +367,20 @@ plt.show()
 plt.title("Coefficiente di ragguaglio α")
 plt.xlabel("α[-]")
 plt.ylabel("Y[m]")
-plt.plot(alpha, Y)
+plt.plot(alpha0, Y, label = "trapezi")
+plt.plot(alpha2, Y, label = "Gauss (2)")
+plt.plot(alpha3, Y, label = "Gauss (3)")
+plt.plot(alpha4, Y, label = "Gauss (4)")
+plt.legend()
 plt.show()
 
 # Grafico 4: Coefficiente di Ragguaglio Beta
 plt.title("Coefficiente di ragguaglio ß")
 plt.xlabel("ß[-]")
 plt.ylabel("Y[m]")
-plt.plot(beta, Y)
+plt.plot(beta0, Y, label = "trapezi")
+plt.plot(beta2, Y, label = "Gauss (2)")
+plt.plot(beta3, Y, label = "Gauss (3)")
+plt.plot(beta4, Y, label = "Gauss (4)")
+plt.legend()
 plt.show()
