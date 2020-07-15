@@ -130,75 +130,6 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
     return Q, Omega, b, alpha, beta
 
 
-def Critica( iF, y, z, ks, Q, MAXITER=100, tol=1e-03, NG=2 ):
-    '''
-    Calcolo della profondita' critica ad assegnata portata
-
-    Argomenti
-    ---------
-    iF: float
-       pendenza del canale
-    y: numpy.ndarray
-      coordinate trasversali dei punti della sezione
-    z: numpy.ndarray
-      coordinate verticali dei punti della sezione
-    ks: numpy.ndarray
-      coefficienti di scabrezza dei punti della sezione
-    Q: float
-      portata
-    MAXITER: int [default=100]
-      numero massimo di iterazioni per l'algoritmo dicotomico
-    tol: float
-      tolleranza sull'eccesso di energia per l'algoritmo dicotomico
-    NG: int [default=2]
-      numero di punti di Gauss nel calcolo dei parametri
-
-    Output
-    ------
-    Ym: float
-       profondita' critica calcolata con il metodo dicotomico
-    '''
-    Ya = 1e-06
-    Yb = z.max() - z.min()
-
-    # Calcolo della profondita' critica con il metodo dicotomico
-    # La funzione da annullare e' quella per l'eccesso di carico specifico sulla sezione
-    # ...completare
-
-    for i in range(MAXITER):
-        Ym = (Ya+Yb)/2
-        # ...completare
-            
-    print('Maximum number of iteration reached!')
-    return Ym
-
-
-def Energia( iF, y, z, ks, Y, Q, NG=2 ):
-    '''
-    Eccesso di energia rispetto alla critica
-    Funzione da annullare per trovare le condizioni critiche
-    Argomenti
-    ---------
-    iF: float
-       pendenza del canale
-    y: numpy.ndarray
-      coordinate trasversali dei punti della sezione
-    z: numpy.ndarray
-      coordinate verticali dei punti della sezione
-    ks: numpy.ndarray
-      coefficienti di scabrezza dei punti della sezione
-    Y: float
-      profondita'
-    Q: float
-      portata
-    NG: int [default=2]
-      numero di punti di Gauss nel calcolo dei parametri
-    '''
-    
-    # ...
-
-    return alpha*Fr2 - 1
-
 
 # =================
 # Codice principale
@@ -233,10 +164,6 @@ for n in range( vpoints ):
     # Calcola i parametri di moto uniforme assegnato il tirante
     Q[n], Omega[n], b[n], alpha[n], beta[n] = MotoUniforme( iF, y, z, ks, Y[n], NG=NG )
     
-    # Calcola il livello critico associato alla portata corrispondente
-    # al livello di moto uniform corrente
-    # Yc[n] = Critica( iF, y, z, ks, Q[n], NG=NG, MAXITER=MAXITER, tol=tol ) --> DECOMMENTARE NELLA SECONDA LEZIONE
-
 
 # Salva File di Output
 # --------------------
