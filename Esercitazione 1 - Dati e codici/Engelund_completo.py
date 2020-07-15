@@ -203,9 +203,9 @@ def MotoUniforme( iF, y, z, ks, Y, NG=2 ):
             
     #Metodo dei Trapezi:
             #Tr = Trapezi(cos_phi, ks, Yi, dy, i)
-            #num_alpha += Tr(cos_phi, ks, Yi, dy, i)[0]
-            #num_beta += Tr(cos_phi, ks, Yi, dy, i)[1]
-            #den += Tr(cos_phi, ks, Yi, dy, i)[2]
+            #num_alpha += Tr[0]
+            #num_beta += Tr[1]
+            #den += Tr[2]
 
     Q = den*np.sqrt(iF)
 
