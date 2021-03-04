@@ -6,8 +6,8 @@ def UniFlow( q, ks, iF ):
 def PhysFlux( U ):
     '''Calcolo dei flussi fisici'''
     Y, q = U
-    Flux = ...
-    return Flux
+    F = np.array([q, q**2/Y+0.5*g*Y**2])
+    return F
 
 def LaxFriedrichs( U, dt, dx ):
     '''Flusso Numerico di Lax-Friedrichs'''
