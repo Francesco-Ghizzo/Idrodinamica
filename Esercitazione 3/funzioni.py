@@ -11,18 +11,18 @@ def PhysFlux( U ):
 
 def LaxFriedrichs( U, dt, dx ):
     '''Flusso Numerico di Lax-Friedrichs'''
-    ...
-    return NumFlux
+    F_LF = 0.5*(PhysFlux(U[]))+PhysFlux(U[]))-0.5*(dx/dt)*(U[]-U[])
+    return F_LF
 
 def LaxWendroff( U, dt, dx ):
     '''Flusso Numerico di Lax-Wendroff'''
     ...
-    return NumFlux
+    return F_LW
 
 def FORCE( U, dt, dx ):
     '''Flusso Numerico FORCE di Toro'''
     ...
-    return NumFlux
+    return F_TO
 
 def Source( U ):
     '''Termine Sorgente'''
