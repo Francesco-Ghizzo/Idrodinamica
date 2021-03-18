@@ -6,23 +6,23 @@ def UniFlow( q, ks, iF ):
 def PhysFlux( U ):
     '''Calcolo dei flussi fisici'''
     Y, q = U
-    F = np.array([q, q**2/Y+0.5*g*Y**2])
-    return F
+    Flux = np.array([q, q**2/Y+0.5*g*Y**2])
+    return Flux
 
 def LaxFriedrichs( U, dt, dx ):
     '''Flusso Numerico di Lax-Friedrichs'''
-    F_LF = 0.5*(PhysFlux(U[]))+PhysFlux(U[]))-0.5*(dx/dt)*(U[]-U[])
-    return F_LF
+    NumFlux = 0.5*(PhysFlux(U[]))+PhysFlux(U[]))-0.5*(dx/dt)*(U[]-U[])
+    return NumFlux
 
 def LaxWendroff( U, dt, dx ):
     '''Flusso Numerico di Lax-Wendroff'''
     ...
-    return F_LW
+    return NumFlux
 
 def FORCE( U, dt, dx ):
     '''Flusso Numerico FORCE di Toro'''
     ...
-    return F_TO
+    return NumFlux
 
 def Source( U ):
     '''Termine Sorgente'''
