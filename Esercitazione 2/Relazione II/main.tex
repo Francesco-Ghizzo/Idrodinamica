@@ -252,8 +252,6 @@ Entrambe le analisi sono state condotte tramite uso del software Hec-Ras.
     \label{fig:spinta}
 \end{figure}
 
-\newpage
-
 \subsection{Il software HEC-RAS}
 
 \noindent Il software HEC-RAS è un software gratuito sviluppato dall’\textit{Hydrologic Engineering Center} \textit{dell’US Army Corps of Engineers}. È utilizzato per la modellazione idraulica unidimensionale ed in regime di moto permanente di corsi d’acqua naturali o artificiali finalizzata alla definizione dei profili di corrente ed alla valutazione delle principali caratteristiche idrauliche nelle varie sezioni. È utilizzato inoltre nella modellazione idraulica bidimensionale ed in regime di moto vario, nella modellazione a fondo mobile (trasporto di sedimenti), nell’analisi di qualità delle acque (modello di avvezione-diffusione), per verifiche idrauliche specifiche (fenomeni di erosione alle pile di un ponte) e nella realizzazione di mappe di inondazione. 
@@ -375,8 +373,6 @@ La pendenza della canaletta, inoltre, è regolabile controllando la quota di mon
 Al successivo cambio di pendenza avviene il ritorno alla condizione fluviale, il che costringe la corrente a a dover raggiungere una quota superiore alla profondità critica: si genera così un risalto dissipativo. La localizzazione del fenomeno avviene nel punto in cui le spinte generate dalle correnti di monte e di valle si equivalgono. In base all'intensità della spinta, perciò, la posizione del risalto sarà collocata a valle del cambio di pendenza se la spinta è maggiore a monte rispetto a valle (con un profilo di corrente lenta decelarato $M3$), oppure a monte se la spinta è minore a monte rispetto a valle (con un profilo di corrente veloce decelerato $S1$.
 Nel nostro caso il profilo calcolato risulta molto incerto, anche se il fenomeno dissipativo sembra avere inizio appena a monte del cambio di pendenza; questo comporterebbe la formazione di un profilo di tipo $S1$. Pertanto è necessario calcolare i valori di spinta a monte e a valle e confrontarli per capire la reale collocazione del risalto.
 
-\newpage
-
 \subsection{Stima della scabrezza}
 
 \noindent L'approccio utilizzato prevede di stimare la scabrezza della seconda livelletta a partire dalla posizione del risalto osservato, influenzata direttamente dal valore della spinta generata dalla corrente: come detto in precedenza, maggiore sarà la spinta, più a valle sarà localizzato il risalto. Il valore del coefficiente di Strickler $ks$ viene pertanto stimato simulando per la canaletta diversi valori di $ks$, fintantoché non vi sia una buona corrispondenza tra la localizzazione del risalto nei dati reali e simulati.\\
@@ -414,8 +410,6 @@ Sono stati simulati diversi valori di tirante idraulico di $ks$
     \caption{Posizione del risalto al variare del $ks$ simulato, configurazione FTF}
 \end{figure}
 
-\newpage
-
 \subsection{Configurazione TTT}
 
 \noindent Nella seconda esperienza, la pendenza della canaletta è stata aumentata fino all’1,5\% e la portata è stata mantenuta costante a $Q$ = 0,0182 $m^3\cdot s^{-1}$. 
@@ -440,6 +434,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 \noindent Nella seconda e nella terza livelletta, pertanto, vedremo svilupparsi un moto uniforme, anche se con profondità minore nella seconda livelletta per via della maggiore pendenza del tratto centrale. Nella terza livelletta, invece, la corrente si trova costretta a passare \textit{ex abrupto} da una condizione uniforme supercritica ad una subcritica determinata dalla parete di fondo dell'apparato, generando così un risalto idraulico. In questo caso il fenomeno è chiaramente posizionato a valle del cambio di pendenza, seguito da un profilo veloce decelerato $S1$ di raccordo col tirante finale.\\ 
 In condizioni di canaletta infinitamente lunga, invece, la corrente avrebbe visto aumentare la quota di pelo libero nella terza livelletta, ma senza superare la critica.
 
+\newpage
 \begin{table}[H]
 \scriptsize\sffamily
 \centering
