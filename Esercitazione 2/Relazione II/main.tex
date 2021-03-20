@@ -605,7 +605,7 @@ In particolare, la verifica idraulica viene condotta in due situazioni distinte:
     \item Corso d'acqua soggetto a deflusso rigurgitato nel tratto di valle, con tirante del torrente collettore maggiore rispetto a quello dell'alveo in esame a causa di una piena, valutato per diversi tempi di ritorno di 50, 200 e 500 anni.
 \end{itemize}
 
-\subsection{Inquadramento territoriale}
+\subsubsection{Inquadramento territoriale}
 
 \begin{figure}[H]
     \centering
@@ -615,13 +615,14 @@ In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \noindent Il tratto torrentizio in analisi si trova in prossimità di San Pietro di Sturla, località del comune di Carasco, provincia di Genova. La zona è attraversata da due torrenti provenienti dall’Appennino Ligure: lo Sturla, da Nord-Est, e il Lavagna da Nord-Ovest. I due corsi d’acqua confluiscono nei pressi della località, dando origine all’Entella che termina il suo percorso sfociando nel Mar Ligure. L’alveo di studio si colloca nel tratto terminale dello Sturla, partendo dalla confluenza con il torrente Lavagna e risalendo il torrente per circa 2 km. Il ponte si trova a circa 250 $m$ dal punto di confluenza dei due torrenti. Data la vicinanza con il centro abitato e la zona industriale, l’alveo presenta argini antropizzati per lunghi tratti, rendendolo così per buona parte impermeabile e facilmente soggetto ad un aumento del tirante in caso di evento di piena.
 
+\subsection{Metodologia}
 
-\subsection{Dati di input}
+\subsubsection{Dati di input}
 \noindent La prima fase prevede la modellazione delle geometrie del tratto torrentizio da analizzare. Le sezioni di interesse, in totale 35, ricavate tramite rilevamento sul campo, vengono importate in AutoCad per studiarne le caratteristiche geometriche, attraverso la planimetria, e valutare la scabrezza delle singole componenti (Figura \ref{fig:AutoCAD}). 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Sezione.jpg}
+    \includegraphics[scale=0.5]{Sezione.png}
     \caption{Rilievo di una sezione trasversale nel tratto a monte del torrente Sturla}
     \label{fig:AutoCAD}
 \end{figure}
@@ -717,7 +718,7 @@ Di seguito si riporta la geometria dell'alveo interpolato:
     \caption{Portata critica in funzione dei tempi di ritorno}
 \end{table}
 
-\subsection{Modellazione idraulica}
+\subsubsection{Modellazione idraulica}
 \noindent La simulazione dell'evento di piena viene condotta con l'uso di HEC-RAS, utilizzato in precedenza per condurre le analisi di laboratorio. Il programma permettere di riprodurre in maniera realistica qualsiasi condizione di moto stazionario all'interno di un determinato alveo, previo l'inserimento di un'adeguata geometria descrittiva, della portata fluente e delle condizioni al contorno della corrente.\\
 Per procedere con la simulazione delle piene è necessario impostare le condizioni al contorno del dominio di calcolo, cioè le caratteristiche della corrente nella sezione a monte e a valle dell'alveo.\\
 Nel caso di deflusso normale, le condizioni imposte sono di moto uniforme sia a monte che a valle. Per ottenere tali condizioni è necessario imporre la pendenza di moto uniforme alle estremità dell'alveo, in tal caso 0.02\% a monte e 2\% a valle.\\
@@ -737,13 +738,12 @@ Di seguito si riportano le condizioni al contorno caratteristiche delle simulazi
 \end{itemize}
 
 \newpage
-\section{Risultati}
+\subsection{Risultati}
 
 \noindent Nel seguente capitolo si riportano osservazioni e valutazioni condotte sui profili di corrente prodotti dalle simulazioni e sulla verifica idraulica del ponte.
 
-\subsection{Profili di corrente}
+\subsubsection{Profili di corrente: Deflusso normale}
 
-\subsubsection{Deflusso normale}
 \noindent Di seguito vengono proposti i profili di corrente, generati in condizioni di normale deflusso alla confluenza per tempi di ritorno di 50, 200 e 500 anni:
 \begin{figure}[H]
     \centering
@@ -805,7 +805,7 @@ Al contrario, il dimezzamento comporta una diminuzione della scabrezza e consegu
 \noindent In Figura \ref{fig:normale_200} e Figura \ref{fig:normale_500}, si nota come un aumento della portata immessa, corrispondente a eventi di crescente criticità, produca un generale incremento della profondità di corrente e una maggiore tendenza ad assumere un comportamento fluviale da parte del corso d'acqua.
 
 
-\subsubsection{Deflusso rigurgitato}
+\subsubsection{Profili di corrente: deflusso rigurgitato}
 \noindent Di seguito, invece, si riportano i profili di corrente simulati in caso di deflusso rigurgitato nella confluenza con il torrente Lavagna:
 
 \begin{figure}[H]
@@ -828,7 +828,7 @@ Al contrario, il dimezzamento comporta una diminuzione della scabrezza e consegu
 
 \noindent Le condizioni di deflusso rigurgitato generano un aumento della profondità della corrente nel tratto di valle, interessando anche le sezioni del ponte. Il profilo che si crea è di tipo $M1$, tipico di correnti lente in condizioni di rigurgito, il quale parte a valle della rampa e raggiunge la quota di tirante imposto. Il profilo a monte della rampa, invece, non risente di alcun effetto.
 
-\subsection{Verifica Idraulica}
+\subsubsection{Verifica Idraulica}
 \noindent Nel seguente paragrafo si confronta il livello di corrente raggiunto per varie portate con la quota d'intradosso del ponte.
 
 \begin{figure}[H]
@@ -929,6 +929,10 @@ Un possibile evento con frequenza di 200 anni, invece, genererebbe un tirante su
 
 \newpage
 \section{Conclusioni}
+
+\subsection{Canaletta laboratorio}
+
+\subsection{Caso studio reale torrente Sturla}
 
 \noindent Da una valutazione complessiva del contesto ambientale in cui si inserisce l'opera, è chiaro come le condizioni caratteristiche del torrente siano favorevoli allo sviluppo di situazioni critiche per la tenuta degli argini e della struttura.\\
 In situazione normale, in caso di evento con $Tr=500$ anni il ponte viene interessato da una quota di corrente non rispettosa del franco di sicurezza, addirittura superiore all'intradosso, il ché non solo aumenta la pressione sull'impalcato, ma rende la struttura simile alla cosiddetta \textit{luce di fondo}, generando così un ulteriore incremento del livello di corrente a monte altamente rischioso per la tenuta degli argini.\\
