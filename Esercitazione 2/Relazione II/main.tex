@@ -251,7 +251,9 @@ Entrambe le analisi sono state condotte tramite uso del software Hec-Ras.
     \caption{Variazione della spinta all'aumentare del tirante, a portata assegnata}
     \label{fig:spinta}
 \end{figure}
-  
+
+\newpage
+
 \subsection{Il software HEC-RAS}
 
 \noindent Il software HEC-RAS è un software gratuito sviluppato dall’\textit{Hydrologic Engineering Center} \textit{dell’US Army Corps of Engineers}. È utilizzato per la modellazione idraulica unidimensionale ed in regime di moto permanente di corsi d’acqua naturali o artificiali finalizzata alla definizione dei profili di corrente ed alla valutazione delle principali caratteristiche idrauliche nelle varie sezioni. È utilizzato inoltre nella modellazione idraulica bidimensionale ed in regime di moto vario, nella modellazione a fondo mobile (trasporto di sedimenti), nell’analisi di qualità delle acque (modello di avvezione-diffusione), per verifiche idrauliche specifiche (fenomeni di erosione alle pile di un ponte) e nella realizzazione di mappe di inondazione. 
@@ -375,7 +377,7 @@ La pendenza della canaletta, inoltre, è regolabile controllando la quota di mon
 Al successivo cambio di pendenza avviene il ritorno alla condizione fluviale, il che costringe la corrente a a dover raggiungere una quota superiore alla profondità critica: si genera così un risalto dissipativo. La localizzazione del fenomeno avviene nel punto in cui le spinte generate dalle correnti di monte e di valle si equivalgono. In base all'intensità della spinta, perciò, la posizione del risalto sarà collocata a valle del cambio di pendenza se la spinta è maggiore a monte rispetto a valle (con un profilo di corrente lenta decelarato $M3$), oppure a monte se la spinta è minore a monte rispetto a valle (con un profilo di corrente veloce decelerato $S1$.
 Nel nostro caso il profilo calcolato risulta molto incerto, anche se il fenomeno dissipativo sembra avere inizio appena a monte del cambio di pendenza; questo comporterebbe la formazione di un profilo di tipo $S1$. Pertanto è necessario calcolare i valori di spinta a monte e a valle e confrontarli per capire la reale collocazione del risalto.
 
-\subsection{Stima della scabrezza}
+\subsubsection{Stima della scabrezza}
 
 \noindent L'approccio utilizzato prevede di stimare la scabrezza della seconda livelletta a partire dalla posizione del risalto osservato, influenzata direttamente dal valore della spinta generata dalla corrente: come detto in precedenza, maggiore sarà la spinta, più a valle sarà localizzato il risalto. Il valore del coefficiente di Strickler $ks$ viene pertanto stimato simulando per la canaletta diversi valori di $ks$, fintantoché non vi sia una buona corrispondenza tra la localizzazione del risalto nei dati reali e simulati.\\
 Il profilo di corrente è stato quindi modellato con il software HEC-RAS ipotizzando un ks di 80, 90, 100 e 110 e adottando come condizioni di contorno dei valori assegnati di tirante per monte e valle.\\
@@ -388,7 +390,7 @@ I dati ricavati dalle varie esperienze sono stati plottati tramite Excel per ott
     \label{fig:risalto_FTF}
 \end{figure}
 
-\subsection{Stima della scabrezza (Marco)}
+\subsubsection{Stima della scabrezza (Marco)}
 
 \noindent Dal momento che dai dati misurati in laboratorio è possibile, ovvero l'equivalenza fra le spinte di monte e di valle in corrispondenza del risalto, si è deciso di stimare la scabrezza della seconda livelletta a partire da come questa influenza la spinta. Come spiegato in precedenza, maggiore sarà il valore del coefficiente di Strickler $ks$, maggiore sarà la spinta e maggiore sarà la spinta, più a valle sarà localizzato il risalto.
 La canaletta è stata quindi modellata attraverso un algoritmo dedicato all'interno del software HEC-RAS. 
@@ -509,7 +511,7 @@ In condizioni di canaletta infinitamente lunga, invece, la corrente avrebbe vist
 \vspace*{\fill}
 \newpage
 
-\subsection{Stima della scabrezza}
+\subsubsection{Stima della scabrezza}
 \noindent Il valore di ks è stato stimato modellando la canaletta grazie al software HEC-RAS e comparando la localizzazione dell’inizio del risalto idraulico nel profilo di corrente simulato e misurato in laboratorio. Le condizioni di contorno utilizzate sono state inizialmente il tirante misurato sia a valle che a monte, mentre successivamente si è imposta una condizione di moto uniforme a monte. Tuttavia, a partire da entrambe le coppie di condizioni di contorno, non vi è stata corrispondenza nella localizzazione del risalto, pur essendo stati effettuati molti tentativi anche con valori di ks molto alti, in un intervallo che va da 80 fino a 300 (a scopo puramente dimostrativo). Anche in questo caso è stato eseguito un confronto grafico tramite Excel (Figura \ref{fig:risalto_TTT}):
 
 \begin{figure}[H]
