@@ -559,8 +559,8 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 
 \section{Caso studio: torrente Sturla}
 \subsection{Descrizione del problema}
-\noindent Nella seconda parte della relazione l’analisi si concentra sul caso di un alveo torrentizio esistente, il torrente Sturla, che scorre nel territorio ligure passando per il comune di Carasco (GE), dove si colloca il tratto d’interesse. Il corso d’acqua viene opportunamente modellato tramite il software Hec-Ras 4.1, nel quale si inseriscono i dati di rilevamento delle sezioni caratteristiche.
-L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benchè il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità, e verificare se il franco di 1 m sotto le campate del ponte venga rispettato dalla corrente in piena.
+\noindent Nella seconda parte della relazione l’analisi si concentra sul caso di un alveo torrentizio esistente, il torrente Sturla, che scorre nel territorio ligure passando per il comune di Carasco (GE), dove si colloca il tratto d’interesse. Il corso d’acqua è stato opportunamente modellato tramite il software Hec-Ras 4.1, nel quale sono stati inseriti i dati di rilevamento delle sezioni caratteristiche.
+L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benchè il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 m sotto le campate del ponte venga rispettato dalla corrente in piena.
 In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \begin{itemize}
@@ -576,12 +576,12 @@ In particolare, la verifica idraulica viene condotta in due situazioni distinte:
     \caption{Inquadramento idrologico e territoriale}
 \end{figure}
 
-\noindent Il tratto torrentizio in analisi si trova in prossimità di San Pietro di Sturla, località del comune di Carasco, provincia di Genova. La zona è attraversata da due torrenti provenienti dall’Appennino Ligure: lo Sturla, da Nord-Est, e il Lavagna da Nord-Ovest. I due corsi d’acqua confluiscono nei pressi della località, dando origine all’Entella che termina il suo percorso sfociando nel Mar Ligure. L’alveo di studio si colloca nel tratto terminale dello Sturla, partendo dalla confluenza con il torrente Lavagna e risalendo il torrente per circa 2 km. Il ponte si trova a circa 250 $m$ dal punto di confluenza dei due torrenti. Data la vicinanza con il centro abitato e la zona industriale, l’alveo presenta argini antropizzati per lunghi tratti, rendendolo così per buona parte impermeabile e facilmente soggetto ad un aumento del tirante in caso di evento di piena.
+\noindent Il tratto torrentizio in analisi si trova in prossimità di San Pietro di Sturla, località del comune di Carasco, in provincia di Genova. La zona è attraversata da due torrenti provenienti dall’Appennino Ligure: lo Sturla, da Nord-Est, e il Lavagna da Nord-Ovest. I due corsi d’acqua confluiscono nei pressi della località di San Pietro di Sturla, dando origine all’Entella che termina il suo percorso sfociando nel Mar Ligure. L’alveo di studio si colloca nel tratto terminale dello Sturla, partendo dalla confluenza con il torrente Lavagna e risalendo il torrente per circa 2 km. Il ponte si trova a circa 250 $m$ dal punto di confluenza dei due torrenti. Data la vicinanza con il centro abitato e la zona industriale, l’alveo presenta argini antropizzati per lunghi tratti, rendendolo così per buona parte impermeabile e facilmente soggetto ad un aumento del tirante in caso di eventi di piena.
 
 \subsection{Metodologia}
 
 \subsubsection{Dati di input}
-\noindent La prima fase prevede la modellazione delle geometrie del tratto torrentizio da analizzare. Le sezioni di interesse, in totale 35, ricavate tramite rilevamento sul campo, vengono importate in AutoCad per studiarne le caratteristiche geometriche, attraverso la planimetria, e valutare la scabrezza delle singole componenti (Figura \ref{fig:AutoCAD}). 
+\noindent La prima fase prevede la modellazione delle geometrie del tratto da analizzare. Le sezioni di interesse, in totale 35, ricavate tramite rilevamento sul campo, sono state importate in AutoCAD® per studiarne le caratteristiche geometriche attraverso la planimetria e valutare la scabrezza delle singole componenti (Figura \ref{fig:AutoCAD}): 
 
 \begin{figure}[H]
     \centering
@@ -590,15 +590,15 @@ In particolare, la verifica idraulica viene condotta in due situazioni distinte:
     \label{fig:AutoCAD}
 \end{figure}
 
-\noindent Tali dati vengono riportati nel software di modellazione Hec-Ras, inserendo per ciascuna sezione le coordinate orizzontali (con origine nell'estremità sinistra) e la quota di ogni punto. 
-In questa fase si inserisce anche la geometria del ponte, ricreandone le pile e le campate nella maniera più fedele. La struttura ha larghezza pari a 8 m ed è collocata a 190 m dalla confluenza con il torrente Lavagna.
+\noindent Tali dati sono stati successivamente immessi nel software di modellazione Hec-Ras, inserendo per ciascuna sezione le coordinate orizzontali (con origine nell'estremità sinistra) e la quota di ogni punto. 
+In questa fase viene inserita inserisce anche la geometria del ponte, ricreandone le pile e le campate nella maniera più fedele. La struttura ha larghezza pari a 8 m ed è collocata a 190 m dalla confluenza con il torrente Lavagna.
 
 \begin{figure}[H]
-\begin{minipage}[b]{6cm}
+\begin{minipage}[b]{0.39\textwidth}
 \centering
     \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{cc}
         \hline
           & \textbf{Quota [m]}\\
           \hline
@@ -612,10 +612,9 @@ In questa fase si inserisce anche la geometria del ponte, ricreandone le pile e 
     \caption{Quote rilevanti del ponte}
     \end{table}
 \end{minipage}
-\ \hspace{2mm} \hspace{3mm} \
-\begin{minipage}[b]{13cm}
+\begin{minipage}[b]{0.6\textwidth}
     \centering
-    \includegraphics[scale=0.95]{UPBridge.PNG}
+    \includegraphics[width=\columnwidth]{UPBridge.PNG}
     \caption{Sezione trasversale ponte}
 \end{minipage}
 \end{figure}
@@ -632,7 +631,7 @@ In questa fase si inserisce anche la geometria del ponte, ricreandone le pile e 
 %    \caption{Quote rilevanti del ponte}
 %\end{table}
 
-\noindent La precisione nel simulare il profilo di corrente lungo il tratto torrentizio tra sezioni distanti tra loro viene garantita dal tool \textit{Interpolation} che infittisce il numero delle sezioni di calcolo lungo l'asta, predisponendole ad intervalli di 0,1 m. Tra le due sezioni comprendenti la geometria del ponte non è possibile interpolare, perciò è necessario collocare manualmente due sezioni di controllo a ridosso del manufatto, per aumentare la precisione di simulazione nel tratto di restringimento.
+\noindent La precisione nel simulare il profilo di corrente lungo il tratto torrentizio tra sezioni distanti tra loro viene garantita dal tool \textit{Interpolation} che infittisce il numero delle sezioni di calcolo lungo l'asta, predisponendole ad intervalli di 0,1 m. Tra le due sezioni comprendenti la geometria del ponte non è possibile interpolare, perciò è necessario collocare manualmente due sezioni di controllo a ridosso del manufatto per aumentare la precisione di simulazione nel tratto di restringimento.
 Di seguito si riporta la geometria dell'alveo interpolato:
 
 \begin{figure}[H]
