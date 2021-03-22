@@ -532,8 +532,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 \newpage
 \section{Risultati}
 \subsection{Configurazione FTF}
-\noindent Grazie al software HEC-RAS si è potuto stimare un coefficiente di scabrezza di Strickler $ks$ tra 100 e 110, valori che permettono una buona corrispondenza nella localizzazione dell’inizio del risalto idraulico fra il profilo di corrente simulato ed il profilo di corrente misurato. \\
-Si assume perciò un ks pari a 100.
+\noindent Grazie al software HEC-RAS si è potuto stimare un coefficiente di scabrezza di Strickler $ks$ tra 100 e 110, valori che permettono una buona corrispondenza nella localizzazione dell’inizio del risalto idraulico fra il profilo di corrente simulato ed il profilo di corrente misurato.
 
 \begin{figure}[H]
     \centering
@@ -541,9 +540,11 @@ Si assume perciò un ks pari a 100.
     \caption{Profilo di corrente FTF simulato con il software Hec-Ras}
 \end{figure}
 
+\newpage
+
 \subsection{Configurazione TTT}
 
-\noindent  Dai risultati ottenuti non è stato possibile ottenere una perfetta corrispondenza con l’inizio del risalto misurato, nemmeno con valori di $ks$ molto elevati, perciò è stato assunto lo stesso valore utilizzato nella configurazione TTT, pari a 100. 
+\noindent  Dai risultati ottenuti non è stato possibile ottenere una perfetta corrispondenza con l’inizio del risalto misurato, nemmeno con valori di $ks$ molto elevati, perciò è stato assunto lo stesso valore utilizzato nella configurazione TTT, pari a circa 100-110. 
 
 \begin{figure}[H]
     \centering
@@ -552,20 +553,7 @@ Si assume perciò un ks pari a 100.
 
 \end{figure}
 
-\noindent Come nel caso precedente, nella seguente tabella si riportano i valori di tirante uniforme misurato e di scabrezza ottenuti per la seconda livelletta; si omettono i valori di spinta monte/valle, non essendo in condizioni di lavorare con la quota di moto uniforme a valle:
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Quota tirante [m]} & $0,11$ \\
-        \textbf{Ks [$\frac{m^{1/3}}{s}$]} & $100$\\
-        \hline
-    \end{tabular}
-    \caption{Portata critica in funzione dei tempi di ritorno}
-\end{table}
-
-\noindent L’insuccesso della simulazione nel posizionare correttamente il risalto è da attribuirsi probabilmente a limitazioni interne del software, che nel caso attuale di simulazione monodimensionale non consentono di rappresentare la natura turbolenta e l'irregolarità della forma. Inoltre, nel caso di tirante di corrente prossimo alla critica (prima livelletta), il profilo simulato perde la linearità e assume un contorno frastagliato.
+\noindent L’insuccesso della simulazione nel posizionare correttamente il risalto è da attribuirsi probabilmente a limitazioni interne del software: una simulazione monodimensionale, infatti, non consente di rappresentare appieno la natura turbolenta e caotica del risalto. Inoltre, nel caso di tirante di corrente prossimo alla critica, come nella terza livelletta, la soluzione numerica perde stabilità e oscilla continuamente tra il valore di moto uniforme ed il valore critico.
 
 \newpage
 
