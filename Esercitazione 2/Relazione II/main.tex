@@ -22,6 +22,7 @@
 \usepackage{enumitem} % Regola la spaziatura degli elenchi (continua sotto)
 %\setlist{topsep=0.85em,parsep=0.45em,itemsep=0.1em} % 'topsep' regola la spaziatura fra i paragrafi prima e dopo l'ambiente, 'parsep' regola la spaziatura fra i paragrafi di uno stesso \item, 'itemsep' regola la spaziatura fra gli \item
 \setdescription{labelindent=0em,labelsep=1em,leftmargin=\parindent} % 'labelindent' è la distanza del contrassegno dal margine della pagina, messa a 0 perché tutto il documento è un grande elenco quindi è inutile indentare | 'leftmargin' è l'indentazione delle righe successive alla prima in una voce, messa uguale a \parindent perché così è come se fosse un testo scritto normale | 'labelsep' è la distanza fra il contrassegno dal resto del testo nella prima riga di ogni voce
+\usepackage{parskip} %Formattazione paragrafi
 
 % Colori
 \usepackage[svgnames,table,xcdraw]{xcolor} % Pacchetto che fornisce i colori, [svgnames] aumentare il database di colori disponibili
@@ -635,7 +636,7 @@ In questa fase viene inserita inserisce anche la geometria del ponte, ricreandon
 %    \caption{Quote rilevanti del ponte}
 %\end{table}
 
-\noindent La precisione nel simulare il profilo di corrente lungo il tratto torrentizio tra sezioni distanti tra loro viene garantita dal tool \textit{Interpolation} che infittisce il numero delle sezioni di calcolo lungo l'asta, predisponendole ad intervalli di 0,1 m. Tra le due sezioni comprendenti la geometria del ponte non è possibile interpolare, perciò è necessario collocare manualmente due sezioni di controllo a ridosso del manufatto per aumentare la precisione di simulazione nel tratto di restringimento.
+\noindent La precisione nel simulare il profilo di corrente lungo il tratto torrentizio tra sezioni distanti tra loro viene garantita dal tool \textit{Interpolation} che infittisce il numero delle sezioni di calcolo lungo l'asta, predisponendole ad intervalli di 0,1 m. Tra le due sezioni comprendenti la geometria del ponte non è possibile interpolare, perciò è necessario collocare manualmente due sezioni di controllo a ridosso del manufatto, per aumentare la precisione di simulazione nel tratto di restringimento.
 Di seguito si riporta la geometria dell'alveo interpolato:
 
 \begin{figure}[H]
@@ -644,37 +645,40 @@ Di seguito si riporta la geometria dell'alveo interpolato:
     \caption{Geometria dell'alveo interpolata con software Hec-Ras}
 \end{figure}
 
-\noindent La determinazione della scabrosità dell'alveo più adatta alla condizione reale avviene suddividendo il letto nei tratti con caratteristiche differenti, per descriverne accuratamente la scabrezza lungo la sezione trasversale. I valori di scabrosità delle superfici utilizzati sono riportati al manuale del software, dov'è possibile trovare i coefficienti di Manning suddivisi per tipologia di alvei e di golene fluviali (Tabella \ref{tab:Manning_alvei}).
+\noindent La determinazione della scabrosità dell'alveo più adatta alla condizione reale avviene suddividendo il letto nei tratti con caratteristiche differenti, per descriverne accuratamente la scabrezza lungo la sezione trasversale. I valori di scabrosità delle superfici utilizzati sono riportati al manuale del software, dov'è possibile trovare i coefficienti di Manning suddivisi per tipologia di alveo fluviale e copertura del letto (Tabella \ref{tab:Manning_alvei}):
 
 \begin{table}[H]
     \centering
     \begin{tabular}{lcc}
         \hline
-        \textbf{Copertura del letto} & \textbf{Descrizione} & \textbf{$ks$}  \\
+        \multicolumn{1}{c}{\textbf{Tipologia di canale}} & \textbf{Descrizione} & $\mathbf{ks}$  \\
         \hline
-        Thalweg & clean, straight, full, not rift or deep pools & \\
-        & ..but more stones and weeds &  0.035\\
-        Barre fluviali o superfici  & &  \\
-        artificiali e ruvide & ..more stones; cobbles, and few boulders & 0.05\\
-        Aree con fitta vegetazione & flood plains with medium to dense brush & 0.075\\
-        Sponde ripide con rocce grosse & &\\
-        e altro materiale & & 0.085\\
-        Asfalto/cemento & float finished concrete & 0.015\\
+        \textbf{Corsi d'acqua naturali} & &\\
+        \hspace{1.5pt} Canali principali & pulito, liscio, pieno, senza crepe o pozze profonde & 0.030\\
+        & come sopra, ma con più pietre e erbacce &  0.035\\
+        [-1em]\\
+        \hspace{1.5pt} Torrenti di montagna senza & fondo: pietre, ciottoli e alcuni massi & 0.040\\
+        \hspace{1.5pt} vegetazione nel canale principale, & fondo: ciottoli con grandi massi & 0.050\\
+        \hspace{1.5pt} sponde normalmente ripide & &\\
+        [-1em]\\
+        \hspace{1.5pt} Pianure di inondazione & macchia da media a densa & 0.070\\
+        [-1em]\\
+        \textbf{Canali costruiti} & &\\
+        \hspace{1.5pt} Cemento & cemento con rifinitura tallocciata & 0.015\\
         \hline
     \end{tabular}
-    \caption{Valori di scabrezza relative alle caratteristiche degli alvei fluviali}
+    \caption{Valori di scabrezza relativi alla copertura del letto fluviale}
     \label{tab:Manning_alvei}
 \end{table}
 
-\noindent Nel caso di studio l'alveo presenta frequentemente condizioni di terreno sabbioso e ghiaioso ($ks$=50), delimitato da sponde e golene coperte da vegetazione ($ks$=75) e pareti artificiali perimetrali ($ks$=15).
-
-\noindent La portata di progetto si è ricavata consultando il Piano di Bacino relativo all'Ambito Regionale di Bacino 16 della Regione Liguria, contenente una sezione di analisi effettuate in corrispondenza delle zone interessate dallo Sturla. Di seguito vengono presentate le portate critiche indicate per tempi di ritorno di 50, 200, 500 anni:
+\noindent Nel caso di studio l'alveo presenta frequentemente condizioni di terreno sabbioso e ghiaioso ($ks$=50), delimitato da sponde e golene coperte da vegetazione ($ks$=75) e pareti artificiali perimetrali ($ks$=15).\\
+La portata di progetto si è ricavata consultando il Piano di Bacino relativo all'Ambito Regionale di Bacino 16 della Regione Liguria, contenente una sezione di analisi effettuate in corrispondenza delle zone interessate dallo Sturla. Di seguito vengono presentate le portate critiche indicate per tempi di ritorno di 50, 200, 500 anni:
 
 \begin{table}[H]
     \centering
     \begin{tabular}{cc}
         \hline
-        \textbf{Tempo di ritorno (anni)} & \textbf{Portata [$m^3/s$]} \\
+        \textbf{Tempo di ritorno (anni)} & \textbf{Portata [$\mathbf{m^3/s}$]}\\
         \hline
         $50$ & $474$\\
         $200$ & $839$ \\
