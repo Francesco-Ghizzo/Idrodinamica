@@ -156,7 +156,7 @@ NOTE
 \newpage
 
 \section{Obiettivi}
-\noindent Sviluppare un algoritmo per generare una stima della scala di deflusso a partire dalla geometria della sezione di un alveo, avvalendosi delle ipotesi del modello tridimensionale su bassa profondità e di moto stazionario e uniforme (equazione di Gauckler-Strickler) ed utilizzando il metodo di Engelund. Individuare inoltre la profondità critica nella medesima sezione dell’alveo attraverso un metodo iterativo. Implementare l’algoritmo prodotto per mezzo di uno \textit{script} nel linguaggio Python e collaudare successivamente lo \textit{script} con i dati di geometria di sezioni complesse di alvei reali.
+\noindent Sviluppare un algoritmo per generare una stima della scala di deflusso a partire dalla geometria della sezione di un alveo, avvalendosi delle ipotesi del modello tridimensionale su bassa profondità e di moto stazionario e uniforme (equazione di Gauckler-Strickler) e utilizzando il metodo di Engelund. Individuare inoltre la profondità critica nella medesima sezione dell’alveo attraverso un metodo iterativo. Implementare l’algoritmo prodotto per mezzo di uno \textit{script} nel linguaggio Python e collaudare successivamente lo \textit{script} con i dati di geometria di sezioni complesse di alvei reali.
 
 \newpage
 \section{Introduzione}
@@ -177,7 +177,7 @@ Al fine di poter mettere in relazione la lettura idrometrica con una stima di po
     \label{eqn:m_1}
 \end{equation}
 
-\noindent osservando che:
+\noindent Osservando che:
 
 \begin{equation}
    kY^{m-1}=\frac{Q}{Y}
@@ -191,7 +191,7 @@ Al fine di poter mettere in relazione la lettura idrometrica con una stima di po
     \label{eqn:m_3}
 \end{equation}
 
-\noindent Da cui si deduce che:
+\noindent da cui si deduce che:
 
 \begin{equation}
     m=\frac{dQ/dY}{Q/Y}
@@ -229,7 +229,7 @@ Il valore di $k$ racchiude invece la correlazione del flusso, oltre che con il r
    \label{eqn:W_energia_potenziale}
 \end{equation}
 
-\noindent (dove $\rho$ [$Kg \cdot m^{-3}$] è la densità del fluido, $g$ [$m\cdot s^{-2}$] è l'accelerazione di gravità, $h$ [$m$] è la quota della superficie libera e $u$ [$m\cdot s^{-1}$] è la velocità puntuale) ed un contributo fornito dall’energia cinetica:
+\noindent (dove $\rho$ [$Kg \cdot m^{-3}$] è la densità del fluido, $g$ [$m\cdot s^{-2}$] è l'accelerazione di gravità, $h$ [$m$] è la coordinata verticale della superficie libera e $u$ [$m\cdot s^{-1}$] è la velocità puntuale) e un contributo fornito dall’energia cinetica:
 
 \begin{equation}
    \int_{\Omega}^{}\left(\frac{1}{2}\rho u^{2}\right)ud\Omega
@@ -250,7 +250,7 @@ Il valore di $k$ racchiude invece la correlazione del flusso, oltre che con il r
    \label{eqn:energia_cinetica_alfa}
 \end{equation}
 
-\noindent Dove $\alpha$ [$adm$] è un coefficiente correttivo detto coefficiente di ragguaglio dell’energia cinetica ed esprime il rapporto fra l’energia cinetica di una corrente reale e l’energia che una corrente possederebbe se scorresse in un alveo di uguale sezione, ma con velocità uniforme e pari alla velocità media:
+\noindent dove $\alpha$ [$adm$] è un coefficiente correttivo, detto coefficiente di ragguaglio dell’energia cinetica, ed esprime il rapporto fra l’energia cinetica di una corrente reale e l’energia che una corrente possederebbe se scorresse in un alveo di uguale sezione, ma con velocità uniforme e pari alla velocità media:
 
 \begin{equation}
    \alpha=\frac{\frac{1}{2}\rho \int_{\Omega}^{} u^{3}d\Omega}{\frac{1}{2}\rho \alpha U^{3}\Omega}=\frac{\int_{\Omega}^{} u^{3}d\Omega}{U^{3}\Omega}=\frac{\frac{1}{\Omega}\int_{\Omega}^{} u^{3}d\Omega}{U^{3}}
@@ -265,7 +265,7 @@ La spinta meccanica totale di una corrente è anch’essa determinata da due com
    \label{eqn:S_comp_statica}
 \end{equation}
 
-\noindent che nasce dalla pressione $P$ [$m^2\cdot s^{-1}$] che agisce sulla sezione bagnata $\Omega$, ed una componente dinamica, che rappresenta l’azione dinamica della quantità di moto:
+\noindent che nasce dalla pressione $P$ [$m^2\cdot s^{-1}$] che agisce sulla sezione bagnata $\Omega$, e una componente dinamica, che rappresenta l’azione dinamica della quantità di moto:
 
 \begin{equation}
    \int_{\Omega}^{} \rho u^{2}d\Omega
@@ -286,7 +286,7 @@ La spinta meccanica totale di una corrente è anch’essa determinata da due com
     \label{eqn:comp_dinamica_beta}
 \end{equation}
 
-\noindent Dove $\beta$ [$adm$]è un coefficiente correttivo detto coefficiente di ragguaglio della quantità di moto e rappresenta il rapporto fra la quantità di moto effettiva della corrente e la quantità di moto di una corrente equivalente che attraversa la stessa sezione $\Omega$ e presenta velocità uniforme e pari alla velocità media della corrente $U$: 
+\noindent dove $\beta$ [$adm$]è un coefficiente correttivo, detto coefficiente di ragguaglio della quantità di moto, e rappresenta il rapporto fra la quantità di moto effettiva della corrente e la quantità di moto di una corrente equivalente che attraversa la stessa sezione $\Omega$ e presenta velocità uniforme e pari alla velocità media della corrente $U$: 
 
 \begin{equation}
    \beta=\frac{\rho \int_{\Omega}^{} u^{2}d\Omega}{\rho U^{2}\Omega}=\frac{\int_{\Omega}^{} u^{2}d\Omega}{U^{2}\Omega}=\frac{\frac{1}{\Omega}\int_{\Omega}^{} u^{2}d\Omega}{U^{2}}
@@ -304,8 +304,8 @@ La spinta meccanica totale di una corrente è anch’essa determinata da due com
     \label{eqn:E_1}
 \end{equation}
 
-\noindent Dove $E$ [$m$] è un’energia per unità di peso, $H$ [$m$] è l’altezza della linea dell’energia e $z_F$ [$m$] è la coordinata verticale del fondo.
-Considerato che $\Omega$ e $\alpha$ sono funzioni di $Y$ ed essendo $g$ costante, possiamo trattare $E$ come funzione delle sole variabili $Y$ e $Q$: $E=E(Y, Q)$.
+\noindent dove $E$ [$m$] è un’energia per unità di peso, $H$ [$m$] è l’altezza della linea dell’energia e $z_F$ [$m$] è la coordinata verticale del fondo.
+Considerato che $\Omega$ e $\alpha$ sono funzioni di $Y$ ed essendo $g$ costante, possiamo trattare $E$ come funzione delle sole variabili $Y$ e $Q$: $E=E(Y, Q)$.\\
 Inoltre, poiché $\Omega$ è una funzione crescente con $Y$: 
 
 \begin{equation}
@@ -339,7 +339,7 @@ Analiticamente, il minimo di $E$ a portata assegnata si ottiene imponendo:
     \label{eqn:B}
 \end{equation}
 
-\noindent L’uguaglianza (\ref{eqn:E_5}) diventa:
+\noindent l’uguaglianza (\ref{eqn:E_5}) diventa:
 \begin{equation}
     \left.\frac{\alpha Q^{2}B}{g\Omega^{3}}\right|_{Y=Y_{C}}=1
     \label{eqn:E_6}
@@ -352,7 +352,7 @@ Analiticamente, il minimo di $E$ a portata assegnata si ottiene imponendo:
     \label{eqn:Froude}
 \end{equation}
 
-\noindent Possiamo riscrivere (\ref{eqn:E_6}) come:
+\noindent possiamo riscrivere (\ref{eqn:E_6}) come:
 
 \begin{equation}
     \left.\frac{\alpha Q^{2}B}{g\Omega^{3}}\right|_{Y=Y_C}=\alpha \frac {Q^{2}}{\Omega^{2}}\left.\left(\frac{B}{g\Omega}\right)\right|_{Y=Y_C}=\alpha\left.\frac {Q^{2}}{\Omega^{2}\left(g\frac{\Omega}{B}\right)}\right|_{Y=Y_{C}}=\alpha Fr^{2}|_{Y=Y_C}=1
@@ -371,7 +371,7 @@ Analiticamente, il minimo di $E$ a portata assegnata si ottiene imponendo:
 \section{Metodologia}
 
 \noindent La portata di generici corsi d’acqua può essere stimata assumendo valide le ipotesi: del modello tridimensionale su bassa profondità (ovvero moto planimetrico e con una direzione preferenziale), di stazionarietà e di uniformità. L’equazione analitica che si ricava a partire da queste ipotesi, come abbiamo visto, presenta la forma (\ref{eqn:Q_Gauckler-Strickler}), detta formula di Gauckler-Strickler.
-In (\ref{eqn:Q_Gauckler-Strickler}), sia il valore del raggio idraulico $Rh$ che l’area della sezione $\Omega$ sono funzioni del tirante idraulico $Y$. Al fine di poter risolvere l’equazione è pertanto imprescindibile conoscere, per ogni $Y$, sia la forma che la dimensione della sezione bagnata. In contesti reali è tuttavia impossibile trovare un'espressione analitica che possa relazionare la geometria della sezione bagnata con il tirante della superficie libera $Y$, dal momento che il letto del fiume presenta una forma irregolare. L’eterogeneità nella composizione della sezione rende inoltre il valore della scabrezza del fondo non uniforme, con conseguente difficoltà nel quantificare il valore di $ks$. È evidente che l’unica strada possibile da percorrere sia quella di ricorrere a metodi numerici.
+In (\ref{eqn:Q_Gauckler-Strickler}), sia il valore del raggio idraulico $Rh$ che l’area della sezione $\Omega$ sono funzioni del tirante idraulico $Y$. Al fine di poter risolvere l’equazione è pertanto imprescindibile conoscere, per ogni $Y$, sia la forma che la dimensione della sezione bagnata. In contesti reali è tuttavia impossibile trovare un'espressione analitica che possa relazionare la geometria della sezione bagnata con il tirante della superficie libera $Y$, dal momento che il letto del fiume presenta una forma irregolare. L’eterogeneità nella composizione della sezione rende inoltre il valore della scabrezza del fondo non uniforme, con conseguente difficoltà nel quantificare il valore di $ks$. È evidente che l’unica strada possibile sia quella di ricorrere a metodi numerici.
 
 \subsection{Metodo di Engelund}
 \noindent Il metodo di Engelund è un metodo per la stima della portata d’acqua passante in una determinata sezione che presuppone, oltre alle ipotesi di bassa profondità e moto localmente uniforme previamente menzionate, tre ipotesi ulteriori, vale a dire:
@@ -389,7 +389,7 @@ In (\ref{eqn:Q_Gauckler-Strickler}), sia il valore del raggio idraulico $Rh$ che
     \label{eqn:Q_Engelund_1}
 \end{equation}
 
-\noindent Dove $B$ è la larghezza della sezione [$m$] e dove la velocità U è una funzione puramente della coordinata orizzontale $y$ (la velocità è infatti mediata sulla verticale).
+\noindent dove $B$ è la larghezza della sezione [$m$] e dove la velocità U è una funzione puramente della coordinata orizzontale $y$ (la velocità è infatti mediata sulla verticale).
 Dal momento che l’operatore integrale gode della proprietà additiva, la portata nell’equazione (\ref{eqn:Q_Engelund_1}) può essere espressa come:
 
 \begin{equation}
@@ -397,7 +397,7 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
     \label{eqn:Q_Engelund_2}
 \end{equation}
 
-\noindent Dove $Q\textsubscript{i}$ è uguale a:
+\noindent dove $Q\textsubscript{i}$ è uguale a:
 
 \begin{equation}
     Q\textsubscript{i}=\sqrt{iF}\int_{0}^{h} ks(y)Rh^{\frac{2}{3}}(y)Y(y)dy
@@ -414,14 +414,14 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
 \end{equation}
 
 
-\noindent che per un trapezio infinitesimo di altezza $dy$ e base minore e maggiore di lunghezza rispettivamente $Y$ e $Y+dY$ vale:
+\noindent che per un trapezio infinitesimo di altezza $dy$ e base minore e maggiore di lunghezza rispettivamente $Y$ e $Y+dY$ (Figura \ref{fig:Rh locale}) vale:
 
 \begin{equation}
     R\textsubscript{h}=\frac{d\Omega}{dp}
     \label{eqn:Rh_2}
 \end{equation}
 
-\noindent dove:
+\noindent dove l'area infinitesima $d\Omega$ è uguale a:
 
 \begin{equation}
     d\Omega=\frac{(Y+(Y+dY))dy}{2}
@@ -430,26 +430,26 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Rh locale.png}
+    \includegraphics[width=0.4\textwidth]{Rh locale.png}
     \caption{Raggio idraulico locale}
     \label{fig:Rh locale}
 \end{figure}
 
-\noindent Il perimetro bagnato $dp$, per una sezione trapezoidale infinitesima, vale a sua volta (Figura \ref{fig:Rh locale}):
+\noindent e il perimetro bagnato $dp$ vale a sua volta:
 
 \begin{equation}
     dp=\frac{dy}{cos\phi}
     \label{eqn:dp}
 \end{equation}
 
-\noindent Dove $\phi$ rappresenta l’angolo tra l’orizzontale ed il fondo dell’alveo. Sostituendo $d\Omega$ (\ref{eqn:dOmega}) e $dp$ (\ref{eqn:dp}) nella definizione di $Rh$ (\ref{eqn:Rh_2}) e sviluppando otteniamo:
+\noindent dove $\phi$ rappresenta l’angolo tra l’orizzontale e il fondo dell’alveo. Sostituendo $d\Omega$ (\ref{eqn:dOmega}) e $dp$ (\ref{eqn:dp}) nella definizione di $Rh$ (\ref{eqn:Rh_2}) e sviluppando otteniamo:
 
 \begin{equation}
     R\textsubscript{h}=\frac{d\Omega}{dp}=\frac{(2Ydy+dYdy)/2}{dy/cos\phi}
     \label{eqn:Rh_3}
 \end{equation}
 
-\noindent E, a meno di infinitesimi di ordine superiore:
+\noindent e a meno di infinitesimi di ordine superiore:
 
 \begin{equation}
     R\textsubscript{h}=\frac{d\Omega}{dp}=\frac{2Ydy/2}{dy/cos\phi}=\frac{Ydy}{dy/cos\phi}=Ycos\phi
@@ -498,7 +498,7 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
    \label{eqn:beta_Engelund_1}
 \end{equation}
 
-\noindent sostituendo alla velocità $u$ la formula di Gauckler-Strickler per il moto uniforme (\ref{eqn:U_Gauckler-Strickler}) e alla portata $Q$ l’espressione a cui siamo pervenuti mediando sulla profondità (\ref{eqn:Q_Engelund_5}) e avvalendoci della stessa formulazione del raggio idraulico ricavata in (\ref{eqn:Rh_4}):
+\noindent Sostituendo alla velocità $u$ la formula di Gauckler-Strickler per il moto uniforme (\ref{eqn:U_Gauckler-Strickler}) e alla portata $Q$ l’espressione a cui siamo pervenuti mediando sulla profondità (\ref{eqn:Q_Engelund_5}) e avvalendoci della stessa formulazione del raggio idraulico ricavata in (\ref{eqn:Rh_4}):
 
 \begin{equation}
     \begin{gathered}
@@ -536,7 +536,7 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
     \label{eqn:Q_trapezi_2}
 \end{equation}
 
-\noindent Dove $cos\phi_{i,i+1}$ è uguale a (Figura \ref{fig:suddivisione_alveo}):
+\noindent dove $cos\phi_{i,i+1}$ è uguale a (Figura \ref{fig:suddivisione_alveo}):
 
 \begin{equation}
     cos\phi_{i,i+1} = \frac{dy}{dB} = \frac{y_{i+1}-y_{i}}{\sqrt{(y_{i+1}-y_{i})^2+(z_{i+1}-z_{i})^2}}
@@ -544,14 +544,14 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
 
 \begin{figure}
     \centering
-    \includegraphics[scale=1.5]{suddivisione alveo.png}
+    \includegraphics[scale=1.3]{suddivisione alveo.png}
     \caption{$cos\phi_{i,i+1}$ per un generico intervallo $i,i+1$}
     \label{fig:suddivisione_alveo}
 \end{figure}
 
 \subsection{Metodo della quadratura di Gauss}
 
-\noindent Il metodo dei trapezi è intuitivo e di facile comprensione; ciononostante, non è molto efficiente e può richiedere una fitta discretizzazione e, di conseguenza, un grande numero di cicli da parte del calcolatore al fine di ottenere risultati di precisione accettabile. 
+\noindent Il metodo dei trapezi è intuitivo e di facile comprensione; ciononostante, non è molto efficiente e può richiedere una fitta discretizzazione e, di conseguenza, un grande numero di cicli da parte del calcolatore per ottenere risultati di precisione accettabile. 
 Il metodo dei trapezi è, d’altronde, soltanto un caso specifico, in cui gli intervalli sono imposti regolari ed equidistanti tra loro, in una famiglia di metodi di integrazione numerica, detti di quadratura. I metodi di quadratura stimano il valore dell’integrale di una funzione come la sommatoria del valore che la funzione assume in determinati punti discreti, detti nodi, moltiplicato per un peso $\omega_{j}$ (Quarteroni et al. 2014):
 
 \begin{equation}
@@ -567,7 +567,7 @@ La formula generale della quadratura di Gauss, definita nell’intervallo $[-1,1
     \label{eqn:Gauss-Legendre_1}
 \end{equation}
 
-\noindent dove $n_G$ è il numeri di nodi adottati, le ascisse $\xi_{j}$ sono le radici del polinomio di Legendre di ordine $n_G$ (quadratura di Gauss-Legendre) ed i pesi $\omega_j$ sono calcolati risolvendo il seguente sistema di equazioni:
+\noindent dove $n_G$ è il numeri di nodi adottati, le ascisse $\xi_{j}$ sono le radici del polinomio di Legendre di ordine $n_G$ (quadratura di Gauss-Legendre) e i pesi $\omega_j$ sono calcolati risolvendo il seguente sistema di equazioni:
 \begin{align}
     \sum_{j=1}^{n_G} \omega_j L_i(\xi_j) = \begin{cases}\textrm{2 \textit{se i} = 0}\\\textrm{0 \textit{altrimenti}}\end{cases} && i = 0, 1, ... n-1
     \label{eqn:pesi_Gauss-Legendre_1}
@@ -579,7 +579,7 @@ La formula generale della quadratura di Gauss, definita nell’intervallo $[-1,1
     \label{eqn:pesi_Gauss-Legendre_2}
 \end{equation}
 
-\noindent Gli zeri $\xi_j$ dei polinomi di Legendre di ordine $n$ ($L_n$) ed i corrispettivi pesi $\omega_j$ calcolati risolvendo il sistema (\ref{eqn:pesi_Gauss-Legendre_2}) sono presentati in Tabella (\ref{tab:Legendre}) sino ad $n = 4$. 
+\noindent Gli zeri $\xi_j$ dei polinomi di Legendre di ordine $n$ ($L_n$) e i corrispettivi pesi $\omega_j$ calcolati risolvendo il sistema (\ref{eqn:pesi_Gauss-Legendre_2}) sono presentati in Tabella (\ref{tab:Legendre}) sino ad $n = 4$. 
 
 \begin{table}[h]
     \centering
@@ -594,7 +594,7 @@ La formula generale della quadratura di Gauss, definita nell’intervallo $[-1,1
         $4$ & $\pm\sqrt{\frac{3}{7}}$ & $\frac{18+\sqrt{30}}{36}$ & $x^4-\frac{6}{7}x^2+\frac{3}{35}$\\
             & $\pm\sqrt{\frac{3}{7}}$ & $\frac{18-\sqrt{30}}{36}$\\\hline
 \end{tabular}
-    \caption{Polinomi di Legendre di ordine $n$ ($Ln$), i rispettivi zeri $\xi_j$ ed i pesi $\omega_j$}
+    \caption{Polinomi di Legendre di ordine $n$ ($Ln$), i rispettivi zeri $\xi_j$ e i pesi $\omega_j$}
     \label{tab:Legendre}
 \end{table}
 
@@ -605,14 +605,14 @@ La formula generale della quadratura di Gauss, definita nell’intervallo $[-1,1
     \label{eqn:Gauss-Legendre_2}
 \end{equation}
 
-\noindent Che applicata a (\ref{eqn:Q_Engelund_4}) diventa:
+\noindent che applicata a (\ref{eqn:Q_Engelund_4}) diventa:
 
 \begin{equation}
     Q\textsubscript{i}\approx\sqrt{iF}cos\phi^{\frac{2}{3}}\textsubscript{i,i+1}\left(\frac{y\textsubscript{i+1}-y\textsubscript{i}}{2}\right)\sum_{j=1}^{n_G} \omega\textsubscript{j}\hat{ks}\textsubscript{j}\hat{Y}\textsubscript{j}^{\frac{5}{3}}
     \label{eqn:Q_Gauss-Legendre_1}
 \end{equation}
 
-\noindent Dove $\hat{ks}\textsubscript{j}$ e $\hat{Y}\textsubscript{j}$ sono i valori che le funzioni $ks(y)$ e $Y(y)$ assumono nelle coordinate suggerite dal metodo della quadratura di Gauss esteso ad un intervallo generico $[y\textsubscript{i}, y\textsubscript{i+1}]$: 
+\noindent dove $\hat{ks}\textsubscript{j}$ e $\hat{Y}\textsubscript{j}$ sono i valori che le funzioni $ks(y)$ e $Y(y)$ assumono nelle coordinate suggerite dal metodo della quadratura di Gauss esteso ad un intervallo generico $[y\textsubscript{i}, y\textsubscript{i+1}]$: 
 
 \begin{equation}
     \hat{ks}_{j}=ks\left(\frac{y_{i+1}-y_{i}}{2}x_{G,j}+\frac{y_{i+1}+y_{i}}{2}\right)
@@ -645,20 +645,21 @@ La formula generale della quadratura di Gauss, definita nell’intervallo $[-1,1
 \begin{quote}
 “data una funzione $f$ definita e continua in un intervallo $[a,b] \in D$, se $f(a) f(b)  < 0$, ovvero se  $f(a)$ ed $f(b)$ hanno segni discordi, allora esisterà sempre un punto $c \in ]a,b[$ tale che $f(c) = 0$; in altre parole, esisterà sempre almeno un punto in cui la funzione si annulla dentro l’intervallo.”
 \end{quote}
-\noindent Operativamente, una volta individuato un intervallo $[a,b]$ i cui estremi $a$ e $b$ soddisfino le condizioni imposte dal teorema degli zeri per le funzioni continue, possiamo ulteriormente suddividerlo in due sotto-intervalli $[a,x_m]$ e $[x_m,b]$ (dove $x_m$ rappresenta la coordinata del punto medio dell’ intervallo $[a,b]$) e controllare quale dei due continui a rispettare le condizioni del teorema. Questa strategia, detta di bisezione (Figura \ref{fig:bisezione}), si ripete iterativamente e si arresta al passo in corrispondenza del quale si abbia $|x_m - c| \leq \epsilon$, dove $\epsilon$ rappresenta una precisione scelta a piacere.
 
 \begin{figure} [H]
     \centering
-    \includegraphics{bisezione.png}
+    \includegraphics[scale=0.9]{bisezione.png}
     \caption{Metodo della bisezione}
     \label{fig:bisezione}
 \end{figure}
 
+\noindent Operativamente, una volta individuato un intervallo $[a,b]$ i cui estremi $a$ e $b$ soddisfino le condizioni imposte dal teorema degli zeri per le funzioni continue, possiamo ulteriormente suddividerlo in due sotto-intervalli $[a,x_m]$ e $[x_m,b]$ (dove $x_m$ rappresenta la coordinata del punto medio dell’ intervallo $[a,b]$) e controllare quale dei due continui a rispettare le condizioni del teorema. Questa strategia, detta di bisezione (Figura \ref{fig:bisezione}), si ripete iterativamente e si arresta al passo in corrispondenza del quale si abbia $|x_m - c| \leq \epsilon$, dove $\epsilon$ rappresenta una precisione scelta a piacere.
+
 \subsection{Implementazione}
 
-\noindent L’algoritmo è stato tradotto nel linguaggio di programmazione Python. All’interno del programma, i parametri forniti dall’utente sono il file contenente i dati di geometria dell’alveo, il numero di punti di discretizzazione verticale ed il numero massimo di iterazioni nel calcolo della profondità critica, oltre alla pendenza del fondo $i_F$.
-L'algoritmo simula tanti valori di superficie libera quanti sono i punti di discretizzazione verticale. Ad ogni iterazione, stabilita una quota $h$, a partire dai dati di geometria dell’alveo viene calcolata l’area della sezione $\Omega$, la larghezza del profilo di corrente $B$, la portata defluente in condizioni di moto uniforme $Q$ ed i coefficienti di ragguaglio $\alpha$ e $\beta$. 
-Innanzitutto è identificata la sezione bagnata: sottraendo punto a punto, lungo la direzione orizzontale, la quota del fondo $z_F(y)$ alla quota del pelo libero $h(y)$ è prodotto un array dei valori di tirante $Y(y)$. È possibile così individuare quali siano i punti interessati dalla corrente e quali siano i punti ad una quota maggiore del pelo libero, che possono essere perciò esclusi dall’analisi e poter così valutare facilmente $\Omega$ e $B$. In seguito vengono chiamate delle apposite funzioni che calcolano la portata passante $Q$ ed i coefficienti di ragguaglio $\alpha$ (\ref{eqn:alfa_Engelund_2}) e $\beta$ (\ref{eqn:beta_Engelund_2}), avvalendosi sia del metodo dei trapezi (\ref{eqn:Q_trapezi_2}), che della quadratura gaussiana (\ref{eqn:Q_Gauss-Legendre_2}) con 2, 3 e 4 nodi. 
+\noindent L’algoritmo è stato tradotto nel linguaggio di programmazione Python. All’interno del programma, i parametri forniti dall’utente sono il file contenente i dati di geometria dell’alveo, il numero di punti di discretizzazione verticale e il numero massimo di iterazioni nel calcolo della profondità critica, oltre alla pendenza del fondo $i_F$.
+L'algoritmo simula tanti valori di superficie libera quanti sono i punti di discretizzazione verticale. Ad ogni iterazione, stabilita una quota $h$, a partire dai dati di geometria dell’alveo viene calcolata l’area della sezione $\Omega$, la larghezza del profilo di corrente $B$, la portata defluente in condizioni di moto uniforme $Q$ e i coefficienti di ragguaglio $\alpha$ e $\beta$. 
+Innanzitutto è identificata la sezione bagnata: sottraendo punto a punto, lungo la direzione orizzontale, la quota del fondo $z_F(y)$ alla quota del pelo libero $h(y)$ è prodotto un array dei valori di tirante $Y(y)$. È possibile in questo modo individuare quali siano i punti interessati dalla corrente e quali siano i punti ad una quota maggiore del pelo libero, che possono essere perciò esclusi dall’analisi, e valutare così facilmente $\Omega$ e $B$. In seguito vengono chiamate delle apposite funzioni che calcolano la portata passante $Q$ (\ref{eqn:Q_Engelund_5}) e i coefficienti di ragguaglio $\alpha$ (\ref{eqn:alfa_Engelund_2}) e $\beta$ (\ref{eqn:beta_Engelund_2}), avvalendosi sia del metodo dei trapezi (\ref{eqn:Q_trapezi_2}), che della quadratura gaussiana (\ref{eqn:Q_Gauss-Legendre_2}) con 2, 3 e 4 nodi. 
 Come ultimo passaggio, la profondità critica $Y\textsubscript{c}$ è individuata utilizzando il metodo della bisezione, dove la funzione da annullare sarà (\ref{eqn:E_8}).
 
 \newpage
@@ -710,7 +711,7 @@ Il rapporto tra l’area della sezione bagnata e l’altezza del tirante assume 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{deflussotri.png}
-    \caption{Scala di deflusso per sezione triangolare}
+    \caption{Scala di deflusso per una sezione triangolare}
     \label{fig:triangolare_scala_deflusso}
 \end{figure}
 
@@ -754,19 +755,19 @@ Il rapporto tra l’area della sezione bagnata e l’altezza del tirante risulta
 \end{minipage}
 \end{figure}
 
-\noindent La scala di deflusso caratteristica dell'alveo rettangolare riporta l'andamento tipico di un alveo fluviale.
+\noindent La scala di deflusso caratteristica di un canale rettangolare riporta l'andamento tipico di un alveo fluviale.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{deflussotri.png}
-    \caption{Scala di deflusso per sezione rettangolare}
+    \caption{Scala di deflusso per una sezione rettangolare}
     \label{fig:rettangolare_scala_deflusso}
 \end{figure}
 
 \subsection{1° sezione reale: Adige}
 \noindent La sezione presa in esame nel caso attuale appartiene al secondo fiume più lungo in Italia, l’Adige, il quale presenta un alveo fortemente antropizzato, più volte soggetto ad opere di sistemazione fluviale. 
 L’asta fluviale che solca la Val d’Adige è stata deviata e regolarizzata in numerosi tratti per permettere lo sfruttamento intensivo del terreno, soprattutto a scopo agricolo. 
-Dal grafico, infatti, si può notare una certa regolarità lungo la coordinata trasversale nella forma della sezione, tipica di un alveo antropizzato. Il rapporto tra l’area bagnata e il tirante appare leggermente logaritmico, a conferma del fatto che la forma della sezione risulta essere intermedia tra una triangolare e una rettangolare.
+Dal grafico, infatti, si può notare una certa regolarità lungo la coordinata trasversale nella forma della sezione, tipica di un letto antropizzato. Il rapporto tra l’area bagnata e il tirante appare leggermente logaritmico, a conferma del fatto che la forma della sezione risulta essere intermedia tra una triangolare e una rettangolare.
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
@@ -784,7 +785,7 @@ Dal grafico, infatti, si può notare una certa regolarità lungo la coordinata t
 \end{minipage}
 \end{figure}
 
-\noindent La regolarità della sezione proposta si riscontra anche nell’andamento simile dei coefficienti di ragguaglio $\alpha$ e $\beta$ al variare del pelo libero. A bassi valori di tirante corrispondono coefficienti con alta variabilità all’interno di un range numerico limitato, i quali però tendono a stabilizzarsi attorno a un valore costante all’aumentare della quota di pelo libero.
+\noindent La regolarità della sezione proposta trova riscontro anche nell’andamento simile dei coefficienti di ragguaglio $\alpha$ e $\beta$ al variare del pelo libero. A bassi valori di tirante corrispondono coefficienti con alta variabilità all’interno di un range numerico limitato, i quali però tendono a stabilizzarsi attorno a un valore costante all’aumentare della quota di pelo libero.
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
@@ -812,7 +813,7 @@ Dal grafico, infatti, si può notare una certa regolarità lungo la coordinata t
 \subsection{2° sezione reale: Tanaro}
 
 \noindent A differenza del caso precedente, la sezione di seguito analizzata appartiene al fiume Tanaro, corso d’acqua tra i maggiori in termini di rilevanza a livello nazionale, caratterizzato da uno sviluppo nel territorio non regolarizzato da opere antropiche.
-L’estensione e l’irregolarità dell’alveo del fiume si notano chiaramente dal grafico, dove elemento rilevante per l’analisi di portata della sezione risulta essere la fossa generatasi sul fondo del corso d’acqua. Tale particolarità altera l’andamento ipoteticamente lineare del rapporto tra area bagnata e tirante, di fatto dividendolo in due tratti con coefficiente angolare diverso: il primo tratto, più ripido, legato al riempimento della fossa, e il secondo, meno ripido, legato al riempimento totale dell’alveo.
+L’estensione e l’irregolarità dell’alveo del fiume si notano chiaramente dal grafico, dove elemento rilevante per l’analisi di portata della sezione risulta essere lo scavo generatosi sul fondo del corso d’acqua. Tale particolarità altera l’andamento ipoteticamente lineare del rapporto tra area bagnata e tirante, di fatto dividendolo in due tratti con coefficiente angolare diverso: il primo tratto, più ripido, legato al riempimento della fossa, e il secondo, meno ripido, legato al riempimento totale dell’alveo.
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
@@ -830,7 +831,7 @@ L’estensione e l’irregolarità dell’alveo del fiume si notano chiaramente 
 \end{minipage}
 \end{figure}
 
-\noindent I coefficienti di ragguaglio seguono un andamento influenzato dal medesimo elemento: una convergenza dei parametri attorno ad un valore costante nella zona della fossa, seguita da un brusco aumento leggermente contenuto soltanto nel tratto di riempimento finale.
+\noindent I coefficienti di ragguaglio seguono un andamento influenzato dal medesimo elemento: una convergenza dei parametri attorno ad un valore costante nella zona dello scavo, seguita da un brusco aumento leggermente contenuto soltanto nel tratto di riempimento finale.
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
@@ -848,7 +849,7 @@ L’estensione e l’irregolarità dell’alveo del fiume si notano chiaramente 
 \end{minipage}
 \end{figure}
 
-\noindent Anche la scala di deflusso del fiume risente della peculiare forma dell’alveo, presentando un tratto iniziale di rapido innalzamento del pelo libero seguito da un tratto di curva più dolce nel momento in cui il riempimento interessa la totalità della sezione. Il confronto tra la scala di deflusso critica e quella analitica ci consente di distinguere due diversi comportamenti della corrente: un carattere fluviale in corrispondenza della fossa sostituito da un carattere torrentizio nel resto dell’alveo.
+\noindent Anche la scala di deflusso del fiume risente della peculiare forma dell’alveo, presentando un tratto iniziale di rapido innalzamento del pelo libero seguito da un tratto di curva più dolce nel momento in cui il riempimento interessa la totalità della sezione. Il confronto tra la scala di deflusso critica e quella analitica ci consente di distinguere due diversi comportamenti della corrente: un carattere fluviale in corrispondenza dello scavo sostituito da un carattere torrentizio nel resto dell’alveo.
 
 \begin{figure}[H]
     \centering
@@ -910,11 +911,11 @@ La forma della sezione presenta un contorno fortemente irregolare, caratterizzat
 
 \begin{thebibliography}{}
 \bibitem{Collischonn, W. 2013}
-Collischonn, W. (2013) \textit{Hidrologia para engenharia e ciências ambientais}.
+Collischonn, W. (2013) \textit{Hidrologia para engenharia e ciências ambientais}. ABRH, Porto Alegre
 \bibitem{Adami, L. 2019}
-Adami, L. 2019 \textit{Corso di Idrodinamica (a. a. 2019/2020)}
+Adami, L. (2019) \textit{Dispense del corso di Idrodinamica (a. a. 2019/2020)}.
 \bibitem{Quarteroni A. 2014}
-Quarteroni A., Sacco R., Saleri F., Gervasio P. (2014) \textit{Matematica Numerica}. Springer 2014
+Quarteroni A., Sacco R., Saleri F., Gervasio P. (2014) \textit{Matematica Numerica}. Springer, Milano
 \end{thebibliography}
 
 \end{document}
