@@ -430,7 +430,7 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{Rh locale.png}
+    \includegraphics[width=0.4\textwidth]{Rh locale.png}
     \caption{Raggio idraulico locale}
     \label{fig:Rh locale}
 \end{figure}
@@ -544,7 +544,7 @@ Dal momento che l’operatore integrale gode della proprietà additiva, la porta
 
 \begin{figure}
     \centering
-    \includegraphics[scale=1.5]{suddivisione alveo.png}
+    \includegraphics[scale=1.3]{suddivisione alveo.png}
     \caption{$cos\phi_{i,i+1}$ per un generico intervallo $i,i+1$}
     \label{fig:suddivisione_alveo}
 \end{figure}
@@ -645,14 +645,15 @@ La formula generale della quadratura di Gauss, definita nell’intervallo $[-1,1
 \begin{quote}
 “data una funzione $f$ definita e continua in un intervallo $[a,b] \in D$, se $f(a) f(b)  < 0$, ovvero se  $f(a)$ ed $f(b)$ hanno segni discordi, allora esisterà sempre un punto $c \in ]a,b[$ tale che $f(c) = 0$; in altre parole, esisterà sempre almeno un punto in cui la funzione si annulla dentro l’intervallo.”
 \end{quote}
-\noindent Operativamente, una volta individuato un intervallo $[a,b]$ i cui estremi $a$ e $b$ soddisfino le condizioni imposte dal teorema degli zeri per le funzioni continue, possiamo ulteriormente suddividerlo in due sotto-intervalli $[a,x_m]$ e $[x_m,b]$ (dove $x_m$ rappresenta la coordinata del punto medio dell’ intervallo $[a,b]$) e controllare quale dei due continui a rispettare le condizioni del teorema. Questa strategia, detta di bisezione (Figura \ref{fig:bisezione}), si ripete iterativamente e si arresta al passo in corrispondenza del quale si abbia $|x_m - c| \leq \epsilon$, dove $\epsilon$ rappresenta una precisione scelta a piacere.
 
 \begin{figure} [H]
     \centering
-    \includegraphics{bisezione.png}
+    \includegraphics[scale=0.9]{bisezione.png}
     \caption{Metodo della bisezione}
     \label{fig:bisezione}
 \end{figure}
+
+\noindent Operativamente, una volta individuato un intervallo $[a,b]$ i cui estremi $a$ e $b$ soddisfino le condizioni imposte dal teorema degli zeri per le funzioni continue, possiamo ulteriormente suddividerlo in due sotto-intervalli $[a,x_m]$ e $[x_m,b]$ (dove $x_m$ rappresenta la coordinata del punto medio dell’ intervallo $[a,b]$) e controllare quale dei due continui a rispettare le condizioni del teorema. Questa strategia, detta di bisezione (Figura \ref{fig:bisezione}), si ripete iterativamente e si arresta al passo in corrispondenza del quale si abbia $|x_m - c| \leq \epsilon$, dove $\epsilon$ rappresenta una precisione scelta a piacere.
 
 \subsection{Implementazione}
 
