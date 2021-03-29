@@ -22,7 +22,6 @@
 \usepackage{enumitem} % Regola la spaziatura degli elenchi (continua sotto)
 %\setlist{topsep=0.85em,parsep=0.45em,itemsep=0.1em} % 'topsep' regola la spaziatura fra i paragrafi prima e dopo l'ambiente, 'parsep' regola la spaziatura fra i paragrafi di uno stesso \item, 'itemsep' regola la spaziatura fra gli \item
 \setdescription{labelindent=0em,labelsep=1em,leftmargin=\parindent} % 'labelindent' è la distanza del contrassegno dal margine della pagina, messa a 0 perché tutto il documento è un grande elenco quindi è inutile indentare | 'leftmargin' è l'indentazione delle righe successive alla prima in una voce, messa uguale a \parindent perché così è come se fosse un testo scritto normale | 'labelsep' è la distanza fra il contrassegno dal resto del testo nella prima riga di ogni voce
-\usepackage{parskip} %Formattazione paragrafi
 
 % Colori
 \usepackage[svgnames,table,xcdraw]{xcolor} % Pacchetto che fornisce i colori, [svgnames] aumentare il database di colori disponibili
@@ -166,19 +165,19 @@ Entrambe le analisi sono state condotte tramite uso del software Hec-Ras.
 \noindent Al fine di descrivere il comportamento delle correnti in moto stazionario e uniforme, ovvero che non presentano nessuna variazione nello spazio e nel tempo di geometria e campo di moto, si opera un bilancio integrale fra la forza motrice e la forza resistiva. Si perviene così ad un’equazione, detta equazione del moto uniforme, che assume la forma:
 
 \begin{equation}
-    U=C\sqrt{gR_ii_f}
+    U=C\sqrt{gR_ii_F}
     \label{eqn:U_moto_uniforme}
 \end{equation}
 
 \begin{equation}
-    Q=\Omega U=C\Omega\sqrt{gR_ii_f}
+    Q=\Omega U=C\Omega\sqrt{gR_ii_F}
     \label{eqn:Q_moto_uniforme}
 \end{equation}
 
-\noindent Dove Q [$m^3\cdot s^{-1}$] è la portata, $\Omega$ [$m^2$] è l’area della sezione bagnata, g [$m\cdot s^{-2}$] è l’accelerazione di gravità, $R_i$ [$m$] è il raggio idraulico, $i_f$ [$adm$] è la pendenza del fondo e C [$adm$] è un coefficiente, detto conduttanza idraulica, che rappresenta fisicamente la facilità di scorrimento di un fluido in un canale ed è definito come:
+\noindent Dove Q [$m^3\cdot s^{-1}$] è la portata, $\Omega$ [$m^2$] è l’area della sezione bagnata, g [$m\cdot s^{-2}$] è l’accelerazione di gravità, $R_i$ [$m$] è il raggio idraulico, $i_F$ [$adm$] è la pendenza del fondo e C [$adm$] è un coefficiente, detto conduttanza idraulica, che rappresenta fisicamente la facilità di scorrimento di un fluido in un canale ed è definito come:
 
 \begin{equation}
-    C=\frac{U}{u_*}=\frac{U}{\sqrt{gR_ii_f}}
+    C=\frac{U}{u_*}=\frac{U}{\sqrt{gR_ii_F}}
     \label{eqn:C}
 \end{equation}
 
@@ -199,12 +198,12 @@ Entrambe le analisi sono state condotte tramite uso del software Hec-Ras.
 \noindent prendendo il nome di coefficiente di scabrezza di Manning. Sosituendo (\ref{eqn:ks}) in (\ref{eqn:U_moto_uniforme}) otteniamo la formula del moto uniforme di Gauckler-Strickler:
 
 \begin{equation}
-    U=ksR_i^{2/3}\sqrt{i_f}
+    U=ksR_i^{2/3}\sqrt{i_F}
     \label{eqn:U_Gauckler-Strickler}
 \end{equation}
 
 \begin{equation}
-    Q= \Omega U = ks\Omega R_i^{2/3}\sqrt{i_f} =ks\frac{\Omega^{5/3}}{p^{2/3}}\sqrt{i_f}
+    Q= \Omega U = ks\Omega R_i^{2/3}\sqrt{i_F} =ks\frac{\Omega^{5/3}}{p^{2/3}}\sqrt{i_F}
     \label{eqn:Q_Gauckler-Strickler}
 \end{equation}
 
@@ -225,7 +224,7 @@ Entrambe le analisi sono state condotte tramite uso del software Hec-Ras.
 \noindent e dal momento che la portata $Q$ e la pendenza $\sqrt{i_F}$ sono dati del problema, possiamo scrivere un'espressione analitica per la scabrezza che presenti come unica incognita $Y$, esplicitando $ks$ in \ref{eqn:Q_Gauckler-Strickler}:
 
 \begin{equation}
-    ks=\frac{Q}{\Omega^{5/3}p^{-2/3}\sqrt{i_f}}=\frac{Q}{(BY)^{5/3}(B+2Y)^{-2/3}\sqrt{i_f}}
+    ks=\frac{Q}{\Omega^{5/3}p^{-2/3}\sqrt{i_F}}=\frac{Q}{(BY)^{5/3}(B+2Y)^{-2/3}\sqrt{i_F}}
 \end{equation}
 
 \noindent Qualora il $ks$ delle pareti, tuttavia, sia diverso dal $ks$ del fondo, il $ks$ totale è dato da una media ponderata tra i due:
@@ -276,7 +275,7 @@ Quando la superficie libera ha una transizione attraverso lo stato critico, l’
 \section{Metodologia}
 \subsection{La canaletta di laboratorio}
 
-\noindent La canaletta artificiale utilizzata in laboratorio presenta sezione rettangolare di larghezza pari a 0,3 $m$ ed è composta da tre livellette, delle quali la prima e la terza sono parallele al fondo dell’apparato, mentre la seconda, localizzata tra la distanza di 3,75 $m$ e 5,75 $m$ da valle, presenta una pendenza maggiore del 2,56\%. \\
+\noindent La canaletta artificiale utilizzata in laboratorio presenta sezione rettangolare di larghezza pari a 0,3 $m$ ed è composta da tre livellette, delle quali la prima e la terza sono parallele al fondo dell’apparato, mentre la seconda, localizzata tra la distanza di 3,75 $m$ e 5,75 $m$ da valle, presenta una pendenza maggiore del 2,56\%.
 La pendenza della canaletta, inoltre, è regolabile controllando la quota di monte, permettendo così di variare le condizioni sperimentali (Figura \ref{fig:canaletta}):
 
 \begin{figure}[H]
@@ -382,30 +381,30 @@ Nel nostro caso il profilo misurato è di difficile interpretazione, dato che il
 
 \begin{table}[H]
 \sffamily\footnotesize
-\begin{minipage}[b]{8.5cm}
-    \centering
+\begin{minipage}[b]{8cm}
+    \raggedleft
     \begin{tabular}{cc}
     \hline
     \multicolumn{2}{c}{\textbf{Valle}}\\
         \hline
-        Quota tirante [m] & $0,077$ \\
+        Tirante [m] & $0,077$ \\
         Spinta [kN] & $873$\\
         \hline
     \end{tabular}
 \end{minipage}
-\ \hspace{2mm} \hspace{3mm} \
-\begin{minipage}[b]{8.5cm}
-    \centering
+\ \hspace{1.5cm}  \
+\begin{minipage}[b]{8cm}
+    \raggedright
     \begin{tabular}{cc}
     \hline
     \multicolumn{2}{c}{\textbf{Monte}}\\
         \hline
-        Quota tirante [m] & $0,05$ \\
+        Tirante [m] & $0,05$ \\
         Spinta [kN] & $236$ \\
         \hline
     \end{tabular}
 \end{minipage}
-\caption{}
+\caption{Valori di tirante idraulico e spinta a valle e a monte del risalto}
 \end{table}
 
 \noindent Dai valori di spinta ottenuti è possibile affermare che l'origine del risalto è collocata a monte del cambio di pendenza.
@@ -417,12 +416,13 @@ Nel nostro caso il profilo misurato è di difficile interpretazione, dato che il
 La canaletta è stata quindi modellata attraverso un algoritmo dedicato all'interno del software HEC-RAS. 
 Una volta inseriti i dati di geometria, fissata la portata sono stati simulati per la canaletta differenti valori del coefficiente di Strickler $ks$, fintantoché non vi è stata una buona corrispondenza tra la localizzazione del risalto nei dati reali e simulati.
 Il profilo di corrente è stato quindi modellato con il software HEC-RAS ipotizzando un ks di 80, 90, 100 e 110 e adottando come condizioni di contorno dei valori assegnati di tirante per monte e valle.\\
-I dati ricavati dalle varie esperienze sono stati plottati tramite Excel per ottenere un confronto grafico della variazione di posizione del risalto al variare della scabrezza del fondo centrale:
+I dati ricavati dalle varie esperienze sono stati plottati tramite Excel per ottenere un confronto grafico della variazione di posizione del risalto al variare della scabrezza del fondo centrale (Figura \ref{fig:risalto_FTF}):
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{FTFrisalto5.5.png}
     \caption{Posizione del risalto al variare del $ks$ simulato, configurazione FTF}
+     \label{fig:risalto_FTF}
 \end{figure}
 
 \newpage
@@ -651,7 +651,7 @@ Di seguito si riporta la geometria dell'alveo interpolato:
     \centering
     \begin{tabular}{lcc}
         \hline
-        \multicolumn{1}{c}{\textbf{Tipologia di canale}} & \textbf{Descrizione} & $\mathbf{ks}$  \\
+        \multicolumn{1}{c}{\textbf{Tipologia di canale}} & \textbf{Descrizione} & $\mathbf{n}$  \\
         \hline
         \textbf{Corsi d'acqua naturali} & &\\
         \hspace{1.5pt} Canali principali & pulito, liscio, pieno, senza crepe o pozze profonde & 0.030\\
@@ -714,7 +714,7 @@ Di seguito si riportano le condizioni al contorno caratteristiche delle simulazi
 
 \subsubsection{Profili di corrente: Deflusso normale}
 
-\noindent Di seguito vengono proposti i profili di corrente, generati in condizioni di normale deflusso alla confluenza per tempi di ritorno di 50, 200 e 500 anni:
+\noindent Di seguito vengono proposti i profili di corrente, generati in condizioni di normale deflusso, alla confluenza, per tempi di ritorno di 50, 200 e 500 anni:
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{ProfU474.PNG}
@@ -722,11 +722,11 @@ Di seguito si riportano le condizioni al contorno caratteristiche delle simulazi
     \label{fig:normale_50}
 \end{figure}
 
-\noindent In\ref{fig:normale_50}, analizzando il corso d'acqua partendo da monte, è possibile notare le numerose variazioni di profondità che il profilo di corrente subisce lungo il suo percorso, dovute sia alle differenze di scabrosità che caratterizzano i diversi tratti del letto fluviale, che alla pendenza irregolare dell'alveo.
+\noindent Nella Figura \ref{fig:normale_50}, analizzando il corso d'acqua partendo da monte, è possibile notare le numerose variazioni di profondità che il profilo di corrente subisce lungo il suo percorso, dovute sia alle differenze di scabrosità che caratterizzano i diversi tratti del letto fluviale sia alla pendenza irregolare dell'alveo.
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
-\noindent Le discontinuità nella pendenza del fondo sono tipiche di un corso d'acqua montano, qual è il torrente Sturla. Lungo tutto il percorso il fondo presenta dei tratti di forte ripidità, dove la corrente si riduce di profondità fino a intersecare il livello della critica. A valle, in particolare, la presenza di una rampa con forte pendenza genera un aumento localizzato della velocità di corrente, subito frenata da un risalto dissipativo al termine del dislivello.\\
+\noindent Le discontinuità nella pendenza del fondo sono tipiche di un corso d'acqua montano, qual è il torrente Sturla. Lungo tutto il percorso il fondo presenta dei tratti di forte ripidità, dove la corrente si riduce di profondità fino a intersecare il livello della critica. A valle, in particolare, la presenza di una rampa con forte pendenza genera un aumento localizzato della velocità della corrente, subito frenata da un risalto dissipativo al termine del dislivello.\\
 Nel resto dell'asta fluviale il profilo di corrente si mantiente più alto della critica, assumento un comportamento di corrente lenta.
 
 \end{minipage}
@@ -740,7 +740,7 @@ Nel resto dell'asta fluviale il profilo di corrente si mantiente più alto della
 
 \newpage
 
-\noindent Riguardo la scabrosità, è possibile evidenziare il legame esistente tra le condizioni di scabrezza e il profilo di corrente conducendo una serie di simulazioni in cui si varia unicamente il coefficiente di Manning.
+\noindent Riguardo alla scabrosità, è possibile evidenziare il legame esistente tra le condizioni di scabrezza e il profilo di corrente conducendo una serie di simulazioni in cui si varia unicamente il coefficiente di Manning.
 I seguenti grafici riportano i risultati di due simulazioni condotte imponendo un fattore moltiplicativo pari a 2 e a 0.5 sul parametro di scabrosità:
 
 \begin{figure}[H]
@@ -772,7 +772,7 @@ Al contrario, il dimezzamento comporta una diminuzione della scabrezza e consegu
     \label{fig:normale_500}
 \end{figure}
 
-\noindent In Figura \ref{fig:normale_200} e Figura \ref{fig:normale_500}, si nota come un aumento della portata immessa, corrispondente a eventi di crescente criticità, produca un generale incremento della profondità di corrente e una maggiore tendenza ad assumere un comportamento fluviale da parte del corso d'acqua.
+\noindent In Figura \ref{fig:normale_200} e Figura \ref{fig:normale_500} si nota come un aumento della portata immessa, corrispondente a eventi di crescente criticità, produca un generale incremento della profondità di corrente e una maggiore tendenza ad assumere un comportamento fluviale da parte del corso d'acqua.
 
 
 \subsubsection{Profili di corrente: deflusso rigurgitato}
@@ -881,7 +881,7 @@ Un possibile evento con frequenza di 200 anni, invece, genererebbe un tirante su
     \caption{Sezione ponte - deflusso rigurgitato, Tr=500 anni}
 \end{figure}
 
-\noindent In queste condizioni la quota di tirante presenta un notevole incremento in tutto il tratto di valle. Il livello di corrente supera più spesso l'altezza d'intradosso, mandando in crisi la struttura del ponte sia per eventi con tempi di ritorno di 200 anni che di 500 anni. Per eventi con frequente di 50 anni, invece, il ponte risulta verificato.
+\noindent In queste condizioni la quota di tirante presenta un notevole incremento in tutto il tratto di valle. Il livello di corrente supera più spesso l'altezza d'intradosso, mandando in crisi la struttura del ponte sia per eventi con tempi di ritorno di 200 anni che di 500 anni. Per eventi con frequenza di 50 anni, invece, il ponte risulta verificato.
 
 \begin{table}[H]
     \centering
@@ -900,15 +900,17 @@ Un possibile evento con frequenza di 200 anni, invece, genererebbe un tirante su
 \newpage
 \section{Conclusioni}
 
-\subsection{Canaletta laboratorio}
+\subsection{Esperienza di laboratorio}
 
-\subsection{Caso studio reale torrente Sturla}
+\noindent A partire dai nostri due esperimenti con la canaletta di laboratorio, possiamo concludere che il modello matematico implementato nel software HEC-RAS offre una buona rappresentazione della realtà per basse pendenze del fondo e per correnti fluviali o lievemente torrentizie. Per grandi pendenze e correnti molto torrentizie, tuttavia, il software mostra delle limitazioni. Il modello è inoltre instabile nel caso in cui la profondità di moto uniforme sia molto prossima alla critica.
+
+\subsection{Caso di studio}
 
 \noindent Da una valutazione complessiva del contesto ambientale in cui si inserisce l'opera, è chiaro come le condizioni caratteristiche del torrente siano favorevoli allo sviluppo di situazioni critiche per la tenuta degli argini e della struttura.\\
 In situazione normale, in caso di evento con $Tr=500$ anni il ponte viene interessato da una quota di corrente non rispettosa del franco di sicurezza, addirittura superiore all'intradosso, il ché non solo aumenta la pressione sull'impalcato, ma rende la struttura simile alla cosiddetta \textit{luce di fondo}, generando così un ulteriore incremento del livello di corrente a monte altamente rischioso per la tenuta degli argini.\\
 In caso di deflusso rigurgitato alla confluenza, questo fenomeno si verifica con una frequenza maggiore.\\
 La conformazione irregolare dell'alveo, inoltre, genera un profilo di corrente instabile, soggetto a cambi di velocità e risalti che possono comportare lo sviluppo di fenomeno erosivi lungo il percorso.
-Per ottenere una condizione a favore di sicurezza, è opportuno rinforzare il letto del torrente a valle dei tratti a forte pendenza, mentre per il ponte, a scopo di diminuire la quota di corrente, è necessario ridurre la scabrezza del fondo e permettere un deflusso più rapido della corrente.
+Per ottenere una condizione a favore della sicurezza, è opportuno rinforzare il letto del torrente a valle dei tratti a forte pendenza, mentre per il ponte, a scopo di diminuire la quota di corrente, è necessario ridurre la scabrezza del fondo e permettere un deflusso più rapido della corrente.
 
 \newpage
 \begin{thebibliography}{}
