@@ -380,7 +380,6 @@ Al successivo cambio di pendenza avviene il ritorno alla condizione fluviale, il
 Nel nostro caso il profilo misurato è di difficile interpretazione, dato che il fenomeno dissipativo sembra avere inizio esattamente a ridosso del cambio di pendenza. È pertanto necessario calcolare analiticamente i valori di spinta a monte e a valle del risalto tramite (\ref{eqn:S}):
 
 \begin{table}[H]
-\sffamily\footnotesize
 \begin{minipage}[b]{8cm}
     \raggedleft
     \begin{tabular}{cc}
@@ -422,7 +421,7 @@ I dati ricavati dalle varie esperienze sono stati infine plottati tramite Excel 
     \centering
     \includegraphics[width=\textwidth]{FTFrisalto5.5.png}
     \caption{Posizione del risalto al variare del $ks$ simulato, configurazione FTF}
-     \label{fig:risalto_FTF}
+    \label{fig:risalto_FTF}
 \end{figure}
 
 \newpage
@@ -565,7 +564,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 \section{Caso studio: torrente Sturla}
 \subsection{Descrizione del problema}
 \noindent Nella seconda parte della relazione l’analisi si concentra sul caso di un alveo torrentizio esistente, il torrente Sturla, che scorre nel territorio ligure passando per il comune di Carasco (GE), dove si colloca il tratto d’interesse. Il corso d’acqua è stato opportunamente modellato tramite il software Hec-Ras 4.1, nel quale sono stati inseriti i dati di rilevamento delle sezioni caratteristiche.
-L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benchè il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 m sotto le campate del ponte venga rispettato dalla corrente in piena.
+L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benché il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di $1 m$ sotto le campate del ponte venga rispettato dalla corrente in piena.
 In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \begin{itemize}
@@ -645,7 +644,7 @@ Di seguito si riporta la geometria dell'alveo interpolato:
     \caption{Geometria dell'alveo interpolata con software Hec-Ras}
 \end{figure}
 
-\noindent La determinazione della scabrosità dell'alveo più adatta alla condizione reale avviene suddividendo il letto nei tratti con caratteristiche differenti, per descriverne accuratamente la scabrezza lungo la sezione trasversale. Una raccolta estensiva dei coefficienti di Manning per corsi d'acqua e pianure d'inondazione può essere trovata nel libro di Chow "Open-Channel Hydraulics" (Chow, 1959). Un estratto del libro di Chow è presentato nel manuale del software, dov'è possibile trovare i valori di $n$ suddivisi per tipologie di alveo fluviale e copertura del letto (Tabella \ref{tab:Manning_alvei}):
+\noindent La determinazione della scabrosità di un alveo reale avviene suddividendo il letto, lungo la sezione trasversale, nei tratti con caratteristiche di scabrezza differenti. Una raccolta estensiva dei coefficienti di Manning per corsi d'acqua e pianure d'inondazione può essere trovata nel libro di Chow "Open-Channel Hydraulics" (Chow, 1959). Un estratto del libro di Chow è presentato nel manuale del software, dov'è possibile trovare i valori di $n$ suddivisi per tipologie di alveo fluviale e copertura del letto (Tabella \ref{tab:Manning_alvei}):
 
 \begin{table}[H]
     \centering
@@ -907,7 +906,7 @@ Un possibile evento con frequenza di 200 anni, invece, genererebbe un tirante su
 \subsection{Caso di studio}
 
 \noindent Da una valutazione complessiva del contesto ambientale in cui si inserisce l'opera, è chiaro come le condizioni caratteristiche del torrente siano favorevoli allo sviluppo di situazioni critiche per la tenuta degli argini e della struttura.\\
-In situazione normale, in caso di evento con $Tr=500$ anni il ponte viene interessato da una quota di corrente non rispettosa del franco di sicurezza, addirittura superiore all'intradosso, il ché non solo aumenta la pressione sull'impalcato, ma rende la struttura simile alla cosiddetta \textit{luce di fondo}, generando così un ulteriore incremento del livello di corrente a monte altamente rischioso per la tenuta degli argini.\\
+In situazione normale, in caso di evento con $Tr=500$ anni il ponte viene interessato da una quota di corrente non rispettosa del franco di sicurezza, addirittura superiore all'intradosso, il che non solo aumenta la pressione sull'impalcato, ma rende la struttura simile alla cosiddetta \textit{luce di fondo}, generando così un ulteriore incremento del livello di corrente a monte altamente rischioso per la tenuta degli argini.\\
 In caso di deflusso rigurgitato alla confluenza, questo fenomeno si verifica con una frequenza maggiore.\\
 La conformazione irregolare dell'alveo, inoltre, genera un profilo di corrente instabile, soggetto a cambi di velocità e risalti che possono comportare lo sviluppo di fenomeno erosivi lungo il percorso.
 Per ottenere una condizione a favore della sicurezza, è opportuno rinforzare il letto del torrente a valle dei tratti a forte pendenza, mentre per il ponte, a scopo di diminuire la quota di corrente, è necessario ridurre la scabrezza del fondo e permettere un deflusso più rapido della corrente.
