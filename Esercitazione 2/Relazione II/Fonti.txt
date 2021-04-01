@@ -1,0 +1,7 @@
+FONTI
+
+Sito dei piani di bacino: http://www.pianidibacino.ambienteinliguria.it/GE/ambito16/ambito16.html
+Piano di bacino: http://www.pianidibacino.ambienteinliguria.it/GE/ambito16/documenti/GE_Amb16_RelGen_rev09.pdf
+portate per tempo di ritorno: pag. 178 e 230
+Fonte dei valori di scabrezza (ks): http://www-3.unipv.it/webidra/materialeDidattico/natale/tab13.pdf
+Manuale HEC-RAS: https://www.hec.usace.army.mil/software/hec-ras/documentation/HEC-RAS_6.0_ReferenceManual.pdf

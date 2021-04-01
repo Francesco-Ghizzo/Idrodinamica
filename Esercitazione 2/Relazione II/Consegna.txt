@@ -1,0 +1,18 @@
+Verifica idraulica di un’opera idraulica (ponte) situata lungo il corso del Torrente Sturla presso il comune di Carasco (GE)
+
+CARATTERISTICHE IDRAULICHE:
+
+- Adottare a riferimento tecnico-normativo il piano del bacino in esame, considerando le portate indicate per i tempi di ritorno rispettivamente di 50, 200, 500 anni.
+  Q50=474m3/s Q200=839m3/s Q500=1223m3/s 
+
+- Il tratto da considerare è quello compreso tra località Terrarossa e la confluenza con il torrente Lavagna.
+  Sezione idraulica di riferimento: ST1
+- Il franco deve essere almeno pari al carico cinetico della corrente e comunque non inferiore al metro.
+
+- Si considerino per le condizioni al contorno di valle entrambe le situazioni di deflusso in moto uniforme e di rigurgito alla confluenza con il torrente Lavagna; in quest’ultimo caso si considerino, per i tre tempi di ritorno, profondità rispettivamente di 5.6, 8 e 8.2 m.
+
+IL PONTE:
+
+Il ponte è collocato tra 190 m e 198.28 m di distanza dalla sezione della confluenza con il Lavagna, dove la quota assoluta del fondo è pari a 21.40 m.
+La quota inferiore dell’impalcato è pari a 29.29 m e 29.84 m alle sommità degli argini sinistro e destro, rispettivamente, ed a 28.55 m e 28.48 m in corrispondenza delle due pile di ponte sinistra e destra, mentre la quota dell’estradosso è costante e pari a 31.48 m.
+Le due pile sono centrate rispettivamente a 158.45 m e 177.01 m, hanno basamenti dello spessore di 2.8 m quella a sinistra e 4.07 m quella a destra, i quali arrivano alle rispettive quote di 24.07 m e 24.0 m, al di sopra delle quali le pile si assestano sullo spessore di 1.5 m.
