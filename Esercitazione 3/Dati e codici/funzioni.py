@@ -21,7 +21,7 @@ def LaxWendroff( U, dt, dx ):
 
 def FORCE( U, dt, dx ):
     '''Flusso Numerico FORCE di Toro'''
-    ...
+    NumFlux = 0.5(LaxFriedrichs( U, dt, dx )+LaxWendroff( U, dt, dx ))
     return NumFlux
 
 def Source( U ):
