@@ -16,7 +16,8 @@ def LaxFriedrichs( U, dt, dx ):
 
 def LaxWendroff( U, dt, dx ):
     '''Flusso Numerico di Lax-Wendroff'''
-    ...
+    U = 0.5*(U[]+U[])+0.5*(dt/dx)*(PhysFlux(U[])-PhysFlux(U[]))
+    NumFlux = PhysFlux(U)
     return NumFlux
 
 def FORCE( U, dt, dx ):
