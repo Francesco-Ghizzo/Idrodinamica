@@ -380,7 +380,6 @@ Al successivo cambio di pendenza avviene il ritorno alla condizione fluviale, il
 Nel nostro caso il profilo misurato è di difficile interpretazione, dato che il fenomeno dissipativo sembra avere inizio esattamente a ridosso del cambio di pendenza. È pertanto necessario calcolare analiticamente i valori di spinta a monte e a valle del risalto tramite (\ref{eqn:S}):
 
 \begin{table}[H]
-\sffamily\footnotesize
 \begin{minipage}[b]{8cm}
     \raggedleft
     \begin{tabular}{cc}
@@ -539,11 +538,10 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.35]{Profilo HEC-RAS FTF.png}
+    \includegraphics[scale=0.3]{Profilo HEC-RAS FTF.png}
     \caption{Profilo di corrente FTF simulato con il software Hec-Ras}
 \end{figure}
 
-\newpage
 
 \subsection{Configurazione TTT}
 
@@ -551,7 +549,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.35]{Profilo HEC-RAS TTT.png}
+    \includegraphics[scale=0.3]{Profilo HEC-RAS TTT.png}
     \caption{Profilo di corrente TTT simulato con il software Hec-Ras}
 
 \end{figure}
@@ -563,7 +561,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 \section{Caso studio: torrente Sturla}
 \subsection{Descrizione del problema}
 \noindent Nella seconda parte della relazione l’analisi si concentra sul caso di un alveo torrentizio esistente, il torrente Sturla, che scorre nel territorio ligure passando per il comune di Carasco (GE), dove si colloca il tratto d’interesse. Il corso d’acqua è stato opportunamente modellato tramite il software Hec-Ras 4.1, nel quale sono stati inseriti i dati di rilevamento delle sezioni caratteristiche.
-L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benchè il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 m sotto le campate del ponte venga rispettato dalla corrente in piena.
+L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benché il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 m sotto le campate del ponte venga rispettato dalla corrente in piena.
 In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \begin{itemize}
@@ -588,13 +586,13 @@ In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{Sezione.jpg}
+    \includegraphics[scale=0.7]{Sezione.png}
     \caption{Rilievo di una sezione trasversale nel tratto a monte del torrente Sturla}
     \label{fig:AutoCAD}
 \end{figure}
 
 \noindent Tali dati sono stati successivamente immessi nel software di modellazione Hec-Ras, inserendo per ciascuna sezione le coordinate orizzontali (con origine nell'estremità sinistra) e la quota di ogni punto. 
-In questa fase viene inserita inserisce anche la geometria del ponte, ricreandone le pile e le campate nella maniera più fedele. La struttura ha larghezza pari a 8 m ed è collocata a 190 m dalla confluenza con il torrente Lavagna.
+In questa fase viene inserita anche la geometria del ponte, ricreandone le pile e le campate nella maniera più fedele. La struttura ha larghezza pari a 8 m ed è collocata a 190 m dalla confluenza con il torrente Lavagna.
 
 \begin{figure}[H]
 \begin{minipage}[b]{0.39\textwidth}
@@ -772,7 +770,7 @@ Al contrario, il dimezzamento comporta una diminuzione della scabrezza e consegu
 
 \noindent In Figura \ref{fig:normale_200} e Figura \ref{fig:normale_500}, si nota come un aumento della portata immessa, corrispondente a eventi di crescente criticità, produca un generale incremento della profondità di corrente e una maggiore tendenza ad assumere un comportamento fluviale da parte del corso d'acqua.
 
-
+\newpage
 \subsubsection{Profili di corrente: deflusso rigurgitato}
 \noindent Di seguito, invece, si riportano i profili di corrente simulati in caso di deflusso rigurgitato nella confluenza con il torrente Lavagna:
 
@@ -801,7 +799,7 @@ Al contrario, il dimezzamento comporta una diminuzione della scabrezza e consegu
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
-L'analisi di un profilo di corrente lenta molto energetica in presenza di un restringimento della sezione d'alveo, come nel caso delle pile di un ponte, prevede la formazione di un abbassamento della quota di tirante al di sotto delle campate, per poi ritornare alla quota di monte, salvo eventuali dissipazioni di energia che ne riducono il livello. La verifica idraulica dev'essere condotta in ogni caso esamindando il tirante a monte del manufatto. A livello legislativo, il dimensionamento di un'opera d'attraversamento fluviale deve tener conto della quota di tirante raggiunta dalla corrente al verificarsi di eventi critici, con tempi di ritorno prestabiliti.
+L'analisi di un profilo di corrente lenta molto energetica in presenza di un restringimento della sezione d'alveo, come nel caso delle pile di un ponte, prevede la formazione di un abbassamento della quota di tirante al di sotto delle campate, per poi ritornare alla quota di monte, salvo eventuali dissipazioni di energia che ne riducono il livello. La verifica idraulica dev'essere condotta in ogni caso esamindando il tirante a monte del manufatto. A livello legislativo (Legge Regionale n° 9 del 28 gennaio 1993, art.26), il dimensionamento di un'opera d'attraversamento fluviale deve tener conto della quota di tirante raggiunta dalla corrente al verificarsi di eventi critici, con tempi di ritorno prestabiliti.
 
 \end{minipage}
 \ \hspace{2mm} \hspace{3mm} \
@@ -912,8 +910,11 @@ Per ottenere una condizione a favore di sicurezza, è opportuno rinforzare il le
 
 \newpage
 \begin{thebibliography}{}
-\bibitem{Piano di Bacino}Ambito regionale di Bacino 16, Piano di Bacino - Stralcio sul rischio idrogeologico
 \bibitem{Appunti del corso}Appunti del corso
+\bibitem{Piano di Bacino} Autorità di Bacino Distrettuale dell'Appennino Settentrionale (2020) \textit{Ambito regionale di Bacino 16, Piano di Bacino - Stralcio sul rischio idrogeologico}.
+\bibitem{Art26} Legge Regionale n° 9 del 28 gennaio 1993, art.26
+\bibitem{HEC-RAS}U.S. Army Corps of Engineers (2020) \textit{HEC-RAS River Analysis System - Hydraulic Reference Manual}. 
+ 
 \end{thebibliography}
 
 \end{document}
