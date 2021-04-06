@@ -562,7 +562,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 \section{Caso studio: torrente Sturla}
 \subsection{Descrizione del problema}
 \noindent Nella seconda parte della relazione l’analisi si concentra sul caso di un alveo torrentizio esistente, il torrente Sturla, che scorre nel territorio ligure passando per il comune di Carasco (GE), dove si colloca il tratto d’interesse. Il corso d’acqua è stato opportunamente modellato tramite il software Hec-Ras 4.1, nel quale sono stati inseriti i dati di rilevamento delle sezioni caratteristiche.
-L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benché il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di $1 m$ sotto le campate del ponte venga rispettato dalla corrente in piena.
+L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benché il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 $m$ sotto le campate del ponte venga rispettato dalla corrente in piena.
 In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \begin{itemize}
@@ -638,8 +638,8 @@ Di seguito si riporta la geometria dell'alveo interpolato:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.72]{GeometriaSturla.PNG}
-    \caption{Geometria dell'alveo interpolata con software Hec-Ras}
+    \includegraphics[scale=0.69]{GeometriaSturla.PNG}
+    \caption{Geometria dell'alveo interpolata con il software Hec-Ras}
 \end{figure}
 
 \noindent La determinazione della scabrosità di un alveo reale avviene suddividendo il letto, lungo la sezione trasversale, nei tratti con caratteristiche di scabrezza differenti. Una raccolta estensiva dei coefficienti di Manning per corsi d'acqua e pianure d'inondazione può essere trovata nel libro di Chow "Open-Channel Hydraulics" (Chow, 1959). Un estratto del libro di Chow è presentato nel manuale del software, dov'è possibile trovare i valori di $n$ suddivisi per tipologie di alveo fluviale e copertura del letto (Tabella \ref{tab:Manning_alvei}):
@@ -686,7 +686,7 @@ La portata di progetto è stata ricavata consultando il Piano di Bacino relativo
 \end{table}
 
 \subsubsection{Modellazione idraulica}
-\noindent La simulazione dell'evento di piena è stata condotta con l'uso di HEC-RAS, utilizzato in precedenza per condurre le analisi di laboratorio. Il programma permettere di riprodurre in maniera realistica la maggior parte delle condizione di moto stazionario all'interno di un determinato alveo, previo l'inserimento di un'adeguata geometria descrittiva, della portata fluente e delle condizioni al contorno della corrente.\\
+\noindent La simulazione dell'evento di piena è stata condotta con l'uso di HEC-RAS, utilizzato in precedenza per condurre le analisi di laboratorio. Il programma permette di riprodurre in maniera realistica la maggior parte delle condizione di moto stazionario all'interno di un determinato alveo, previo l'inserimento di un'adeguata geometria descrittiva, della portata fluente e delle condizioni al contorno della corrente.\\
 Per procedere con la simulazione delle piene è necessario impostare le condizioni al contorno del dominio di calcolo, cioè le caratteristiche della corrente nella sezione a monte e a valle dell'alveo.\\
 Nel caso di deflusso normale, le condizioni imposte sono di moto uniforme sia a monte che a valle. Per ottenere tali condizioni è necessario imporre la pendenza di moto uniforme alle estremità dell'alveo, in tal caso 0.02\% a monte e 2\% a valle.\\
 Nel caso di regime con deflusso rigurgitato, invece, a valle si prefissa una quota di pelo libero da rispettare, da sommare all'altezza del fondo pari a 21.15 $m$.\\
@@ -800,7 +800,7 @@ Al contrario, il dimezzamento comporta una diminuzione della scabrezza e consegu
 
 \begin{figure}[H]
 \begin{minipage}[b]{8.5cm}
-L'analisi di un profilo di corrente lenta molto energetica in presenza di un restringimento della sezione d'alveo, come nel caso delle pile di un ponte, prevede la formazione di un abbassamento della quota di tirante al di sotto delle campate, per poi ritornare alla quota di monte, salvo eventuali dissipazioni di energia che ne riducono il livello. La verifica idraulica dev'essere condotta in ogni caso esamindando il tirante a monte del manufatto. A livello legislativo, il dimensionamento di un'opera d'attraversamento fluviale deve tener conto della quota di tirante raggiunta dalla corrente al verificarsi di eventi critici, con tempi di ritorno prestabiliti.
+L'analisi di un profilo di corrente lenta molto energetica in presenza di un restringimento della sezione d'alveo, come nel caso delle pile di un ponte, prevede la formazione di un abbassamento della quota di tirante al di sotto delle campate, per poi ritornare alla quota di monte, salvo eventuali dissipazioni di energia che ne riducono il livello. La verifica idraulica dev'essere condotta in ogni caso esamindando il tirante a monte del manufatto. A livello legislativo (Legge Regionale n° 9 del 28 gennaio 1993, art.26), il dimensionamento di un'opera d'attraversamento fluviale deve tener conto della quota di tirante raggiunta dalla corrente al verificarsi di eventi critici, con tempi di ritorno prestabiliti.
 
 \end{minipage}
 \ \hspace{2mm} \hspace{3mm} \
@@ -913,6 +913,7 @@ Per ottenere una condizione a favore della sicurezza, è opportuno rinforzare il
 \begin{thebibliography}{}
 \bibitem{Piano di Bacino} Autorità di Bacino Distrettuale dell'Appennino Settentrionale (2020) \textit{Piano di Bacino stralcio sul rischio idrogeologico AMBITO 16, Relazione generale}.
 \bibitem{Chow, 1959}Chow, V.T. (1959) \textit{Open Channel Hydraulics}. McGraw-Hill, New York
+\bibitem{Art26} Legge Regionale n° 9 del 28 gennaio 1993, art.26
 \bibitem{HEC-RAS}U.S. Army Corps of Engineers (2020) \textit{HEC-RAS River Analysis System - Hydraulic Reference Manual}. 
 \end{thebibliography}
 
