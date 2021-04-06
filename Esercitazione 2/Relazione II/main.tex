@@ -227,7 +227,7 @@ Entrambe le analisi sono state condotte tramite uso del software Hec-Ras.
     ks=\frac{Q}{\Omega^{5/3}p^{-2/3}\sqrt{i_F}}=\frac{Q}{(BY)^{5/3}(B+2Y)^{-2/3}\sqrt{i_F}}
 \end{equation}
 
-\noindent Qualora il $ks$ delle pareti, tuttavia, sia diverso dal $ks$ del fondo, il $ks$ totale è dato da una media ponderata tra i due:
+\noindent Se il $ks$ delle pareti, tuttavia, è diverso dal $ks$ del fondo, il $ks$ totale è dato da una media ponderata tra i due:
 
 \begin{equation}
     ks_{tot} = \frac{Bks_{fondo} + 2Yks_{pareti}}{B+2Y}
@@ -561,7 +561,7 @@ Le quote misurate sono riportate nella Tabella \ref{tab:TTT} e il profilo di cor
 \section{Caso studio: torrente Sturla}
 \subsection{Descrizione del problema}
 \noindent Nella seconda parte della relazione l’analisi si concentra sul caso di un alveo torrentizio esistente, il torrente Sturla, che scorre nel territorio ligure passando per il comune di Carasco (GE), dove si colloca il tratto d’interesse. Il corso d’acqua è stato opportunamente modellato tramite il software Hec-Ras 4.1, nel quale sono stati inseriti i dati di rilevamento delle sezioni caratteristiche.
-L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benché il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 m sotto le campate del ponte venga rispettato dalla corrente in piena.
+L’oggetto di studio è la verifica idraulica del livello inferiore del ponte presente nella località di San Pietro di Sturla, il quale ha subìto un crollo nel 2013 in seguito a un evento di piena, benché il fenomeno non fosse particolarmente critico. Lo scopo è osservare quale sia il pelo libero d’acqua raggiunto nel torrente in seguito a eventi di piena di varia criticità e verificare se il franco di 1 $m$ sotto le campate del ponte venga rispettato dalla corrente in piena.
 In particolare, la verifica idraulica viene condotta in due situazioni distinte:
 
 \begin{itemize}
@@ -637,11 +637,11 @@ Di seguito si riporta la geometria dell'alveo interpolato:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.72]{GeometriaSturla.PNG}
+    \includegraphics[scale=0.69]{GeometriaSturla.PNG}
     \caption{Geometria dell'alveo interpolata con software Hec-Ras}
 \end{figure}
 
-\noindent La determinazione della scabrosità dell'alveo più adatta alla condizione reale avviene suddividendo il letto nei tratti con caratteristiche differenti, per descriverne accuratamente la scabrezza lungo la sezione trasversale. I valori di scabrosità delle superfici utilizzati sono riportati al manuale del software, dov'è possibile trovare i coefficienti di Manning suddivisi per tipologia di alveo fluviale e copertura del letto (Tabella \ref{tab:Manning_alvei}):
+\noindent La determinazione della scabrosità di un alveo reale avviene suddividendo il letto, lungo la sezione trasversale, nei tratti con caratteristiche di scabrezza differenti. Una raccolta estensiva dei coefficienti di Manning per corsi d'acqua e pianure d'inondazione può essere trovata nel libro di Chow "Open-Channel Hydraulics" (Chow, 1959). Un estratto del libro di Chow è presentato nel manuale del software, dov'è possibile trovare i valori di $n$ suddivisi per tipologie di alveo fluviale e copertura del letto (Tabella \ref{tab:Manning_alvei}):
 
 \begin{table}[H]
     \centering
@@ -663,7 +663,7 @@ Di seguito si riporta la geometria dell'alveo interpolato:
         \hspace{1.5pt} Cemento & cemento con rifinitura tallocciata & 0.015\\
         \hline
     \end{tabular}
-    \caption{Valori di scabrezza relativi alla copertura del letto fluviale}
+    \caption{Valori di scabrezza relativi alla copertura del letto fluviale (Chow, 1959)}
     \label{tab:Manning_alvei}
 \end{table}
 
@@ -685,7 +685,7 @@ La portata di progetto si è ricavata consultando il Piano di Bacino relativo al
 \end{table}
 
 \subsubsection{Modellazione idraulica}
-\noindent La simulazione dell'evento di piena viene condotta con l'uso di HEC-RAS, utilizzato in precedenza per condurre le analisi di laboratorio. Il programma permettere di riprodurre in maniera realistica qualsiasi condizione di moto stazionario all'interno di un determinato alveo, previo l'inserimento di un'adeguata geometria descrittiva, della portata fluente e delle condizioni al contorno della corrente.\\
+\noindent La simulazione dell'evento di piena viene condotta con l'uso di HEC-RAS, utilizzato in precedenza per condurre le analisi di laboratorio. Il programma permette di riprodurre in maniera realistica qualsiasi condizione di moto stazionario all'interno di un determinato alveo, previo l'inserimento di un'adeguata geometria descrittiva, della portata fluente e delle condizioni al contorno della corrente.\\
 Per procedere con la simulazione delle piene è necessario impostare le condizioni al contorno del dominio di calcolo, cioè le caratteristiche della corrente nella sezione a monte e a valle dell'alveo.\\
 Nel caso di deflusso normale, le condizioni imposte sono di moto uniforme sia a monte che a valle. Per ottenere tali condizioni è necessario imporre la pendenza di moto uniforme alle estremità dell'alveo, in tal caso 0.02\% a monte e 2\% a valle.\\
 Nel caso di regime con deflusso rigurgitato, invece, a valle si prefissa una quota di pelo libero da rispettare, da sommare all'altezza del fondo pari a 21.15 $m$.\\
@@ -737,7 +737,7 @@ Nel resto dell'asta fluviale il profilo di corrente si mantiente più alto della
 \newpage
 
 \noindent Riguardo alla scabrosità, è possibile evidenziare il legame esistente tra le condizioni di scabrezza e il profilo di corrente conducendo una serie di simulazioni in cui si varia unicamente il coefficiente di Manning.
-I seguenti grafici riportano i risultati di due simulazioni condotte imponendo un fattore moltiplicativo pari a 2 e a 0.5 sul parametro di scabrosità:
+I seguenti grafici riportano i risultati di due simulazioni condotte imponendo un fattore moltiplicativo pari a 2 e a 0.5 sul coefficiente $n$:
 
 \begin{figure}[H]
     \centering
@@ -877,7 +877,7 @@ Un possibile evento con frequenza di 200 anni, invece, genererebbe un tirante su
     \caption{Sezione ponte - deflusso rigurgitato, Tr=500 anni}
 \end{figure}
 
-\noindent In queste condizioni la quota di tirante presenta un notevole incremento in tutto il tratto di valle. Il livello di corrente supera più spesso l'altezza d'intradosso, mandando in crisi la struttura del ponte sia per eventi con tempi di ritorno di 200 anni che di 500 anni. Per eventi con frequente di 50 anni, invece, il ponte risulta verificato.
+\noindent In queste condizioni la quota di tirante presenta un notevole incremento in tutto il tratto di valle. Il livello di corrente supera più spesso l'altezza d'intradosso, mandando in crisi la struttura del ponte sia per eventi con tempi di ritorno di 200 anni che di 500 anni. Per eventi con frequente di 50 anni, invece, la stabilità del ponte risulta verificata.
 
 \begin{table}[H]
     \centering
@@ -911,7 +911,8 @@ Per ottenere una condizione a favore di sicurezza, è opportuno rinforzare il le
 \newpage
 \begin{thebibliography}{}
 \bibitem{Appunti del corso}Appunti del corso
-\bibitem{Piano di Bacino} Autorità di Bacino Distrettuale dell'Appennino Settentrionale (2020) \textit{Ambito regionale di Bacino 16, Piano di Bacino - Stralcio sul rischio idrogeologico}.
+\bibitem{Piano di Bacino} Autorità di Bacino Distrettuale dell'Appennino Settentrionale (2020) \textit{Piano di Bacino stralcio sul rischio idrogeologico AMBITO 16, Relazione generale}.
+\bibitem{Chow, 1959}Chow, V.T. (1959) \textit{Open Channel Hydraulics}. McGraw-Hill, New York
 \bibitem{Art26} Legge Regionale n° 9 del 28 gennaio 1993, art.26
 \bibitem{HEC-RAS}U.S. Army Corps of Engineers (2020) \textit{HEC-RAS River Analysis System - Hydraulic Reference Manual}. 
  
