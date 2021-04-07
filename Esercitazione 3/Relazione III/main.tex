@@ -320,7 +320,7 @@ e dove $C^2$ è uguale a:
     F=\begin{vmatrix}Q\\\frac{Q^2}{\Omega}+g\frac{\Omega^2}{2B}\end{vmatrix} &&
     S=\begin{vmatrix}0\\g\Omega(i_F-j)\end{vmatrix}
 \end{align*}
-\noindent Il termine $S(U)$ è detto termine sorgente. 
+\noindent dove $U$ è il vettore delle incognite, $F(U)$ è il vettore dei flussi e $S(U)$ è il vettore delle sorgenti (Toro, 2009). 
 \subsubsection{Forma conservativa ridotta}
 \noindent Trovandoci nelle condizioni di alveo cilindrico e rettangolare, possiamo semplificare il sistema (\ref{eqn:cons_massa_cons}), (\ref{eqn:cons_q_moto_cons}) dividendo entrambe le equazioni per la larghezza della superficie libera $B$, che è una costante. Otterremo perciò:
 \begin{equation}
@@ -642,7 +642,7 @@ Possiamo notare che i termini dell'uguaglianza rappresentano nientemeno che le a
         \begin{equation}
         \begin{split}
            &F_{i+\frac{1}{2}}^{LW}=F(U_{i+\frac{1}{2}}^{LW}) \\
-           &U_{i+\frac{1}{2}}^{LW}=\frac{1}{2}\left(U_i^n+U_{i+1}^n\right)+\frac{1}{2}\frac{\Delta t}{\Delta x}\left(F_i^n-F_{i+1}^n\right)
+           &U_{i+\frac{1}{2}}^{LW}=\frac{1}{2}\left(U_i^n+U_{i+1}^n\right)+\frac{1}{2}\frac{\Delta t}{\Delta x}\left(F(U_i^n)-F(U_{i+1}^n)\right)
         \end{split}
         \label{eqn:Lax-Wendroff}
     \end{equation}
@@ -652,7 +652,58 @@ Possiamo notare che i termini dell'uguaglianza rappresentano nientemeno che le a
         \label{eqn:FORCE}
         \end{equation}
 \end{itemize}
-\subsubsection{Metodo di Runge-Kutta}
+\subsubsection{Metodo dello splitting}
+
+\noindent Un modo per costruire metodi di risoluzione di sistemi non omogenei della forma (\ref{eqn:forma_cons_vett}):
+
+\begin{equation}
+    U_t+F(U)_x=S(U)
+    \label{eqn:sistema_EDP_non_omogenea}
+\end{equation}
+
+\noindent è quello di dividere (inglese \textit{split}) (\ref{eqn:sistema_EDP_non_omogenea}), per un tempo $\Delta t$, nel problema iperbolico di avvezione pura:
+
+\begin{equation}
+    U_t+F(U)_x = 0
+    \label{eqn:avvezione_pura}
+\end{equation}
+
+\noindent e nel problema sorgente
+
+\begin{equation}
+    \frac{d}{dt}U = S(U)
+\end{equation}
+
+\noindent che è un sistema di Equazioni Differenziali Ordinarie (E. Toro, 2009).
+Siamo interessati a costruire metodi numerici per il PVI:
+
+\begin{equation}
+    \begin{cases} EDP:\quad &U_t+F(U)_x = S(U);\quad 0\leq x \leq L\\
+    CI: &U(x,t^n)=U^n
+    \end{cases}
+    \label{eqn:PVI_completo}
+\end{equation}
+
+\noindent Vogliamo evolvere la soluzione dal suo valore iniziale $U^n$ al tempo $t^n$ di un passo temporale di dimensione $\Delta t$, sino ad un valore $U^{n+1}$ al tempo $t^{n+1} = t^n + \Delta t$. Assumiamo che il dominio spaziale $[0, L]$ sia stato discretizzato in un numero $M$ finito di celle (approccio ai volumi finiti). Lo schema di splitting è:
+
+\begin{equation}
+    \left\{\begin{array}{lr}
+        EDP: & U_t+F(U)_x = 0\\
+        CI: & U(x,t^n)=U^n
+        \end{array}
+    \right. \Longrightarrow \tilde{U}^{n+1}
+    \label{eqn:PVI_avvettivo}
+\end{equation}
+
+\begin{equation}
+    \left\{\begin{array}{lr}
+        EDO: & \frac{d}{dt}U = S(U)\\
+        CI: & U(x,t^n)=\tilde{U}^{n+1}
+        \end{array}
+    \right. \Longrightarrow U^{n+1}
+\end{equation}
+
+\noindent La soluzione iniziale per il problema avvettivo (\ref{eqn:PVI_avvettivo}) è la soluzione iniziale per il problema completo (\ref{eqn:PVI_completo}). La soluzione di (\ref{eqn:PVI_avvettivo}) dopo un tempo $\Delta t$ si denota con $\tilde{U}^{n+1}$ ed è usata come condizione iniziale per il secondo PVI. Il secondo PVI tiene conto della presenza del termine sorgente $S(U)$ ed è anch'esso risolto per un passo temporale completo $\Delta t$; questa soluzione è poi considerata come un'approsimazione per la soluzione $U^{n+1}$ del problema completo (\ref{eqn:PVI_completo}) ad un tempo $t^{n+1}=t^n+\Delta t$.
 
 \subsection{Analisi dei metodi numerici adottati}
 \subsubsection{Consistenza e convergenza}
@@ -1072,7 +1123,9 @@ Quarteroni A. (2006) \textit{Modellistica numerica per problemi differenziali}. 
 \bibitem{Salsa S. 2016}
 Salsa S. (2016) \textit{Equazioni a Derivate Parziali. Metodi, Modelli e Applicazioni}. Springer-Verlag Italia, Milano
 \bibitem{Toro E. F. 2001}
-Toro E. F. (2001) \textit{Shock-Capturing Methods for Free-Surface Shallow Flows}. John Wiley $\And$ Sons, LTD, Chichester New York Weinheim Brisbane Singapore Toronto 
+Toro E. F. (2001) \textit{Shock-Capturing Methods for Free-Surface Shallow Flows}. John Wiley $\And$ Sons, LTD, Chichester New York Weinheim Brisbane Singapore Toronto
+\bibitem{Toro E. F. 2009}
+Toro, Eleuterio F. (2009) \textit{Riemann Solvers and Numerical Methods for Fluid Dynamics : A Practical Introduction}. Springer Berlin / Heidelberg 
 \end{thebibliography}
 
 
