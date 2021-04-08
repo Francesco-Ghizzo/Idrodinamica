@@ -27,10 +27,12 @@ def FORCE( U, dt, dx ):
 
 def Source( U ):
     '''Termine Sorgente'''
-    ...
+    S = np.array([0, g*U[0]*(iF-j))
     return S
 
 def RK2( S, U, dt ):
     '''Schema di Runge-Kutta del secondo ordine'''
-    ...
-    return ...
+    K1 = dt*S[:,:]
+    K2 = dt*Source(U+K1)
+    Unknown = U + 0.5*(K1+K2)
+    return Unknown
