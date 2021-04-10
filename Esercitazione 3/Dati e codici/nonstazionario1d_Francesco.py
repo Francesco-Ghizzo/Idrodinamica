@@ -125,12 +125,12 @@ def PhysFlux( U ):
 
 def LaxFriedrichs( U, dt, dx ):
     '''Flusso Numerico di Lax-Friedrichs'''
-    NumFlux = 0.5*(PhysFlux(U[:,:-2]))+PhysFlux(U[:,1:-1])-0.5*(dx/dt)*(U[:,1:-1]-U[:,:-2])
+    NumFlux = 0.5*(PhysFlux(U[:,:-1]))+PhysFlux(U[:,1:])-0.5*(dx/dt)*(U[:,1:]-U[:,:-1])
     return NumFlux
 
 def LaxWendroff( U, dt, dx ):
     '''Flusso Numerico di Lax-Wendroff'''
-    U = 0.5*(U[:,1:-1]+U[:,2:])+0.5*(dt/dx)*(PhysFlux(U[:,1:-1])-PhysFlux(U[:,2:]))
+    U = 0.5*(U[:,:-1]+U[:,1:])+0.5*(dt/dx)*(PhysFlux(U[:,:-1])-PhysFlux(U[:,1:]))
     NumFlux = PhysFlux(U)
     return NumFlux
 
@@ -228,7 +228,7 @@ for n in range( NMAX ):
 
     # Aggiorna Parte Iperbolica
     # -------------------------
-    U[:,1:-1] -= dt/dx * ( Flux[:,2:] - Flux[:,:-2] )
+    U[:,1:-1] -= dt/dx * ( Flux[:,1:] - Flux[:,:-1] )
 
     # Soluzione Termine Sorgente
     U = RK2( Source, U, dt )
