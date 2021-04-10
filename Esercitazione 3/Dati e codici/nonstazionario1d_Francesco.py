@@ -141,7 +141,9 @@ def FORCE( U, dt, dx ):
 
 def Source( U ):
     '''Termine Sorgente'''
-    S = np.array([0, g*U[0]*(iF-j)])
+    Y, q = U
+    j = (q**2)/(Y**(10/3)*ks**2)
+    S = np.array([np.zeros( IMAX+2 ), g*U[0]*(iF-j)])
     return S
 
 def RK2( S, U, dt ):
