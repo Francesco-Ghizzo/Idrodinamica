@@ -146,10 +146,10 @@ def Source( U ):
 
 def RK2( S, U, dt ):
     '''Schema di Runge-Kutta del secondo ordine'''
-    K1 = dt*S[:,:]
-    K2 = dt*Source(U+K1)
-    Unknown = U + 0.5*(K1+K2)
-    return Unknown
+    K1 = dt*S(U)
+    K2 = dt*S(U+K1)
+    U = U + 0.5*(K1+K2)
+    return U
 
 
 # =============================================
