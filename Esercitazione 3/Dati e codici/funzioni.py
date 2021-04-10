@@ -11,7 +11,7 @@ def PhysFlux( U ):
 
 def LaxFriedrichs( U, dt, dx ):
     '''Flusso Numerico di Lax-Friedrichs'''
-    NumFlux = 0.5*(PhysFlux(U[:,:-1]))+PhysFlux(U[:,:]))-0.5*(dx/dt)*(U[:,:]-U[:,:-1])
+    NumFlux = 0.5*(PhysFlux(U[:,:-1]))+PhysFlux(U[:,:])-0.5*(dx/dt)*(U[:,:]-U[:,:-1])
     return NumFlux
 
 def LaxWendroff( U, dt, dx ):
@@ -27,7 +27,7 @@ def FORCE( U, dt, dx ):
 
 def Source( U ):
     '''Termine Sorgente'''
-    S = np.array([0, g*U[0]*(iF-j))
+    S = np.array([0, g*U[0]*(iF-j)])
     return S
 
 def RK2( S, U, dt ):
