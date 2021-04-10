@@ -43,7 +43,7 @@ g = 9.81 # Accelerazione di gravita' [m/s^2]
 iF = 0.001 # Pendenza costante del canale [-]
 L = 100e3 # Lunghezza del canale [m]
 IMAX = 10000 # Numero di celle del dominio [-]
-NMAX = 100000 # Numero massimo di iterazioni temporali [-]
+NMAX = 3 # Numero massimo di iterazioni temporali [-]
 ks = 30 # Coefficiente di scabrezza del fondo [m^(1/2)/s]
 TIMEOUT = 3600e1 # Tempo finale della simulazione [s]
 CFL = 0.9 # Coefficiente di Courant-Friedrichs-Levy # [-]
@@ -251,7 +251,7 @@ N = len(file_list)
 cols = plt.cm.Spectral_r(np.linspace(0,1,N)) # Sequenza di colori
 Nplots = 100
 plt.figure()
-for i in xrange(0, N, int(N/Nplots)):
+for i in range(0, N, int(N/Nplots)):
     f = file_list[i]
     fname = os.path.join( cartella_output, f )
     data = np.loadtxt( fname )
