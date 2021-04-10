@@ -213,7 +213,9 @@ for n in range( NMAX ):
     # Time control
     # ------------
     if time >= TIMEOUT: break
-    ... # calcolare dt!
+    lambda_pos = u + np.sqrt(g*Y[1:-1]) 
+    lambda_neg = u - np.sqrt(g*Y[1:-1]) # in realtà non serve calcolare il negativo perché sia u che la radice quadrata sono sempre positivi
+    dt = CFL*dx/max(max(lambda_pos),abs(lambda_neg)) # calcolare dt!
     if time+dt > TIMEOUT: dt = TIMEOUT-time
 
     # Condizioni al Contorno
