@@ -372,7 +372,7 @@ dove:
 \noindent Le equazioni(\ref{eqn:cons_massa_cons_rid}) e (\ref{eqn:cons_q_moto_quasi_lin}) sono purtroppo equazioni differenziali non lineari (sono presenti infatti prodotti fra le incognite $Y$ e $q$), ma fortunatamente quasi-lineari (sono lineari rispetto alle derivate di $Y$ e $q$ di ordine massimo (Salsa S. 2016)). 
 
 \subsubsection{Forma caratteristica}
-\noindent Come abbiamo visto, in alcuni casi specifici le equazioni del flusso si riducono a sistemi di equazioni differenziali parziali del primo ordine quasi-lineari per due variabili indipendenti. Per tali sistemi può essere sviluppata una pressoché completa trattazione matematica, a patto che siano di natura iperbolica. Questa trattazione diventa particolarmente semplice quando il numero di funzioni ed equazioni è uguale a due (Courant R., Friedrichs K. O. 1977). \\
+\noindent Come abbiamo visto, in alcuni casi specifici le equazioni del flusso si riducono a sistemi di equazioni differenziali parziali del primo ordine quasi-lineari per due variabili indipendenti. Per tali sistemi può essere sviluppata una pressoché completa trattazione matematica, a patto che siano di natura iperbolica. Questa trattazione diventa particolarmente semplice quando il numero di funzioni ed equazioni è uguale a due (Courant \& Friedrichs, 1977). \\
 \noindent Sistemi di equazioni di questo tipo si presentano nella forma:
 \begin{equation}
     \frac{\partial U_i}{\partial t}+J_{ik}\frac{\partial U_k}{\partial x}-S_i  = 0
@@ -383,7 +383,7 @@ dove:
     \item $i$ rappresenta l'indice non ripetuto
     \item $k$ rappresenta l'indice ripetuto
 \end{itemize}
-\noindent Il problema più comune associato a tali sistemi è il seguente problema di valore iniziale (PVI): dati i valori della funzione sconosciuta al tempo $t=0$ $U(x,0)$, usare le equazioni per determinare l’evoluzione nel tempo della funzione $U(x,t)$ (Ben-Artzi M., Falcovitz J. 2003).\\
+\noindent Il problema più comune associato a tali sistemi è il seguente problema di valore iniziale (PVI): dati i valori della funzione sconosciuta al tempo $t=0$ $U(x,0)$, usare le equazioni per determinare l’evoluzione nel tempo della funzione $U(x,t)$ (Ben-Artzi \& Falcovitz, 2003).\\
 Al fine di conoscere il valore della funzione incognita nel punto $(x,t)$, possiamo provare a connettere il punto $(x,t)$ con il punto $(x_0,0)$ sull'asse $x$, portante il dato iniziale, mediante una curva $x=x(t)$ lungo la quale $U$ sia costante. Una curva di questo tipo prende il nome di curva caratteristica. Se poi il procedimento si può ripetere per ogni punto $(x,t)$ con  $x\in D \subseteq \mathbb{R}, t>0$, possiamo calcolare $ U$ in ogni punto ed il problema è risolto. Questo metodo è detto metodo delle caratteristiche (Salsa S. 2016).\\
 L'idea è quella di assumere un atteggiamento lagrangiano. Si definisce innanzitutto la cosiddetta derivata materiale:
 \begin{equation}
@@ -521,7 +521,7 @@ L'idea è quella di assumere un atteggiamento lagrangiano. Si definisce innanzit
 \noindent La definizione del vettore delle incognite $U$ agli estremi del dominio di integrazione per $t \geq 0$ assicura la possibilità di risolvere la (\ref{eqn:forma_cons_rid_vett}) su tutto il dominio spaziale e per ciascun istante temporale $t \geq 0$.
 
 \subsection{Rottura di una diga}
-\noindent Le dighe sono serbatoi artificiali che immagazzinano grandi volumi di acqua confinata da elevazioni naturali del terreno, come un canyon o una valle, e pareti artificiali. Tuttavia, sebbene abbiano comportato numerosi benefici per la società, come fonti di acqua per il consumo umano e per l'irrigazione, generazione di energia idroelettrica e controllo di piene, lungo gli anni le dighe sono state anche al centro di numerosi eventi catastrofici. Questi eventi possono essere la conseguenza diretta del crollo improvviso delle pareti della diga. Tali crolli possono a loro volta indurre un flusso d'acqua che causa devastazione lungo il suo cammino nelle valli, con danni considerevoli alle proprietà e perdita di vite umane . I processi che portano al collasso di una diga sono vari e estremamente complessi. Come parte dell'analisi del rischio per la protezione civile, devono essere prodotte mappe di inondazione. Queste sono attualmente basate sulla simulazione numerica delle onde di propagazione. Le equazioni su acqua bassa dipendenti dal tempo, a una o due dimensioni spaziali, sono normalmente accettate come modello matematico base per studiare i fenomeni di propagazione delle onde indotti da eventi di collasso di una diga (Toro E. F. 2001).
+\noindent Le dighe sono serbatoi artificiali che immagazzinano grandi volumi di acqua confinata da elevazioni naturali del terreno, come un canyon o una valle, e pareti artificiali. Tuttavia, sebbene abbiano comportato numerosi benefici per la società, come fonti di acqua per il consumo umano e per l'irrigazione, generazione di energia idroelettrica e controllo di piene, lungo gli anni le dighe sono state anche al centro di numerosi eventi catastrofici. Questi eventi possono essere la conseguenza diretta del crollo improvviso delle pareti della diga. Tali crolli possono a loro volta indurre un flusso d'acqua che causa devastazione lungo il suo cammino nelle valli, con danni considerevoli alle proprietà e perdita di vite umane . I processi che portano al collasso di una diga sono vari e estremamente complessi. Come parte dell'analisi del rischio per la protezione civile, devono essere prodotte mappe di inondazione. Queste sono attualmente basate sulla simulazione numerica delle onde di propagazione. Le equazioni su acqua bassa dipendenti dal tempo, a una o due dimensioni spaziali, sono normalmente accettate come modello matematico base per studiare i fenomeni di propagazione delle onde indotti da eventi di collasso di una diga (Toro, 2001).
 
 \begin{figure} [H]
     \centering
@@ -532,9 +532,9 @@ L'idea è quella di assumere un atteggiamento lagrangiano. Si definisce innanzit
 
 \subsubsection{Modello 1D}
 \noindent Si immagini un canale orizzontale di sezione rettangolare uniforme. Si supponga inoltre che il canale presenti due livelli costanti di pelo libero, entrambi a riposo, separati da un muro alla posizione $x=0$ (Figura \ref{fig:Dam Break}).
-\noindent Se la parete che separa i due livelli costanti collassa, due caratteristiche dominanti emergono dal processo nella forma di onde. Un'onda rivolta verso destra viaggia nella porzione poco profonda del fluido, aumentando la profondità \textit{ex abrupto}. L'onda rivolta verso sinistra viaggia nella regione di acqua profonda e ha l'effetto di ridurre l'altezza del pelo libero. Se la parete collassa in un tempo sufficientemente piccolo, il modello ondulatorio che emerge è quasi quello di un sistema ondulatorio centrato con un'onda di rarefazione a sinistra ed un'onda di shock a destra; tali sistemi ondulatori possono essere approssimati dalle equazioni su acqua bassa (Toro E. F. 2001).
+\noindent Se la parete che separa i due livelli costanti collassa, due caratteristiche dominanti emergono dal processo nella forma di onde. Un'onda rivolta verso destra viaggia nella porzione poco profonda del fluido, aumentando la profondità \textit{ex abrupto}. L'onda rivolta verso sinistra viaggia nella regione di acqua profonda e ha l'effetto di ridurre l'altezza del pelo libero. Se la parete collassa in un tempo sufficientemente piccolo, il modello ondulatorio che emerge è quasi quello di un sistema ondulatorio centrato con un'onda di rarefazione a sinistra ed un'onda di shock a destra; tali sistemi ondulatori possono essere approssimati dalle equazioni su acqua bassa (Toro, 2001).
 \subsubsection{PVI}
-\noindent Una generalizzazione per le equazioni su acqua bassa del problema della rottura di una diga è il cosiddetto problema di Riemann. Formalmente, il problema di Riemann è definito come il seguente problema ai valori iniziali (Toro E. F. 2001):
+\noindent Una generalizzazione per le equazioni su acqua bassa del problema della rottura di una diga è il cosiddetto problema di Riemann. Formalmente, il problema di Riemann è definito come il seguente problema ai valori iniziali (Toro, 2001):
 \begin{equation}
     \frac{\partial U}{\partial t}+\frac{\partial F(U)}{\partial x}=0
     \label{eqn:Riemann}
@@ -550,7 +550,7 @@ L'idea è quella di assumere un atteggiamento lagrangiano. Si definisce innanzit
 \section{Metodologia}
 \subsection{Metodi numerici adottati}
 \subsubsection{Metodi numerici conservativi}
-\noindent Si consideri il sistema unidimensionale di leggi di conservazione (\ref{eqn:Riemann}). Questa è chiamata forma differenziale delle leggi di conservazione ed è valida soltanto per il caso in cui la soluzione è regolare su tutto il dominio. Nella presenza di discontinuità, dev'essere usata la formulazione integrale (Toro E. F. 2001).
+\noindent Si consideri il sistema unidimensionale di leggi di conservazione (\ref{eqn:Riemann}). Questa è chiamata forma differenziale delle leggi di conservazione ed è valida soltanto per il caso in cui la soluzione è regolare su tutto il dominio. Nella presenza di discontinuità, dev'essere usata la formulazione integrale (Toro, 2001).
 \noindent Applichiamo ora il Teorema di Green (Pagani C. D., Salsa S. 2016)
 \begin{equation}
     \oint f(x,t)dx + g(x,t)dt = \iint \left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial t}\right)dxdt
@@ -646,12 +646,13 @@ Possiamo notare che i termini dell'uguaglianza rappresentano nientemeno che le a
         \end{split}
         \label{eqn:Lax-Wendroff}
     \end{equation}
-    \item Metodo FORCE (First Order Centered)(Toro E. F. 2001)
+    \item Metodo FORCE (First Order Centered)(Toro, 2001)
     \begin{equation}
         F_{i+\frac{1}{2}}^{TO}=\frac{1}{2}\left[F_{i+\frac{1}{2}}^{LF}+F_{i+\frac{1}{2}}^{LW}\right]
         \label{eqn:FORCE}
         \end{equation}
 \end{itemize}
+
 \subsubsection{Metodo dello splitting}
 
 \noindent Un modo per costruire metodi di risoluzione di sistemi non omogenei della forma (\ref{eqn:forma_cons_vett}):
@@ -672,9 +673,10 @@ Possiamo notare che i termini dell'uguaglianza rappresentano nientemeno che le a
 
 \begin{equation}
     \frac{d}{dt}U = S(U)
+    \label{eqn:sorgente}
 \end{equation}
 
-\noindent che è un sistema di Equazioni Differenziali Ordinarie (E. Toro, 2009).
+\noindent che è un sistema di Equazioni Differenziali Ordinarie (Toro, 2009).
 Siamo interessati a costruire metodi numerici per il PVI:
 
 \begin{equation}
@@ -701,14 +703,31 @@ Siamo interessati a costruire metodi numerici per il PVI:
         CI: & U(x,t^n)=\tilde{U}^{n+1}
         \end{array}
     \right. \Longrightarrow U^{n+1}
+    \label{eqn:PVI_EDO}
 \end{equation}
 
-\noindent La soluzione iniziale per il problema avvettivo (\ref{eqn:PVI_avvettivo}) è la soluzione iniziale per il problema completo (\ref{eqn:PVI_completo}). La soluzione di (\ref{eqn:PVI_avvettivo}) dopo un tempo $\Delta t$ si denota con $\tilde{U}^{n+1}$ ed è usata come condizione iniziale per il secondo PVI. Il secondo PVI tiene conto della presenza del termine sorgente $S(U)$ ed è anch'esso risolto per un passo temporale completo $\Delta t$; questa soluzione è poi considerata come un'approsimazione per la soluzione $U^{n+1}$ del problema completo (\ref{eqn:PVI_completo}) ad un tempo $t^{n+1}=t^n+\Delta t$.
+\noindent La soluzione iniziale per il problema avvettivo (\ref{eqn:PVI_avvettivo}) è la soluzione iniziale per il problema completo (\ref{eqn:PVI_completo}). La soluzione di (\ref{eqn:PVI_avvettivo}) dopo un tempo $\Delta t$ si denota con $\tilde{U}^{n+1}$ ed è usata come condizione iniziale per il secondo PVI. Il secondo PVI tiene conto della presenza del termine sorgente $S(U)$ ed è anch'esso risolto per un passo temporale completo $\Delta t$; questa soluzione è poi considerata come un'approsimazione per la soluzione $U^{n+1}$ del problema completo (\ref{eqn:PVI_completo}) ad un tempo $t^{n+1}=t^n+\Delta t$.\\
+Un modo per costruire metodi numerici per risolvere il PVI (\ref{eqn:PVI_EDO}) è quello di integrare (\ref{eqn:sorgente}) tra $t^n$ e $t^{n+1}$ per ottenere
+\begin{equation}
+    U(t^{n+1}) = U(t^n) + \int_{t^n}^{t^{n+1}}S(U)dt
+\end{equation}
+
+\noindent Dipendendo dal modo in cui l'integrale è calcolato, vari metodi numerici possono essere ottenuti. Un metodo di Runge-Kutta di secondo ordine a due passi (esplicito) è il seguente:
+
+\begin{equation}
+    \left\{\begin{array}{ll}
+        K1 &= \Delta tS(t^n,U^n)\\
+        K2 &= \Delta tS(t^n+\Delta t, U^n+K1)\\
+        U^{n+1} &= U^n + \frac{1}{2}[K1+K2]
+         \end{array}
+    \right.
+    \label{eqn:Runge-Kutta}
+\end{equation}
 
 \subsection{Analisi dei metodi numerici adottati}
 \subsubsection{Consistenza e convergenza}
 \noindent Per un dato schema numerico, l'errore di troncamento locale $\tau$ è l'errore che si genera pretendendo che la soluzione esatta verifichi lo schema numerico stesso.
-Per uno schema unidimensionale, $\tau$ è  funzione del passo di discretizzazione temporale $\Delta t$ e  dell'intervallo di discretizzazione spaziale $\Delta x$. Lo schema numerico si dirà consistente se l'errore di troncamento $\tau(\Delta t, \Delta x)$ tende a zero quando $\Delta t$ e $\Delta x$ tendono a zero (Quarteroni A. 2006).
+Per uno schema unidimensionale, $\tau$ è  funzione del passo di discretizzazione temporale $\Delta t$ e  dell'intervallo di discretizzazione spaziale $\Delta x$. Lo schema numerico si dirà consistente se l'errore di troncamento $\tau(\Delta t, \Delta x)$ tende a zero quando $\Delta t$ e $\Delta x$ tendono a zero (Quarteroni, 2006).
 \subsubsection{Stabilità}
 \noindent Molto spesso nel contesto di problemi iperbolici si cercano soluzioni per tempi lunghi (cioè per $T\gg1$). In questi casi è richiesta la forte stabilità dello schema, in quanto essa garantisce che la soluzione numerica sia limitata per ogni valore di $T$. In uno schema alle differenze finite come (\ref{eqn:Riemann_discreto}), il valore di $U_i^{n+1}$ dipende, in generale, soltanto dai valori di $U^{n}_{i-\frac{1}{2}}$, $U^{n}_{i}$ e $U^{n}_{i+\frac{1}{2}}$. Procedendo all'indietro si desume che la soluzione $U_i^{n+1}$ dipenderà solo dai dati iniziali nei punti $x_{i-\frac{1}{2}}$, $x_i$ e $x_{i+\frac{1}{2}}$, vale a dire $x_i\pm\:\textrm{un certo}\:\Delta x$. Fissato un tempo $t$, il luogo dei punti che giacciono sull'asse delle $x$ che influenzano la soluzione al tempo $t+\Delta t$ è chiamato dominio di dipendenza numerico. Condizione necessaria affinché uno schema numerico esplicito della forma (60) sia stabile, è che $U^{n}_{i-\frac{1}{2}}$, $U^{n}_{i}$ e $U^{n}_{i+\frac{1}{2}}$ non cadano mai al di fuori del dominio di dipendenza numerico di $U_i^{n+1}$ (Figura \ref{fig:CFL}). 
 \begin{figure}
@@ -724,7 +743,7 @@ Per uno schema unidimensionale, $\tau$ è  funzione del passo di discretizzazion
 \end{equation}
 \noindent dove:
 \begin{itemize}
-    \item $\lambda$ è il maggiore autovalore soluzione dell'equazione \ref{eqn:determinante_uguale_zero}.
+    \item $\lambda$ è il maggiore autovalore soluzione dell'equazione (\ref{eqn:determinante_uguale_zero}).
 \end{itemize}
 \noindent Il rapporto $\frac{\lambda}{\Delta t/\Delta x}$ rappresenta una quantità adimensionale detta numero di CFL (da Courant, Friedrichs e Lewy) o numero di Courant. La relazione (\ref{eqn:Courant}) si riassume quindi a: 
 \begin{equation}
@@ -1112,20 +1131,20 @@ Un'analisi qualitativa del grafico ci mostra come i cappi delle onde più brevi 
 
 \newpage
 \begin{thebibliography}{}
-\bibitem{Ben-Artzi M., Falcovitz J. 2003}
-Ben-Artzi M., Falcovitz J. (2003) \textit{Generalized Riemann Problems in Computational Fluid Dynamics}. Cambridge University Press
-\bibitem{Courant R., Friedrichs K. O. 1977}
-Courant R., Friedrichs K. O. (1977) \textit{Supersonic Flow and Shock Waves}. Springer-Verlag, New York Heidelberg Berlin
-\bibitem{Pagani C. D., Salsa S. 2016}
-Pagani C. D., Salsa S. (2016) \textit{Analisi Matematica 2}. Zanichelli, Bologna
-\bibitem{Quarteroni A. 2006}
-Quarteroni A. (2006) \textit{Modellistica numerica per problemi differenziali}. Springer-Verlag Italia, Milano
-\bibitem{Salsa S. 2016}
-Salsa S. (2016) \textit{Equazioni a Derivate Parziali. Metodi, Modelli e Applicazioni}. Springer-Verlag Italia, Milano
-\bibitem{Toro E. F. 2001}
-Toro E. F. (2001) \textit{Shock-Capturing Methods for Free-Surface Shallow Flows}. John Wiley $\And$ Sons, LTD, Chichester New York Weinheim Brisbane Singapore Toronto
-\bibitem{Toro E. F. 2009}
-Toro, Eleuterio F. (2009) \textit{Riemann Solvers and Numerical Methods for Fluid Dynamics : A Practical Introduction}. Springer Berlin / Heidelberg 
+\bibitem{Ben-Artzi & Falcovitz, 2003}
+Ben-Artzi, M. \& Falcovitz, J. (2003) \textit{Generalized Riemann Problems in Computational Fluid Dynamics}. Cambridge University Press
+\bibitem{Courant & Friedrichs, 1977}
+Courant, R. \& Friedrichs, K. O. (1977) \textit{Supersonic Flow and Shock Waves}. Springer-Verlag, New York Heidelberg Berlin
+\bibitem{Pagani & Salsa, 2016}
+Pagani, C. D. \& Salsa, S. (2016) \textit{Analisi Matematica 2}. Zanichelli, Bologna
+\bibitem{Quarteroni, 2006}
+Quarteroni, A. (2006) \textit{Modellistica numerica per problemi differenziali}. Springer-Verlag Italia, Milano
+\bibitem{Salsa, 2016}
+Salsa, S. (2016) \textit{Equazioni a Derivate Parziali. Metodi, Modelli e Applicazioni}. Springer-Verlag Italia, Milano
+\bibitem{Toro, 2001}
+Toro, E. F. (2001) \textit{Shock-Capturing Methods for Free-Surface Shallow Flows}. John Wiley $\And$ Sons, LTD, Chichester New York Weinheim Brisbane Singapore Toronto
+\bibitem{Toro, 2009}
+Toro, E. F. (2009) \textit{Riemann Solvers and Numerical Methods for Fluid Dynamics : A Practical Introduction}. Springer Berlin / Heidelberg 
 \end{thebibliography}
 
 
