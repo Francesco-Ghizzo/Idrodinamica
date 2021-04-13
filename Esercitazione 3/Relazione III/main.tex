@@ -378,21 +378,17 @@ dove:
     \frac{\partial U_i}{\partial t}+J_{ik}\frac{\partial U_k}{\partial x}-S_i  = 0
     \label{eqn:sistema_iperbolico}
 \end{equation}
-\noindent dove:
-\begin{itemize}
-    \item $i$ rappresenta l'indice non ripetuto
-    \item $k$ rappresenta l'indice ripetuto
-\end{itemize}
-\noindent Il problema più comune associato a tali sistemi è il seguente problema di valore iniziale (PVI): dati i valori della funzione sconosciuta al tempo $t=0$ $U(x,0)$, usare le equazioni per determinare l’evoluzione nel tempo della funzione $U(x,t)$ (Ben-Artzi \& Falcovitz, 2003).\\
+\noindent dove $i$ rappresenta l'indice non ripetuto e $k$ rappresenta l'indice ripetuto.\\
+Il problema più comune associato a tali sistemi è il seguente problema di valore iniziale (PVI): dati i valori della funzione sconosciuta al tempo $t=0$ $U(x,0)$, usare le equazioni per determinare l’evoluzione nel tempo della funzione $U(x,t)$ (Ben-Artzi \& Falcovitz, 2003).\\
 Al fine di conoscere il valore della funzione incognita nel punto $(x,t)$, possiamo provare a connettere il punto $(x,t)$ con il punto $(x_0,0)$ sull'asse $x$, portante il dato iniziale, mediante una curva $x=x(t)$ lungo la quale $U$ sia costante. Una curva di questo tipo prende il nome di curva caratteristica. Se poi il procedimento si può ripetere per ogni punto $(x,t)$ con  $x\in D \subseteq \mathbb{R}, t>0$, possiamo calcolare $ U$ in ogni punto ed il problema è risolto. Questo metodo è detto metodo delle caratteristiche (Salsa S. 2016).\\
 L'idea è quella di assumere un atteggiamento lagrangiano. Si definisce innanzitutto la cosiddetta derivata materiale:
 \begin{equation}
-    \frac{D}{Dt}=\frac{\partial }{\partial t}+\left(u\cdot\nabla\right)
+    \frac{D}{Dt}=\frac{\partial }{\partial t}+\left(v\cdot\nabla\right)
     \label{eqn:derivata_materiale_3D}
 \end{equation}
 \noindent dove:
 \begin{itemize}
-    \item $u$ è il vettore velocità del sistema di riferimento lagrangiano [$m\cdot s^{-1}$]
+    \item $v$ è il vettore velocità del sistema di riferimento lagrangiano [$m\cdot s^{-1}$]
 \end{itemize}
 \noindent In una dimensione spaziale:
 \begin{equation}
