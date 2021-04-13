@@ -551,7 +551,7 @@ L'idea è quella di assumere un atteggiamento lagrangiano. Si definisce innanzit
 \subsection{Metodi numerici adottati}
 \subsubsection{Metodi numerici conservativi}
 \noindent Si consideri il sistema unidimensionale di leggi di conservazione (\ref{eqn:Riemann}). Questa è chiamata forma differenziale delle leggi di conservazione ed è valida soltanto per il caso in cui la soluzione è regolare su tutto il dominio. Nella presenza di discontinuità, dev'essere usata la formulazione integrale (Toro, 2001).
-\noindent Applichiamo ora il Teorema di Green (Pagani C. D., Salsa S. 2016)
+\noindent Applichiamo ora il Teorema di Green (Pagani \& Salsa, 2016)
 \begin{equation}
     \oint f(x,t)dx + g(x,t)dt = \iint \left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial t}\right)dxdt
     \label{eqn:teorema_Green}
@@ -655,21 +655,21 @@ Possiamo notare che i termini dell'uguaglianza rappresentano nientemeno che le a
 
 \subsubsection{Metodo dello splitting}
 
-\noindent Un modo per costruire metodi di risoluzione di sistemi non omogenei della forma (\ref{eqn:forma_cons_vett}):
+\noindent Un approccio per costruire metodi numerici per risolvere sistemi non lineari di leggi di conservazione iperboliche come (\ref{eqn:forma_cons_vett}):
 
 \begin{equation}
     U_t+F(U)_x=S(U)
     \label{eqn:sistema_EDP_non_omogenea}
 \end{equation}
 
-\noindent è quello di dividere (inglese \textit{split}) (\ref{eqn:sistema_EDP_non_omogenea}), per un tempo $\Delta t$, nel problema iperbolico di avvezione pura:
+\noindent è quello di dividere (inglese \textit{to split}) il problema non omogeneo, per un tempo $\Delta t$, nel problema iperbolico di avvezione pura:
 
 \begin{equation}
     U_t+F(U)_x = 0
     \label{eqn:avvezione_pura}
 \end{equation}
 
-\noindent e nel problema sorgente
+\noindent e nel problema sorgente:
 
 \begin{equation}
     \frac{d}{dt}U = S(U)
@@ -686,7 +686,7 @@ Siamo interessati a costruire metodi numerici per il PVI:
     \label{eqn:PVI_completo}
 \end{equation}
 
-\noindent Vogliamo evolvere la soluzione dal suo valore iniziale $U^n$ al tempo $t^n$ di un passo temporale di dimensione $\Delta t$, sino ad un valore $U^{n+1}$ al tempo $t^{n+1} = t^n + \Delta t$. Assumiamo che il dominio spaziale $[0, L]$ sia stato discretizzato in un numero $M$ finito di celle (approccio ai volumi finiti). Lo schema di splitting è:
+\noindent Vogliamo evolvere la soluzione dal suo valore iniziale $U^n$ al tempo $t^n$ di un passo temporale di dimensione $\Delta t$, sino ad un valore $U^{n+1}$ al tempo $t^{n+1} = t^n + \Delta t$. Assumiamo che il dominio spaziale $[0, L]$ sia stato discretizzato in un numero $M$ finito di celle (approccio ai volumi finiti, Figura \ref{fig:Dominio di Calcolo}). Lo schema di splitting è:
 
 \begin{equation}
     \left\{\begin{array}{lr}
@@ -712,7 +712,7 @@ Un modo per costruire metodi numerici per risolvere il PVI (\ref{eqn:PVI_EDO}) �
     U(t^{n+1}) = U(t^n) + \int_{t^n}^{t^{n+1}}S(U)dt
 \end{equation}
 
-\noindent Dipendendo dal modo in cui l'integrale è calcolato, vari metodi numerici possono essere ottenuti. Un metodo di Runge-Kutta di secondo ordine a due passi (esplicito) è il seguente:
+\noindent Dipendendo dalla maniera in cui l'integrale è calcolato, vari metodi numerici possono essere ottenuti. Un metodo di Runge-Kutta di secondo ordine a due passi (esplicito) è il seguente:
 
 \begin{equation}
     \left\{\begin{array}{ll}
@@ -729,7 +729,7 @@ Un modo per costruire metodi numerici per risolvere il PVI (\ref{eqn:PVI_EDO}) �
 \noindent Per un dato schema numerico, l'errore di troncamento locale $\tau$ è l'errore che si genera pretendendo che la soluzione esatta verifichi lo schema numerico stesso.
 Per uno schema unidimensionale, $\tau$ è  funzione del passo di discretizzazione temporale $\Delta t$ e  dell'intervallo di discretizzazione spaziale $\Delta x$. Lo schema numerico si dirà consistente se l'errore di troncamento $\tau(\Delta t, \Delta x)$ tende a zero quando $\Delta t$ e $\Delta x$ tendono a zero (Quarteroni, 2006).
 \subsubsection{Stabilità}
-\noindent Molto spesso nel contesto di problemi iperbolici si cercano soluzioni per tempi lunghi (cioè per $T\gg1$). In questi casi è richiesta la forte stabilità dello schema, in quanto essa garantisce che la soluzione numerica sia limitata per ogni valore di $T$. In uno schema alle differenze finite come (\ref{eqn:Riemann_discreto}), il valore di $U_i^{n+1}$ dipende, in generale, soltanto dai valori di $U^{n}_{i-\frac{1}{2}}$, $U^{n}_{i}$ e $U^{n}_{i+\frac{1}{2}}$. Procedendo all'indietro si desume che la soluzione $U_i^{n+1}$ dipenderà solo dai dati iniziali nei punti $x_{i-\frac{1}{2}}$, $x_i$ e $x_{i+\frac{1}{2}}$, vale a dire $x_i\pm\:\textrm{un certo}\:\Delta x$. Fissato un tempo $t$, il luogo dei punti che giacciono sull'asse delle $x$ che influenzano la soluzione al tempo $t+\Delta t$ è chiamato dominio di dipendenza numerico. Condizione necessaria affinché uno schema numerico esplicito della forma (60) sia stabile, è che $U^{n}_{i-\frac{1}{2}}$, $U^{n}_{i}$ e $U^{n}_{i+\frac{1}{2}}$ non cadano mai al di fuori del dominio di dipendenza numerico di $U_i^{n+1}$ (Figura \ref{fig:CFL}). 
+\noindent Molto spesso nel contesto di problemi iperbolici si cercano soluzioni per tempi lunghi (cioè per $T\gg1$). In questi casi è richiesta la forte stabilità dello schema, in quanto essa garantisce che la soluzione numerica sia limitata per ogni valore di $T$. In uno schema alle differenze finite come (\ref{eqn:Riemann_discreto}), il valore di $U_i^{n+1}$ dipende, in generale, soltanto dai valori di $U^{n}_{i-\frac{1}{2}}$, $U^{n}_{i}$ e $U^{n}_{i+\frac{1}{2}}$. Procedendo all'indietro si desume che la soluzione $U_i^{n+1}$ dipenderà solo dai dati iniziali nei punti $x_{i-\frac{1}{2}}$, $x_i$ e $x_{i+\frac{1}{2}}$, vale a dire $x_i\pm\:\textrm{un certo}\:\Delta x$. Fissato un tempo $t$, il luogo dei punti che giacciono sull'asse delle $x$ che influenzano la soluzione al tempo $t+\Delta t$ è chiamato dominio di dipendenza numerico. Condizione necessaria affinché uno schema numerico esplicito della forma (\ref{eqn:Riemann_discreto}) sia stabile, è che $U^{n}_{i-\frac{1}{2}}$, $U^{n}_{i}$ e $U^{n}_{i+\frac{1}{2}}$ non cadano mai al di fuori del dominio di dipendenza numerico di $U_i^{n+1}$ (Figura \ref{fig:CFL}). 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{CFL.png}
@@ -1144,7 +1144,7 @@ Salsa, S. (2016) \textit{Equazioni a Derivate Parziali. Metodi, Modelli e Applic
 \bibitem{Toro, 2001}
 Toro, E. F. (2001) \textit{Shock-Capturing Methods for Free-Surface Shallow Flows}. John Wiley $\And$ Sons, LTD, Chichester New York Weinheim Brisbane Singapore Toronto
 \bibitem{Toro, 2009}
-Toro, E. F. (2009) \textit{Riemann Solvers and Numerical Methods for Fluid Dynamics : A Practical Introduction}. Springer Berlin / Heidelberg 
+Toro, E. F. (2009) \textit{Riemann Solvers and Numerical Methods for Fluid Dynamics : A Practical Introduction}. Springer-Verlag Berlin Heidelberg 
 \end{thebibliography}
 
 
