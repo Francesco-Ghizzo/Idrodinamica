@@ -820,246 +820,6 @@ Imporre $CFL=0.9$ ci permette di determinare il passo temporale secondo la segue
 
 
 
-\section{Parte scritta da Marco}
-\subsection{Dam Break}
-\noindent Per la risoluzione del problema di rottura di una diga si considera, in fase iniziale (t=0), una situazione di integrità della struttura e di stabilità del fluido:
-
-\begin{itemize}
-\item A monte 
-\begin{equation}
- Y=Y\textsubscript{$0$}, U=0
-\end{equation}
-\item A valle
-\begin{equation}
- Y=0, U=0
-\end{equation}
-\end{itemize}
-
-\noindent Le ipotesi di partenza prevedono alveo rettangolare largo e l’assenza dell’effetto frizionale, bilanciato da quello gravitazionale.
-Nello stesso istante si considera il crollo improvviso della diga e l’inizio del fenomeno di dispersione del fluido, che si propaga nello spazio per mezzo di due onde: una di sommersione verso valle e una di rarefazione verso monte.
-Le equazioni caratteristiche son le seguenti:
-
-\begin{equation}
-\frac{dx}{dt}=U\pm \sqrt{gY}
-\end{equation}
-
-\begin{equation}
-U \pm 2\sqrt{gY}=cost
-\end{equation}
-
-\noindent Nelle suddette condizioni le celerità con cui si propagano le due onde sono, rispettivamente, $c=2\sqrt{gY\textsubscript{$0$}}$ e $c=-\sqrt{gY}$.
-Il tirante della regione di onda semplice viene espresso come
-Dall’analisi del fenomeno si può dedurre l’esistenza di un punto di criticità della corrente, corrispondente al luogo di passaggio tra la corrente lenta a monte e veloce a valle. Tale punto si posiziona in corrispondenza della diga ad un’altezza pari a 
-
-\begin{equation}
-    Y=\frac{4}{9}Y\textsubscript{$0$}
-\end{equation}
-\subsection{Modello cinematico}
-\noindent Si tratta del modello più semplice per lo studio del fenomeno, caratterizzato da un’equazione dinamica semplificata dai suoi termini inerziali e gravitazionali che la rende di fatto una legge di moto localmente uniforme:
-\begin{equation}
-\frac{\partial \Omega }{\partial t}+U\frac{\partial Q}{\partial x}=0
-\end{equation}
-\begin{equation}
-Q=C\Omega\sqrt{gR_hi_f}=kY^m
-\end{equation}
-
-\noindent La seconda equazione è la cosiddetta scala di deflusso per moto uniforme, legge che lega la portata al tirante; i parametri k ed m, per ipotesi di alveo cilindrico (geometria costante), non sono dipendenti dalla coordinata spaziale.
-Il termine di conduttanza C viene espresso con la formula di Gauckler Strickler.\\
-I valori di celerità dell’onda di piena si ricavano dalla relazione $\frac{\partial Q}{\partial \Omega}$;
-fisicamente il termine corrisponde alla velocità dell’onda, descritta anche come la variazione della portata lungo l’area.
-Considerando l’ipotesi di alveo rettangolare largo (area costante), la celerità si può esprimere nel seguente modo:
-
-\begin{equation}
-c=\frac{1}{b}\frac{\partial Q}{\partial Y}
-\end{equation}
-
-Derivando la portata per il tirante:
-
-\begin{equation} 
-c=\frac{1}{b}mkY^{m-1}=\frac{Q}{\Omega}\frac{\Omega}{bY}=mU\frac{Y\textsubscript{$m$}}{Y}
-\end{equation}
-
-\noindent Dall’equazione si nota la proporzionalità diretta tra la celerità c e il tirante Y; questo esprime fisicamente una maggiore velocità di propagazione dell’onda all’aumentare del tirante di fluido.
-All’interno del fenomeno la relazione comporta che il picco della piena si muove più velocemente rispetto agli altri punti, generando una progressiva deformazione temporale dell’onda che si esaurisce nel suo frangimento finale.
-Questo aspetto fenomenologico non è contemplato nel caso reale, ma è previsto all’interno del modello a causa delle grosse semplificazioni che costringono all’uso di un’equazione differenziale di primo grado con un’unica condizione imposta a monte, perciò priva di condizioni a valle.
-
-\subsection{Modello parabolico}
-\noindent A differenza del precedente modello, quello parabolico risulta più complesso in quanto trascura solamente il termine inerziale:
-
-\begin{equation}
-\frac{\partial \Omega }{\partial t}+U\frac{\partial Q}{\partial x}=0
-\end{equation}
-\begin{equation}
-\frac{\partial Y }{\partial x}=if-j
-\end{equation}
-
-\noindent In questo caso l’equazione della portata tiene conto del termine frizionale:
-
-\begin{equation}
-    Q=C\Omega\sqrt{gR\textsubscript{$H$}(if-\frac{\partial Y}{\partial x}})
-\end{equation}
-
-\noindent Inserendo tale relazione nell’equazione della continuità, si ottiene la seguente equazione alle derivate parziali di secondo ordine:
-
-\begin{equation}
-\frac{\partial Y}{\partial t}+c\frac{\partial Y}{\partial x}=D\frac{\partial Y^2}{\partial x^2}
-\end{equation}
-
-\noindent Al termine $D=\frac{Q}{2bj}$, coefficiente di diffusione, si lega l’incremento o l’attenuazione dell’onda.
-Considerando una sezione fissata, è possibile plottare graficamente l’andamento del tirante dell’onda in relazione alla portata caratteristica; la forma che ne consegue, conosciuta come cappio di piena, rappresenta in maniera ottimale la differenza tra il massimo locale dell’onda ($\frac{\partial Y}{\partial x} = 0$) e il colmo di piena ($Q=Qmax$), associati a due punti diversi dell’evento ondoso.
-
-\subsection{Condizioni iniziali e al contorno}
-\noindent La risoluzione di un problema di equazioni differenziali necessita della definizione di un certo numero di condizioni al bordo, sia iniziali che al contorno, in base al grado dell’equazione.
-Nei casi trattati le condizioni iniziali ($t=0$), ossia i valori delle incognite all’instante iniziale, sono le seguenti:
-
-\begin{itemize}
-\item Onda di piena: portata unitaria e tirante di moto uniforme
-\item Dam Break: tirante unitario a sx della diga, tirante nullo a dx, velocità nulla in entrambi i lati
-\end{itemize}
-
-\noindent Si definisce inoltre il dominio di calcolo, dato dal seguente range di coordinate spaziali:
-Le condizioni al contorno, invece, ossia i valori delle variabili in determinati punti del dominio per qualsiasi istante, sono definite dal comportamento delle onde ai bordi del dominio, le quali in genere rispettano i seguenti principi:
-
-\begin{itemize}
-\item Trasmissività: le celle ai bordi del dominio di calcolo assumono il valore e il segno della cella adiacente
-\item Riflessività: l’onda di piena, a contatto con parete riflettente, viene respinta e inverte il suo verso di moto
-\end{itemize}
-
-\noindent Le condizioni, rispettivamente trasmissiva e riflessiva, vengono espresse analiticamente nel seguente modo:
-\begin{itemize}
-\item A monte: 
-\begin{equation}
-\begin{cases}
-    Y(0,t)=Y(1,t)\\
-    q(0,t)=q(1,t)
-    \end{cases}
-    \begin{cases}
-    Y(0,t)=Y(1,t)\\
-    q(0,t)=-q(1,t)
-    \end{cases}
-\end{equation}
-\item A valle:
-\begin{equation}
-\begin{cases}
-    Y(M+1,t)=Y(M,t)\\
-    q(M+1,t)=q(M,t)
-    \end{cases}
-    \begin{cases}
-    Y(M+1,t)=Y(M,t)\\
-    q(M+1,t)=-q(M,t)
-    \end{cases}
-\end{equation}
-\end{itemize}
-
-\subsection{Notazione vettoriale}
-\noindent La trattazione del problema riportata in scrittura vettoriale si esprime tramite la definizione dei seguenti vettori:
-\begin{itemize}
-    \item Incognite:
-    \begin{equation}
-        U=\begin{pmatrix}
-            Y\\
-            q
-        \end{pmatrix}
-    \end{equation}
-    \item Flusso:
-    \begin{equation}
-        F=\begin{pmatrix}
-            q\\
-            Q\frac{q^2}{Y}+g\frac{Y^2}{2}
-        \end{pmatrix}
-    \end{equation}
-    \item Sorgente:
-    \begin{equation}
-        F=\begin{pmatrix}
-            0\\
-            gY(if-j)
-        \end{pmatrix}
-    \end{equation}
-\end{itemize}
-L’equazione generale che racchiude, in forma vettoriale, le espressioni analizzate in precedenza diventa la seguente:
-\begin{equation}
-    \frac{\partial U}{\partial t}+\frac{\partial F(U)}{\partial x}=S(U)
-\end{equation}
-
-\noindent con il secondo termine esprimibile in funzione del primo tramite l’uso del termine jacobiano del sistema J(U):
-
-\begin{equation}
-    \frac{\partial F(U)}{\partial x}=J(U)\frac{\partial U}{\partial x}
-\end{equation}
-
-\begin{equation}
-J(U)=\begin{bmatrix}
-0 & 1\\
--\frac{q^2}{Y^2}+gY & \frac{2g}{Y}
-\end{bmatrix}
-\end{equation}
-Un sistema alle derivate parziale del primo ordine ammette un’unica soluzione se esso è iperbolico, cioè la matrice J(U) possiede autovalori reali e linearmente indipendenti.
-Una volta risolto tale problema, le radici ottenute come soluzione del polinomio caratteristico della matrice sono l’espressione delle curve caratteristiche che descrivono il moto di propagazione dell’onda, lungo le quali le seguenti espressioni rimangono costanti:
-
-\begin{equation}
-    c^{\pm}=u\pm 2\sqrt{gY}=cost
-\end{equation}
-
-\subsection{Metodo ai volumi finiti}
-\noindent Per la risoluzione del sistema di equazioni vettoriali descritto in precedenza ci si avvale del metodo ai volumi finiti.
-L’approccio modellistico prevede la suddivisione del dominio di calcolo in una mesh computazionale di risoluzione variabile, all’interno della quale viene approssimata la media integrale delle equazioni trattate, soddisfando al contempo entrambi i principi di conservazione. Le variabili, pertanto, vengono derivate come differenze discrete tra valori di due celle diverse adiacenti.
-Innanzitutto il dominio di controllo viene discretizzato in M celle  di forma rettangolare, o volumi finiti, definiti nel piano (x,t) come:
-
-\begin{equation}
-    V^{i}_n=[x_{1-\frac{1}{2}},x_{i+\frac{1}{2}}]\times[t^n,t^{n+1}]
-\end{equation}
-
-\noindent La cella i-esima perciò ha dimensione $\Delta x\Delta t$.
-
-\noindent Il sistema scritto in forma vettoriale
-
-\begin{equation}
-    \frac{\partial U}{\partial t}+\frac{\partial F}{\partial x}=S(U)
-\end{equation}
-
-\noindent può esser scritto in forma integrale nel seguente modo:
-
-\begin{equation}
-    \int Udx+F(U)dt=0
-\end{equation}
-
-\noindent Per ogni cella del dominio si ricava il valore medio del vettore incognite, assunto come costante all’interno della cella. Dalla discretizzazione nel volume infinitesimo si ottiene:
-
-\begin{equation}
-    U^{n+1}\textsubscript{$i$}= U^{n}\textsubscript{$i$}-\frac{\Delta t}{\Delta x}(F\textsubscript{$1+\frac{1}{2}$}-F\textsubscript{$1-\frac{1}{2}$})
-\end{equation}
-
-\noindent Le variabili conservate indefinite, rappresentate dal termine $F\textsubscript{$1+\frac{1}{2}$}$, si possono determinare con diversi schemi numerici:
-\begin{itemize}
-    \item Lax-Friedrichs 
-    \begin{equation}
-        f\textsubscript{$1+\frac{1}{2}$}=\frac{1}{2}(f(q^n\textsubscript{$i+1$})+f(q^n\textsubscript{$i$}))-\frac{\Delta x}{2\Delta t}(q^n\textsubscript{$i+1$}+q^n\textsubscript{$i$})
-    \end{equation}
-    \item Lax-Wendroff 
-     \begin{equation}
-        f\textsubscript{$1+\frac{1}{2}$}=f(\frac{1}{2}(q^n\textsubscript{$i+1$})+f(q^n\textsubscript{$i$}))-\frac{\Delta x}{2\Delta t}(q^n\textsubscript{$i+1$}+q^n\textsubscript{$i$})
-    \end{equation}
-    \item Force
-     \begin{equation}
-      f\textsubscript{$1-\frac{1}{2}$}=\frac{1}{2}(F^{LF}\textsubscript{$i-\frac{1}{2}$}+F^{LW}\textsubscript{$i-\frac{1}{2}$})
-    \end{equation}
-\end{itemize}
-
-\noindent Lo svolgimento dell’equazione vettoriale del problema si divide in due procedure di natura differente, aventi entrambe la medesima condizione iniziale: una legata alla risoluzione di una PDE con risultato nullo, che fornisce un termine finale puramente convettivo, e un’altra legata alla risoluzione di una ODE con risultato pari al termine sorgente.
-La condizione di stabilità per gli schemi elencati è legata al numero di Courant (CFL)
-
-\begin{equation}
-    CFL=\lambda\frac{\Delta t}{\Delta x}
-\end{equation}
-
-\noindent che rappresenta il rapporto tra la velocità di flusso e la velocità della griglia di calcolo. Per la stabilità e l’accuratezza del metodo è necessario che CFL<1, perciò il numero viene fissato a 0,9.
-La stabilità dei metodi si lega quindi alle dimensioni del passo temporale, il quale può assumere come massimo valore
-
-\begin{equation}
-    \Delta t=CFL\frac{\Delta x}{\lambda\textsubscript{$max$}}
-\end{equation}
-con $\lambda\textsubscript{$max$}$ autovalore maggiore.
-
 \newpage
 
 \section {Risultati}
@@ -1070,13 +830,14 @@ con $\lambda\textsubscript{$max$}$ autovalore maggiore.
 
 \noindent Graficamente la simulazione del crollo improvviso della diga ci riporta un'immagine in cui viene riprodotto il livello di tirante sviluppatosi all'interno del dominio spaziale in seguito alla rimozione della parete di contenimento. 
 In seguito al fenomeno di crollo, la condizione riflessiva posta a valle del serbatoio, in cui il tirante è costante, viene meno.
-Dal momento di rottura della diga, l'acqua contenuta dalla diga si riversa nello spazio restante, con un aumento progressivo del livello di tirante verso valle e una diminuzione altrettanto progressiva verso monte. Osservando i singoli profili di corrente generatisi per ogni istante di simulazione, si nota che essi intersecano la quota di tirante critica, posta in corrispondenza della diga, il quale valore è il seguente:
+Dal momento di rottura della diga, l'acqua contenuta dalla diga si riversa nello spazio restante, con un aumento progressivo del livello di tirante verso valle e una diminuzione altrettanto progressiva verso monte. Osservando i singoli profili di corrente generatisi per ogni istante di simulazione, si nota che essi intersecano la quota di tirante critica, posta in corrispondenza della diga, il quale valore è:
 
 \begin{equation}
     Y_c=\frac{4}{9}Y_0
 \end{equation}
 
 \noindent con $Y_0$ livello di tirante a monte della diga.
+Questo ci indica come il moto della corrente passi da natura subcritica a supercritica sempre in corrispondenza della parete di diga, per qualsiasi onda generatasi nel tempo.
 
 \noindent I profili di tirante del flusso d'acqua in propagazione si descrivono analiticamente, punto per punto, tramite le curve caratteristiche della corrente, le quali, all'interno di un piano orario $x-t$, descrivono un ventaglio di soluzioni che assumono valori negativi verso monte e positivi verso valle. Perciò i profili di corrente a valle della diga vengono descritti da curve caratteristiche positive, dette \textit{onde di sommersione}, mentre quelle a monte da curve caratteristiche negative, dette \textit{onde di rarefazione}.\\
 Di seguito si riportano le formule generali delle due onde, rispettivamente di sommersione e di rarefazione:
@@ -1102,28 +863,47 @@ Dal grafico è possibile osservare la conformazione dell'onda di piena all'ultim
 \begin{figure} [H]
     \centering
     \includegraphics{Onda.png}
-    \caption{Andamento del tirante in seguito al crollo della diga}
+    \caption{Andamento del tirante in seguito al passaggio di un'onda di piena}
     \label{fig:onda}
 \end{figure}
 
-\noindent La variazione progressiva della portata al passaggio dell'onda, in virtù della natura non stazionaria del fenomeno, trova riscontro grafico nel cosiddetto \textit{cappio di piena} \ref{fig:cappio}. \\ L'andamento della figura, se letta in senso antiorario, ci indica che la fase ascendente dell'onda di piena corrisponde ad un aumento della portata transitante, mentre la fase discendente si accompagna ad un aumento del tirante, in riferimento alla scala di moto uniforme. In particolare, l'andamento del valore delle proprietà della corrente è caratterizzato dai i seguenti passaggi, descritti in ordine temporale:
-\begin{itemize}
+\noindent La variazione progressiva della portata al passaggio dell'onda, in virtù della natura non stazionaria del fenomeno, trova riscontro grafico nel cosiddetto \textit{cappio di piena} (figura \ref{fig:cappio}). \\ L'andamento della figura, se letta in senso antiorario, ci indica che la fase ascendente dell'onda di piena corrisponde ad un aumento della portata transitante, mentre la fase discendente si accompagna ad un aumento del tirante, in riferimento alla scala di moto uniforme (vedi fig.\ref{fig:punti}). In particolare, l'andamento del valore delle proprietà della corrente è caratterizzato dai i seguenti passaggi, descritti in ordine temporale:
+\begin{enumerate}
     \item punto di massimo locale della velocità, tangente alla retta $U=cost$ ($\frac{\partial U}{\partial t}=0$)
     \item punto di massimo della portata ($\frac{\partial Q}{\partial t}=0$)
     \item punto di colmo della piena ($\frac{\partial Y}{\partial t}=0$)
     \item punto di massimo locale della profondità, tangente alla scala di deflusso ($\frac{\partial Y}{\partial x}$=0)
-\end{itemize}
+\end{enumerate}
 
+\begin{figure}[H]
+\begin{minipage}[b]{8.5cm}
+\noindent Dalla forma del cappio di piena, in particolare dalla sua eccentricità che regola la distanza dei punti caratteristici dalla scala di deflusso dell'alveo, si può dedurre se la figura si riferisca ad un'onda di piena più o meno accentuata.
+Un'analisi qualitativa del grafico ci mostra come i cappi delle onde più brevi abbiano una maggiore apertura, segno del fatto che le variazioni di portata e di tirante rispetto alla scala di deflusso sono maggiori. Questo è indice di come le onde tendano ad attenuarsi progressivamente con il loro sviluppo e ad appiattirsi lungo l'alveo fluviale.
+\end{minipage}
+\ \hspace{2mm} \hspace{3mm} \
+\begin{minipage}[b]{8.5cm}
+    \centering
+    \includegraphics[height=6cm, width=8.5cm]{Punticappio.png}
+    \caption{Cappio di piena}
+    \label{fig:punti}
+\end{minipage}
+\end{figure}
 
 \begin{figure} [H]
     \centering
     \includegraphics[scale=0.5,width=18cm]{Cappio.png}
-    \caption{Andamento del tirante in seguito al crollo della diga}
+    \caption{Cappio di piena}
     \label{fig:cappio}
 \end{figure}
 
-\noindent Dalla forma del cappio di piena, in particolare dalla sua eccentricità che regola la distanza dei punti caratteristici dalla scala di deflusso dell'alveo, si può dedurre se la figura si riferisca ad un'onda di piena più o meno accentuata.
-Un'analisi qualitativa del grafico ci mostra come i cappi delle onde più brevi abbiano una maggiore apertura, segno del fatto che le variazioni di portata e di tirante rispetto alla scala di deflusso sono maggiori. Questo è indice di come le onde tendano ad attenuarsi progressivamente con il loro sviluppo e ad appiattirsi lungo l'alveo fluviale.
+\newpage
+
+\section{Conclusioni}
+\noindent L'esperienza di laboratorio appena affrontata fornisce qualche esempio di come si manifestano i fenomeni di moto non stazionario e in quali occasioni è possibile osservarli.
+Nel caso della rottura della diga si è osservato un fenomeno di moto vario rapido, caratterizzato dal movimento di due onde che si propagano nello spazio in direzioni opposte con diverse velocità, fino a raggiungere le condizioni di stabilità. La progressione nel tempo dell'onda di sommersione è ben raffigurata dalla figura \ref{fig:diga}.\\
+Lo studio dell'onda di piena, invece, ci permette di analizzare un fenomeno non stazionario lento, il quale può essere soggetto a duplice natura, in base alla componente prevalente nel moto: \textbf{inerziale}, se prevale la velocità, o \textbf{frizionale}, se prevale l'attrito e l'interazione con l'alveo. Nel nostro caso, dalla figura \ref{fig:onda} è possibile notare la lenta attenuazione dell'onda nello spazio, la diminuzione dell'ampiezza e l'abbassamento del colmo di piena. Da questo si deduce come non ci sia un termine prevalente tra i due descritti, in quanto la dissipazione è molto graduale nel tempo, come ci si aspetta da un fenomeno di piena all'interno di un corso d'acqua.
+
+
 
 \newpage
 \begin{thebibliography}{}
